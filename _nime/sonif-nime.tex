@@ -155,8 +155,9 @@ H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2
 
 \subsubsection{Max modules}
 \textbf{- Objects generation \& performance mechanics}\\ \par
-Manipulating objects algorithm consists of 3 steps: object generation, finding the object and releasing the object on the floor. Object generation is performed by random generators, functioning within certain limits. These limitations are influenced by the dimensions of the room in which the Vicon system is installed. Finding the object supposes continuous mathematic relations between the coordinates of the object and coordinates of the selected marker. When these coordinates are close enough one to another, the object is retreived and manipulated by performer (eg. define gesture); After all these actions are completed, a simple comparison between the coordinates of the floor and the value of the z axes of the marker is done in order to put down the object.  \\
-- Gesture recognition
+Manipulating objects algorithm consists of 3 steps: object generation, finding the object and releasing the object on the floor. Object generation is performed by random generators, functioning within certain limits. These limitations are influenced by the dimensions of the room in which the Vicon system is installed. Finding the object supposes continuous mathematic relations between the coordinates of the object and coordinates of the selected marker. When these coordinates are close enough one to another, the object is retreived and manipulated by performer (eg. define gesture); After all these actions are completed, a simple comparison between the coordinates of the floor and the value of the z axes of the marker is done in order to put down the object.\\ \par
+\textbf{- Gesture recognition}\\ \par
+Interaction between sound control and human gesture has constantly increased over the last years \cite{Gestureanalysis}. Probabilistic models for analysing motion and sound relationships became a necessity and a forthcoming tool \cite{probabilisticmodels}. \textit{Mubu} containers provided by Ircam laboratories in MAX/MSP software represents a handy tool to record and analyze gesture, captured with Vicon system \cite{mubu}. Gesture recognition is based on Hierarhical Hidden Markov Model implemented in mubu.hhmm object of MAX/MSP.
 
 - Sound design
 

@@ -1,3 +1,59 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: sonif-nime.aux
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: sonif-nime.aux
 The style file: abbrv.bst
 Database file #1: sonif-ref.bib
+Too many commas in name 1 of "Jules Francoise, Norbert Schnell, Ricardo Borghesi, Frederic Bevilacqua" for entry probabilisticmodels
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Jules Francoise, Norbert Schnell, Ricardo Borghesi, Frederic Bevilacqua" for entry probabilisticmodels
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
+while executing---line 1090 of file abbrv.bst
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            521 strings with 4448 characters,
+and the built_in function-call counts, 1283 in all, are:
+= -- 126
+> -- 39
+< -- 2
++ -- 17
+- -- 12
+* -- 68
+:= -- 206
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 16
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 64
+empty$ -- 109
+format.name$ -- 12
+if$ -- 286
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 6
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 25
+preamble$ -- 1
+purify$ -- 14
+quote$ -- 0
+skip$ -- 50
+stack$ -- 0
+substring$ -- 77
+swap$ -- 22
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 0
+while$ -- 12
+width$ -- 5
+write$ -- 45
+(There were 6 error messages)

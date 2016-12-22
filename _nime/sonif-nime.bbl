@@ -5,4 +5,22 @@ T.~Hermann, A.~Hunt, and J.~G. Neuhoff.
 \newblock {\em The sonification handbook}.
 \newblock Logos Verlag Berlin, 2011.
 
+\bibitem{Gestureanalysis}
+K.~N. Jorge~Solis.
+\newblock {\em Musical Robots and Interactive Multimodal Systems}.
+\newblock Springer-Verlag Berlin Heidelberg, Berlin, 2011.
+
+\bibitem{probabilisticmodels}
+R.~B. F.~B. Jules~Francoise, Norbert~Schnell.
+\newblock Probabilistic models for designing motion and sound relationships.
+\newblock {\em International Conference on New Interfaces for Musical
+  Expression}, pages 287--292, June 2014.
+
+\bibitem{mubu}
+D.~S. G. P. R.~B. Norbert~Schnell, Axel~Robel.
+\newblock Mubu & friends - assembling tools for content based real-time
+  interactive audio processing in max/msp.
+\newblock {\em International Computer Music Association}, pages 423--426,
+  August 2009.
+
 \end{thebibliography}
