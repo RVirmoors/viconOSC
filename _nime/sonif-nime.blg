@@ -3,6 +3,11 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sonif-nime.aux
 The style file: abbrv.bst
 Database file #1: sonif-ref.bib
+I was expecting a `,' or a `}'---line 33 of file sonif-ref.bib
+ :  
+ :  address={Boston},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Too many commas in name 1 of "Jules Francoise, Norbert Schnell, Ricardo Borghesi, Frederic Bevilacqua" for entry probabilisticmodels
 while executing---line 1049 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
@@ -15,45 +20,46 @@ Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffr
 while executing---line 1090 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
 while executing---line 1090 of file abbrv.bst
-You've used 4 entries,
+Warning--empty year in hhmm
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            521 strings with 4448 characters,
-and the built_in function-call counts, 1283 in all, are:
-= -- 126
-> -- 39
+            526 strings with 4527 characters,
+and the built_in function-call counts, 1490 in all, are:
+= -- 145
+> -- 46
 < -- 2
-+ -- 17
-- -- 12
-* -- 68
-:= -- 206
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 16
++ -- 21
+- -- 14
+* -- 78
+:= -- 244
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 20
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 64
-empty$ -- 109
-format.name$ -- 12
-if$ -- 286
+cite$ -- 6
+duplicate$ -- 74
+empty$ -- 126
+format.name$ -- 14
+if$ -- 326
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 6
-newline$ -- 23
-num.names$ -- 8
-pop$ -- 25
+int.to.str$ -- 5
+missing$ -- 7
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 31
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 17
 quote$ -- 0
-skip$ -- 50
+skip$ -- 56
 stack$ -- 0
-substring$ -- 77
-swap$ -- 22
+substring$ -- 83
+swap$ -- 23
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 12
-warning$ -- 0
-while$ -- 12
-width$ -- 5
-write$ -- 45
-(There were 6 error messages)
+type$ -- 16
+warning$ -- 1
+while$ -- 14
+width$ -- 6
+write$ -- 54
+(There were 7 error messages)
