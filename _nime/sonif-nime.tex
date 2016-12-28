@@ -11,7 +11,7 @@
 
 
 \documentclass{nime-alternate}
-\usepackage{dirtytalk}
+%\usepackage{dirtytalk}
 
 \begin{document}
 %
@@ -139,7 +139,13 @@ H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2
 
 - interactive / movement sonification examples\cite{hermann2011sonification}.
 
-- \say{Sound in space} represents another innovative element in this project because introduces the concept of \say{tactile sound}. This means that the sound is an entity, gets a materialization and it becomes switchable. It is not about the \textbf{localization} of sound in space, it is about its \textbf{position}, the coordinates of the sound in space, like an actual \textit{object}. \say{Sound objects} concept represents an innovative tool for multimedia arts such as sketches, imaginary games and realtime interactions.
+- \textit{Sound in space} represents another innovative element in this project because introduces the concept of \textit{tactile sound}.
+%GRIG: trebuie o referinta aici. Noi inventam acest concept? Avem nevoie de un concept nou?
+This means that the sound is an entity, gets a materialization and it becomes switchable. It is not about the \textbf{localization} of sound in space, it is about its \textbf{position}, the coordinates of the sound in space, like an actual \textit{object}. \textit{Sound objects} concept represents an innovative tool for multimedia arts such as sketches, imaginary games and realtime interactions.
+%GRIG: As incerca sa reformulam paragraful asta; distinctia intre localization si position este prea vaga.
+
+%GRIG: mutat de la 3.2
+Interaction between sound control and human gesture has constantly increased over the last years \cite{Gestureanalysis}. Probabilistic models for analysing motion and sound relationships became a necessity and a forthcoming tool \cite{probabilisticmodels}.
 
 \section{Project Description}
 
@@ -158,10 +164,14 @@ H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2
 
 \subsubsection{Max modules}
 \textbf{- Objects generation \& performance mechanics}\\ \par
-Max is a realtime visual programing environment for music and multimedia arts that helps you build stand-alone applications, plugins and mixing audio signals. In order to create interactive sounds, attractive grapichs and special effects, MAX creates a connection between virtual objects and subpatches\footnote{See \url{http://www.cycling74.com/}.}.
-Manipulating objects algorithm consists of 3 big steps: object generation, finding the object and releasing the object on the floor. Object generation is realized by random generators with the help of \textit{drunk} object, but with certain limits. These limitations are influenced by the dimensions of the room in which the Vicon system is installed. Finding the object supposes continuous mathematic operations between the coordinates of the object and coordinates of the left hand's marker. This process comes with an audio feedback. When these coordinates are close enough one to another, the object is retreived and manipulated by performer (eg. define gesture). After all these processes, a simple comparison between the coordinates of the floor and the value of the z axes of the marker is done in order to put down the object. According to this, a performer can handle as many objects as he wants.\\ \par
+%GRIG: nu e cazul sa prezentam Max pe larg aici. Eventual o propozitie scurta mai sus...
+%Max is a realtime visual programing environment for music and multimedia arts that helps you build stand-alone applications, plugins and mixing audio signals. In order to create interactive sounds, attractive grapichs and special effects, MAX creates a connection between virtual objects and subpatches\footnote{See \url{http://www.cycling74.com/}.}.
+Manipulating objects algorithm consists of 3 big steps: object generation, finding the object and releasing the object on the floor. 
+%GRIG: ar mai fi picking up the object, si eventual throwing...
+
+Object generation is realized by random generators with the help of \textit{drunk} object, but with certain limits. These limitations are influenced by the dimensions of the room in which the Vicon system is installed. Finding the object supposes continuous mathematic operations between the coordinates of the object and coordinates of the left hand's marker. This process comes with an audio feedback. When these coordinates are close enough one to another, the object is retreived and manipulated by performer (eg. define gesture). After all these processes, a simple comparison between the coordinates of the floor and the value of the z axes of the marker is done in order to put down the object. According to this, a performer can handle as many objects as he wants.\\ \par
 \textbf{- Gesture recognition}\\ \par
-Interaction between sound control and human gesture has constantly increased over the last years \cite{Gestureanalysis}. Probabilistic models for analysing motion and sound relationships became a necessity and a forthcoming tool \cite{probabilisticmodels}. \textit{Mubu} containers provided by Ircam laboratories in MAX/MSP software represent a handy tool to record and analyze gesture, captured with Vicon system \cite{mubu}. Our gesture recognition algorythm is based on Hierarchical Hidden Markov Model implemented in \textit{mubu.hhmm} object of MAX/MSP. Hierarchical Hidden Markov Model is a generalization of HMM where each state is considered to be a self-contained probabilistic model \cite{hhmm}. The system is trained by captured data which is essentially a gesture. This process requires a predefined indicator in order to delimitate gestures from all data flow. The algorythm analyzes all input data and generates a probability of similarity between data and saved gestures. In order to control every generated object, there are associated 2 or 3 gestures saved by the performer, but there is a limited time for the gestures to be executed. Predefined gestures offer the possibility to delete the gesture just saved and also indicate the moment the gesture is recorded. to be continued...
+ \textit{Mubu} containers provided by Ircam laboratories in MAX/MSP software represent a handy tool to record and analyze gesture, captured with Vicon system \cite{mubu}. Our gesture recognition algorithm is based on Hierarchical Hidden Markov Models (HHMM) implemented in \textit{mubu.hhmm} object of MAX/MSP. HHMMs are a generalization of HMM where each state is considered to be a self-contained probabilistic model \cite{hhmm}. The system is trained by captured data which is essentially a gesture. This process requires a predefined indicator in order to delimitate gestures from all data flow. The algorithm analyzes all input data and generates a probability of similarity between data and saved gestures. In order to control every generated object, there are associated 2 or 3 gestures saved by the performer, but there is a limited time for the gestures to be executed. Predefined gestures offer the possibility to delete the gesture just saved and also indicate the moment the gesture is recorded. to be continued...
 
 - Sound design
 
