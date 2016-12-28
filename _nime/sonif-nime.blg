@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: sonif-nime.aux
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: sonif-nime.aux
 The style file: abbrv.bst
 Database file #1: sonif-ref.bib
 I was expecting a `,' or a `}'---line 33 of file sonif-ref.bib
@@ -6,12 +8,17 @@ I was expecting a `,' or a `}'---line 33 of file sonif-ref.bib
  :  address={Boston},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Illegal end of database file---line 41 of file sonif-ref.bib
+ :  year={2014}
+ :             
+I'm skipping whatever remains of this entry
 Too many commas in name 1 of "Jules Francoise, Norbert Schnell, Ricardo Borghesi, Frederic Bevilacqua" for entry probabilisticmodels
 while executing---line 1049 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
 while executing---line 1049 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
 while executing---line 1049 of file abbrv.bst
+Warning--empty year in soundunseen
 Too many commas in name 1 of "Jules Francoise, Norbert Schnell, Ricardo Borghesi, Frederic Bevilacqua" for entry probabilisticmodels
 while executing---line 1090 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
@@ -19,4 +26,45 @@ while executing---line 1090 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
 while executing---line 1090 of file abbrv.bst
 Warning--empty year in hhmm
-(There were 7 error messages)
+You've used 6 entries,
+            2118 wiz_defined-function locations,
+            531 strings with 4632 characters,
+and the built_in function-call counts, 1710 in all, are:
+= -- 164
+> -- 53
+< -- 2
++ -- 24
+- -- 16
+* -- 89
+:= -- 282
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 23
+chr.to.int$ -- 0
+cite$ -- 8
+duplicate$ -- 86
+empty$ -- 148
+format.name$ -- 16
+if$ -- 372
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 9
+newline$ -- 33
+num.names$ -- 12
+pop$ -- 40
+preamble$ -- 1
+purify$ -- 20
+quote$ -- 0
+skip$ -- 61
+stack$ -- 0
+substring$ -- 88
+swap$ -- 24
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 18
+warning$ -- 2
+while$ -- 16
+width$ -- 7
+write$ -- 64
+(There were 8 error messages)
