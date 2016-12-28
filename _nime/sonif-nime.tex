@@ -139,9 +139,9 @@ H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2
 
 - interactive / movement sonification examples\cite{hermann2011sonification}.
 
-- \textit{Sound in space} represents another innovative element in this project because introduces the concept of \textit{tactile sound}.
+- \textit{Sound in space} represents another innovative element in this project because introduces the ideea of \textit{controling sound} by movement.
 %GRIG: trebuie o referinta aici. Noi inventam acest concept? Avem nevoie de un concept nou?
-This means that the sound is an entity, gets a materialization and it becomes switchable. It is not about the \textbf{localization} of sound in space, it is about its \textbf{position}, the coordinates of the sound in space, like an actual \textit{object}. \textit{Sound objects} concept represents an innovative tool for multimedia arts such as sketches, imaginary games and realtime interactions.
+This means that the sound is an entity, gets a materialization and it becomes switchable. It is not about the \textbf{localization} of sound in space (detecting the direction of sound source), it is about its \textbf{position}in space, the coordinates of the sound object in space, like an actual \textit{object} in a room. \textit{Sound objects} concept represents an innovative tool for multimedia arts such as sketches, imaginary games and realtime interactions.
 %GRIG: As incerca sa reformulam paragraful asta; distinctia intre localization si position este prea vaga.
 
 %GRIG: mutat de la 3.2
@@ -158,15 +158,16 @@ Interaction between sound control and human gesture has constantly increased ove
 - Visual environment
 
 \subsection{Implementation}
-- Character design (Nexus)
+- Character design (Nexus)\\
 
-- Vicon extensions (SDK plugin)
+- \textbf{Vicon extensions (SDK plugin)} \par
+Vicon's SDK is a versatile and simple tool for users to gain easy access to Vicon DataFlow created in Nexus, Blade or Tracker applications.The Vicon DataStream Software Development Kit (SDK) provides intuitive programable access to data with custom functions created in C++. With the help of some functions, Vicon's SDK forwardes the Vicon DataStream to other constructive softwares and plug-ins to create custom applications \footnote{See \url{https://www.vicon.com/products/software/datastream-sdk/}.}. In combination with Open Sound Control protocol, Vicon's SDK forwards data to any software compatible with this communication protocol (eg. MAX/MSP). OSC is a protocol for communication among computers, sound synthesizers and other multimedia devices\footnote{See  \url{http://opensoundcontrol.org}.}. Hence, any marker can be routed in MAX/MSP using its parameters and coordinates. Also, the Vicon DataStream Software Development Kit (SDK) admits inside changes such as labeling markers, timecode generation and framerate.
 
 \subsubsection{Max modules}
 \textbf{- Objects generation \& performance mechanics}\\ \par
 %GRIG: nu e cazul sa prezentam Max pe larg aici. Eventual o propozitie scurta mai sus...
 %Max is a realtime visual programing environment for music and multimedia arts that helps you build stand-alone applications, plugins and mixing audio signals. In order to create interactive sounds, attractive grapichs and special effects, MAX creates a connection between virtual objects and subpatches\footnote{See \url{http://www.cycling74.com/}.}.
-Manipulating objects algorithm consists of 3 big steps: object generation, finding the object and releasing the object on the floor. 
+Manipulating objects algorithm consists of some big steps: object generation, finding the object, picking up the object, throwing the object on the floor. 
 %GRIG: ar mai fi picking up the object, si eventual throwing...
 
 Object generation is realized by random generators with the help of \textit{drunk} object, but with certain limits. These limitations are influenced by the dimensions of the room in which the Vicon system is installed. Finding the object supposes continuous mathematic operations between the coordinates of the object and coordinates of the left hand's marker. This process comes with an audio feedback. When these coordinates are close enough one to another, the object is retreived and manipulated by performer (eg. define gesture). After all these processes, a simple comparison between the coordinates of the floor and the value of the z axes of the marker is done in order to put down the object. According to this, a performer can handle as many objects as he wants.\\ \par
