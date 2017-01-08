@@ -131,7 +131,8 @@ H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2
 
 - challenges
 
-- the Vicon system
+\textbf{- the Vicon system}\\ \par
+With advanced technology and intelligent controls, Vicon Vantage represents a powerful tool to capture motion.Vicon Vantage system used in this project contains 8's 5 megapixel camera which transmit movement in realtime to Nexus or Blade. Having accelerometers and temperature sensors, each camera detects any decalibration of the system. \footnote{See  \url{https://www.vicon.com}.}.
 
 \section{State of the Art}
 
@@ -154,12 +155,13 @@ Interaction between sound control and human gesture has constantly increased ove
 - Performance aesthetic\\
 
 \textbf{- Gestures, virtual objects, dynamic mapping}\\ \par
-Manny interactions and programable elements which are included in the concept have an exactly function and usefulness.
+Manny interactions and programable elements which are included in the concept have an exactly function and usefulness. These elements are created in MAX with the help of Vicon SDK and OSC C++ library. The concept suppose an interactive action of a performer or a simple user with an virtual object which has associated gestures defined by person. Virtual object interaction acts in sound design utility like a master controller. Searching for a certain object comes with an audio feedback which makes the search easier. Object's asscociated gestures are compatible with sound design patch and contribute at audio performance. A dynamic mapping of marker's coordinates is necessary to transfer data between Nexus and MAX.
 
 - Visual environment
 
 \subsection{Implementation}
-- Character design (Nexus)\\
+\textbf{- Character design (Nexus)}\\ \par
+Implementation of the concept presented above requires Nexus, Vicon SDK and MAX sotware. Every character involved in the scene is defined by a limited number of markers. In this case, one marker is positioned on the head and the others 2 on the hands. Every marker has associated a name in Nexus and between them 3 segments are drawn. It is very important in realtime capture motion, that the marker to have assigned correct coordinates.
 
 - \textbf{Vicon extensions (SDK plugin)} \par
 Vicon's SDK is a versatile and simple tool for users to gain easy access to Vicon DataFlow created in Nexus, Blade or Tracker applications.The Vicon DataStream Software Development Kit (SDK) provides intuitive programable access to data with custom functions created in C++. With the help of some functions, Vicon's SDK forwardes the Vicon DataStream to other constructive softwares and plug-ins to create custom applications \footnote{See \url{https://www.vicon.com/products/software/datastream-sdk/}.}. In combination with Open Sound Control protocol, Vicon's SDK forwards data to any software compatible with this communication protocol (eg. MAX/MSP). OSC is a protocol for communication among computers, sound synthesizers and other multimedia devices\footnote{See  \url{http://opensoundcontrol.org}.}. Hence, any marker can be routed in MAX/MSP using its parameters and coordinates. Also, the Vicon DataStream Software Development Kit (SDK) admits inside changes such as labeling markers, timecode generation and framerate.
