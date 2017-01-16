@@ -721,39 +721,54 @@ int main(int argc, char* argv[])
 			char buffer[OUTPUT_BUFFER_SIZE];
 			osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
 
-			if (!m_x[0]) m_x[0] = m_x[3];
-			if (!m_x[3]) m_x[3] = m_x[0];
-			if (!m_y[0]) m_y[0] = m_y[3];
-			if (!m_y[3]) m_y[3] = m_y[0];
-			if (!m_z[0]) m_z[0] = m_z[3];
-			if (!m_z[3]) m_z[3] = m_z[0];
+			if (!m_x[0]) m_x[0] = m_x[2];
+			if (!m_x[2]) m_x[2] = m_x[0];
+			if (!m_y[0]) m_y[0] = m_y[2];
+			if (!m_y[2]) m_y[2] = m_y[0];
+			if (!m_z[0]) m_z[0] = m_z[2];
+			if (!m_z[2]) m_z[2] = m_z[0];
 
-			if (!m_x[1]) m_x[1] = m_x[2];
+		/*	if (!m_x[1]) m_x[1] = m_x[2];
 			if (!m_x[2]) m_x[2] = m_x[1];
 			if (!m_y[1]) m_y[1] = m_y[2];
 			if (!m_y[2]) m_y[2] = m_y[1];
 			if (!m_z[1]) m_z[1] = m_z[2];
-			if (!m_z[2]) m_z[2] = m_z[1];
+			if (!m_z[2]) m_z[2] = m_z[1];*/
 
-			if (!m_x[5]) m_x[5] = m_x[4];
-			if (!m_x[4]) m_x[4] = m_x[5];
-			if (!m_y[5]) m_y[5] = m_y[4];
-			if (!m_y[4]) m_y[4] = m_y[5];
-			if (!m_z[5]) m_z[5] = m_z[4];
-			if (!m_z[4]) m_z[4] = m_z[5];
+			if (!m_x[3]) m_x[3] = m_x[4];
+			if (!m_x[4]) m_x[4] = m_x[3];
+			if (!m_y[3]) m_y[3] = m_y[4];
+			if (!m_y[4]) m_y[4] = m_y[3];
+			if (!m_z[3]) m_z[3] = m_z[4];
+			if (!m_z[4]) m_z[4] = m_z[3];
 
-			p << osc::BeginBundleImmediate
-				<< osc::BeginMessage("/markers/cap")
-				<< (m_x[0] + m_x[3]) / 2 << (m_y[0] + m_y[3]) / 2 << (m_z[0] + m_z[3]) / 2 << osc::EndMessage;
+			if (! (!m_x[0] || !m_x[3]) ) {
+				p << osc::BeginBundleImmediate
+					<< osc::BeginMessage("/markers/cap")
+					<< (m_x[0] + m_x[2]) / 2 << (m_y[0] + m_y[2]) / 2 << (m_z[0] + m_z[2]) / 2 << osc::EndMessage;
 
-			p << osc::BeginMessage("/markers/dreapta")
-				<< (m_x[1] + m_x[2]) /2 << (m_y[1] + m_y[2]) / 2 << (m_z[1] + m_z[2]) / 2 << osc::EndMessage;
+				//p << osc::BeginMessage("/markers/dreapta")
+				//	<< (m_x[1] + m_x[2]) /2 << (m_y[1] + m_y[2]) / 2 << (m_z[1] + m_z[2]) / 2 << osc::EndMessage;
 
-			p << osc::BeginMessage("/markers/stanga")
-				<< (m_x[4] + m_x[5]) / 2 << (m_y[4] + m_y[5]) / 2 << (m_z[4] + m_z[5]) / 2 << osc::EndMessage
-				<< osc::EndBundle;
+				p << osc::BeginMessage("/markers/stanga")
+					<< (m_x[4] + m_x[3]) / 2 << (m_y[4] + m_y[3]) / 2 << (m_z[4] + m_z[3]) / 2 << osc::EndMessage;
 
-			transmitSocket.Send(p.Data(), p.Size());
+				float dist = pow(m_x[3] - m_x[4], 2) + pow(m_y[3] - m_y[4], 2) + pow(m_z[3] - m_z[4], 2);
+
+				p << osc::BeginMessage("/rec/dist")	<< dist
+					<< osc::EndMessage;
+
+				if (dist < 2500 && dist)
+					p << osc::BeginMessage("/rec/1") << osc::EndMessage;
+				else
+					p << osc::BeginMessage("/rec/0") << osc::EndMessage;
+
+
+				p << osc::EndBundle;
+
+				transmitSocket.Send(p.Data(), p.Size());
+			}
+
 
 //			Sleep(1500);
 

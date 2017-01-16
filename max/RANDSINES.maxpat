@@ -3,13 +3,13 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 3,
-			"revision" : 1,
+			"minor" : 2,
+			"revision" : 4,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 103.0, 1406.0, 698.0 ],
+		"rect" : [ 42.0, 103.0, 1406.0, 698.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -122,6 +122,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-133",
+					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -147,6 +148,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-130",
+					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -160,6 +162,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-129",
+					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -285,7 +288,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 139.5, 565.0, 86.0, 39.0 ],
+					"patching_rect" : [ 139.5, 565.0, 86.0, 40.0 ],
 					"style" : ""
 				}
 
@@ -375,9 +378,9 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 143.0, 12.0, 59.0, 22.0 ],
+					"patching_rect" : [ 143.0, 12.0, 52.0, 22.0 ],
 					"style" : "",
-					"text" : "r dreapta"
+					"text" : "r st_xyz"
 				}
 
 			}
@@ -742,7 +745,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.5, 1019.059998, 95.0, 39.0 ],
+					"patching_rect" : [ 151.5, 1019.059998, 95.0, 40.0 ],
 					"style" : ""
 				}
 
@@ -986,7 +989,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 116.0, 734.0, 90.0, 39.0 ],
+					"patching_rect" : [ 116.0, 734.0, 90.0, 40.0 ],
 					"style" : ""
 				}
 
