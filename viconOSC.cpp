@@ -758,10 +758,11 @@ int main(int argc, char* argv[])
 				p << osc::BeginMessage("/rec/dist")	<< dist
 					<< osc::EndMessage;
 
-				if (dist < 2500 && dist)
+				if (dist < 3000 && dist)
 					p << osc::BeginMessage("/rec/1") << osc::EndMessage;
 				else
-					p << osc::BeginMessage("/rec/0") << osc::EndMessage;
+					if (dist >= 3000)
+						p << osc::BeginMessage("/rec/0") << osc::EndMessage;
 
 
 				p << osc::EndBundle;

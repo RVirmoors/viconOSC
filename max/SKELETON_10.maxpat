@@ -3,13 +3,13 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 3,
-			"revision" : 1,
+			"minor" : 2,
+			"revision" : 4,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 76.0, 1298.0, 618.0 ],
+		"rect" : [ 1002.0, 84.0, 876.0, 914.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,85 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontsize" : 11.189972,
+					"id" : "obj-57",
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1373.0, 292.333374, 134.0, 21.0 ],
+					"style" : "",
+					"text" : "scale -2000. 2000 -20 20"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-50",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1561.0, 231.0, 79.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-51",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1465.5, 231.0, 84.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-53",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1350.0, 231.0, 82.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-54",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "int", "int" ],
+					"patching_rect" : [ 1401.0, 175.0, 148.0, 22.0 ],
+					"style" : "",
+					"text" : "unpack 0 0 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-55",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1401.0, 129.5, 93.0, 22.0 ],
+					"style" : "",
+					"text" : "r st_xyz"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-52",
 					"linecount" : 2,
 					"maxclass" : "comment",
@@ -55,10 +134,11 @@
 					"id" : "obj-49",
 					"maxclass" : "newobj",
 					"numinlets" : 6,
-					"numoutlets" : 0,
-					"patching_rect" : [ 527.5, 777.744324, 265.5, 45.0 ],
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "signal" ],
+					"patching_rect" : [ 527.5, 777.744324, 183.0, 45.0 ],
 					"style" : "",
-					"text" : "chorusaw"
+					"text" : "chorusaw_2"
 				}
 
 			}
@@ -459,7 +539,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1035.5, 645.333374, 310.0, 22.0 ],
+					"patching_rect" : [ 1117.5, 645.333374, 310.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -1337,8 +1417,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 3,
-							"revision" : 1,
+							"minor" : 2,
+							"revision" : 4,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -3028,6 +3108,60 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-50", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-54", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-51", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-54", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-53", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-54", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-54", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-55", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-57", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-55", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-113", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-57", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-65", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -3073,8 +3207,8 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "chorusaw.maxpat",
-				"bootpath" : "G:/SOUND DESIGN SONIFICATION/SONIFICATION PROJECT",
+				"name" : "chorusaw_2.maxpat",
+				"bootpath" : "~/viconOSC/max",
 				"type" : "JSON",
 				"implicit" : 1
 			}
