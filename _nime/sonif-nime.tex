@@ -93,11 +93,13 @@ G.K.M. Tobin\\
 
 \maketitle
 \begin{abstract}
-
-The abstract should preferably be between 100 and 200 words.
+	
+	
+%\textit{SoundThimble} is an interactive installation, inspired by the game called Hunt the Thimble in which someone hides an object then guides the other players to its location by stating whether their position is “hot” – closer to the object, or “cold” – farther from the object. 
+ The installation is based on a high-resolution, state-of-the-art motion capture system – Vicon (denumirea exacta) -- consisting of eight high-resolution, infra-red cameras. The system is used alongside MaxMSP to track, interpret and sonify the movement and gestures of a performer in 3d space.
 \end{abstract}
 
-\keywords{sonification, motion tracking, gesture spotting, interactive installation}
+\keywords{sonification, motion tracking, gesture spotting, interactive installation, synthesis}
 
 
 \acmclassification1998{
@@ -113,7 +115,14 @@ H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2
 - challenges
 
 \textbf{- the Vicon system}\\ \par
-With advanced technology and intelligent controls, Vicon Vantage represents a powerful tool to capture motion.Vicon Vantage system used in this project contains 8's 5 megapixel camera which transmit movement in realtime to Nexus or Blade. Having accelerometers and temperature sensors, each camera detects any decalibration of the system. \footnote{See  \url{https://www.vicon.com}.}.
+
+The SoundThimble project started with the aim of exploring the technical possibilities offered by the Vicon technology and implementing them into the realm of Sonic Arts and interactive sound installations. Three-dimensional motion capture systems – including Vicon – have been extensively used in animation, movies and games where actors’/performers’ movement in 3d space is being tracked with a high degree of both spatial and temporal resolution (scrieti voi pls valorile exacte… ?mm discriminare / ??fps) and assigned to animate various models such as characters, animals, aliens and other creatures. Although motion capture devices such as video cameras and Microsoft Kinect  devices have provided researchers and sound artist countless expressive possibilities, the idea of using advanced motion capture systems like Vicon is relatively new and unexploited. (ref despre Kinect, proiecte misto, proiecte cu Vicon) 
+
+With advanced technology and intelligent controls, Vicon Vantage represents a powerful tool to capture motion. Vicon Vantage system used in this project contains 8's 5 megapixel camera which transmit movement in realtime to Nexus or Blade. Having accelerometers and temperature sensors, each camera detects any decalibration of the system. \footnote{See  \url{https://www.vicon.com}.}.
+
+In addition to a high spatial resolution and discrimination of only (cati mm?) the ability of placing a large number of markers makes it possible to track head, hands, elbows, shoulders, torso, feet, thighs and even fingers. By assigning numerous markers to groups, there is possible to  reduce the chance of the system temporarily losing markers, which can happen when using only one marker per limb because cameras’ blind spots. These charactheristics result in a very accurate and complex motion tracking.
+
+One of the fist challenges was to create a method of sending real-time from Vicon to MaxMSP where data would be processed and used to generate and manipulate sound. By default, the Vicon system does not support the Open Sound Control (OSC) protocol (ref), needed to communicate with MaxMSP. To overcome this limitation, some code modifications and additions have been implemented inside Vicon’s Blade sdk.
 
 \section{State of the Art}
 
@@ -136,6 +145,9 @@ Interaction between sound control and human gesture has constantly increased ove
 - Performance aesthetic\\
 
 \textbf{- Gestures, virtual objects, dynamic mapping}\\ \par
+
+SoundThimble can be described as either being an interactive sound installation or an auditory game.The narrative of SoundThimble implies a performer which tries to find a virtual object, randomly placed in 3d space, by analyzing cues that are constantly shifting in the sonic fabric in relation to his/her movement. Similarly to the traditional game, the distance between the performer and the virtual object is correlated to sound synthesis and modulation parameters in MaxMSP. The closer one gets to the object the more “organized”  and constant the sound and vice-versa. Once the object is found, the performer has full freedom to record a number of gestures that can be re-performed later, re-called through the use of the MuBu package (ref) and used to trigger or manipulate various sound events/sonic shifts. We can think of SoundThimble as having two different narratives: one before the object is found, where only distance in relation to the object is used to control sound and the second where gestures are being employed, after the object has been found. Generally, the level of interaction is higher after the object is found, however both situations can overlap (e.g: the performer tries to find the second object while recalling gestures that were assigned to the first object). This scenario keeps repeating: other objects are randomly generated, the performer finds them, defines gestures and interacts sonically with them.
+
 Manny interactions and programable elements which are included in the concept have an exactly function and usefulness. These elements are created in MAX with the help of Vicon SDK and OSC C++ library. The concept suppose an interactive action of a performer or a simple user with an virtual object which has associated gestures defined by person. Virtual object interaction acts in sound design utility like a master controller. Searching for a certain object comes with an audio feedback which makes the search easier. Object's asscociated gestures are compatible with sound design patch and contribute at audio performance. A dynamic mapping of marker's coordinates is necessary to transfer data between Nexus and MAX.
 
 - Visual environment
@@ -160,6 +172,17 @@ Object generation is realized by random generators with the help of \textit{drun
 
 - Sound design
 
+Although there is a wide range of sonification alternatives available, including triggering of pre-stored sounds, modulating/LFO-ing stored sounds etc. we started experimenting with a few synthesis patches with parameters that could be correlated to XYZ coordinates in a reactive and expressive manner.  In order to exploit the increased spatial resolution, marker positions, grouping of markers and other possibilities of the Vicon system, the development of synthesis  algorithms in MaxMSP seems to be very flexible.  In this way, the whole soundscape can be generated in a continuous, organic manner by correlating markers’ positions with synthesis parameters. 
+
+The interactive experience can be described as having two main paradigms: object finding and object interaction. For object finding we have been experimenting with two straightforward patches in MaxMSP: the first is based on a sawtooth wave that is sent to 8 delays. These output a random signal with a settable range which continuously alter the phase and frequency of the sawtooth iterations. This chorus-inspired algorithm has three controllable parameters: main frequency, range and speed of frequency variation. The farthest someone is from the virtual object the more detuning and phase shifting occurs on each of the eight iterations, while approaching it the effect becomes less pronounced to the point where only slight variations of the signal occur. Also, main frequency is associated with movement in the vertical plane. Further modulation can be used to make the sound more complex. The second patch is somewhat based on the same principle of decorrelation: six sine waves with different frequencies are modulated in amplitude by a random~ object which generates control waves with a variable degree of complexity (more or less noise-like shapes). As in this case, distance between the performer and the virtual object is associated with the level of randomness and decorrelation: longer distance translates to a higher degree of decorrelation and randomness. What is interesting about this patch is the effect of amplitude modulation (AM) (referinta ce e AM) when the carrier frequency (?) goes beyond 20hz and sidebands occur. By using noise-like carriers, complex sonorities occur with a variable harmonic content. In both cases, the performer tries to find the object by listening to these variations. By correlating small and large variations to its position in the 3d field the performer receives meaningful clues about where the object might be as well as an interesting and engaging soundscape. 
+
+An additional granular synthesis (ref) patch that was initially created for object interaction also seems to be effective for object finding. The patch reads short grains from a pre-loaded sound and scatters into “clouds” in either a controlled or random manner. Among the parameters that can be mapped are: grain position, grain size, envelope shape, level of scattering, pitch, stereo width. Not only this, but by using the [pattrstorage] and [pattr] objects we can group multiple parameters’ state, save them as presets and interpolate between them. By doing this, we can control an undefined number of parameters by linking only one marker/one gesture to the interpolation amount box. This patch also seems to be effective for finding the object, differentiating the two paradigms by the level of control: less control for object finding and more control for object interaction.
+
+Real-scenario testing and simulations using the Vicon cameras is quite limited because two main reasons: we don’t always have access to the space and we would always need a performer that could cope with long hours of code debugging, errors, MaxMSP programming and so on. This is the reason why in order to simulate interactions inside the sound design patches, we also created a basic interface in Jitter that receives data from Vicon Blade via OSC and represents each marker in the 3d space. By using this interface it is possible to move a particular marker anywhere along the XYZ planes, by only using the mouse, and get instant auditory feedback. The downside being that experiments done in virtual space do not always translate well to the real space: calibration by value scaling, experimenting with different function shapes etc. is tedious but absolutely necessary.
+
+So far, all sound-design is based on two channels that can either be routed to multiple pairs of speakers or downmixed to mono and diffused on an arbitrary number of speakers, however multichannel sound is taken into consideration for future improvements.
+
+
 - Visualisation (jitter)
 
 \section{Case studies}
@@ -172,6 +195,11 @@ Object generation is realized by random generators with the help of \textit{drun
 - Areas of improvement
 
 - Eye tracking?
+
+Although we have been working on the project for only a few months it is fairly safe to state that the expressive opportunities of the Vicon system are superior to others such as cameras and Microsoft Kinects. Although a lot more challenging (no native OSC support, difficulties in conducting test at any time, arduous task of integrating Blade to the Jitter interface to the Gesture Recognition patch, and then to the Sound Synthesis patch, great deal of calibration and scaling), new other possibilities are being offered by the high temporal and spatial resolution.
+
+Future work on SoundThimble could/will include: multiple performers, eye tracking, generative visuals, spatial sound, more powerful synthesis and sound manipulation algorithms, different rules added to the narrative of the auditory game.
+
 
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
