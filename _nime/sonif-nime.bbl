@@ -5,6 +5,12 @@ BrianKane.
 \newblock {\em Sound Unseen - Acousmatic Sound in Theory and Practice}.
 \newblock Oxford University Press, New York.
 
+\bibitem{dobrian2003gestural}
+C.~Dobrian and F.~Bevilacqua.
+\newblock Gestural control of music: using the vicon 8 motion capture system.
+\newblock In {\em Proceedings of the 2003 conference on New interfaces for
+  musical expression}, pages 161--163. National University of Singapore, 2003.
+
 \bibitem{hermann2011sonification}
 T.~Hermann, A.~Hunt, and J.~G. Neuhoff.
 \newblock {\em The sonification handbook}.
@@ -21,6 +27,11 @@ R.~B. F.~B. Jules~Francoise, Norbert~Schnell.
 \newblock {\em International Conference on New Interfaces for Musical
   Expression}, pages 287--292, June 2014.
 
+\bibitem{kapur2005framework}
+A.~Kapur, G.~Tzanetakis, N.~Virji-Babul, G.~Wang, and P.~R. Cook.
+\newblock A framework for sonification of vicon motion capture data.
+\newblock In {\em Conference on Digital Audio Effects}, pages 47--52, 2005.
+
 \bibitem{mubu}
 D.~S. G. P. R.~B. Norbert~Schnell, Axel~Robel.
 \newblock Mubu and friends assembling tools.
@@ -31,5 +42,11 @@ D.~S. G. P. R.~B. Norbert~Schnell, Axel~Robel.
 N.~T. Shai~Fine, Yoram~Singer.
 \newblock The hierarchical hidden markov model: Analysis and aplications.
 \newblock {\em Machine Learning}.
+
+\bibitem{worrall2013understanding}
+D.~Worrall.
+\newblock Understanding the need for micro-gestural inflections in
+  parameter-mapping sonification.
+\newblock Georgia Institute of Technology, 2013.
 
 \end{thebibliography}

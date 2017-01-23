@@ -18,7 +18,7 @@
 % --- Author Metadata here ---
 \conferenceinfo{NIME'17,}{May 15-19, 2017, Aalborg University Copenhagen, Denmark.}
 
-\title{SoundThimble: A High Resolution Gesture Sonification Framework}
+\title{SoundThimble: A High Resolution Gesture\\ Sonification Framework}
 
 %
 % You need the command \numberofauthors to handle the 'placement
@@ -103,7 +103,9 @@ G.K.M. Tobin\\
 	
 	
 %\textit{SoundThimble} is an interactive installation, inspired by the game called Hunt the Thimble in which someone hides an object then guides the other players to its location by stating whether their position is “hot” – closer to the object, or “cold” – farther from the object. 
- The installation is based on a high-resolution, state-of-the-art motion capture system consisting of eight high-resolution, infra-red cameras. The system is used alongside MaxMSP to track, interpret and sonify the movement and gestures of a performer in 3d space.
+
+
+ The installation is based on a state-of-the-art Vicon motion capture system, used alongside a Max-based platform to track, interpret and sonify the movement and gestures of a performer in 3D space.
 \end{abstract}
 
 \keywords{sonification, motion tracking, gesture spotting, interactive installation, synthesis}
@@ -124,12 +126,17 @@ H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2
 \textbf{- the Vicon system}\\ \par
 
 % concept
-The SoundThimble project started with the aim of exploring the technical possibilities offered by the Vicon technology and implementing them into the realm of Sonic Arts and interactive sound installations. Three-dimensional motion capture systems – including Vicon – have been extensively used in animation, movies and games where actors’/performers’ movement in 3d space is being tracked with a high degree of both spatial and temporal resolution (scrieti voi pls valorile exacte… ?mm discriminare / ??fps) and assigned to animate various models such as characters, animals, aliens and other creatures. Although motion capture devices such as video cameras and Microsoft Kinect  devices have provided researchers and sound artist multiple expressive possibilities, the idea of using advanced motion capture systems like Vicon is relatively new and unexploited. (ref despre Kinect, proiecte misto, proiecte cu Vicon) 
+
+
+High resolution three-dimensional motion capture systems are traditionally used for animation in film and games~\cite{animatie}, as well as for life sciences research~\cite{life} and engineering applications~\cite{eng}. This technology has long been mined by the NIME community~\cite{dobrian2003gestural}, although in many early cases, technological limitations meant that the motion data transmission and the sound generation processes were not simultaneous~\cite{dobrian2003gestural, kapur2005framework}.
+
+The \textit{SoundThimble} project harnesses current motion tracking technology and gesture detection software to develop new modes of sound exploration, advancing the fields of sonic arts and interactive installation.
 
 %With advanced technology and intelligent controls, Vicon Vantage represents a powerful tool to capture motion. 
 Vicon Vantage system used in this project contains 8 5-megapixel cameras which transmit movement in realtime to Nexus. Having accelerometers and temperature sensors, each camera detects any decalibration of the system. \footnote{See  \url{https://www.vicon.com}.}.
 
-In addition to a high spatial resolution and discrimination of only (cati mm?) the ability of placing a large number of markers makes it possible to track head, hands, elbows, shoulders, torso, feet, thighs and even fingers. By assigning numerous markers to groups, there is possible to  reduce the chance of the system temporarily losing markers, which can happen when using only one marker per limb because cameras' blind spots. These characteristics result in a very accurate and complex motion tracking.
+%In addition to a high spatial resolution and discrimination of only (cati mm?) the ability of placing a large number of markers makes it possible to track head, hands, elbows, shoulders, torso, feet, thighs and even fingers. By assigning numerous markers to groups, there is possible to  reduce the chance of the system temporarily losing markers, which can happen when using only one marker per limb because cameras' blind spots. 
+These characteristics result in a very accurate and complex motion tracking.
 
 === FIGURE : Nexus / Bogdan ====
 
@@ -137,6 +144,14 @@ In addition to a high spatial resolution and discrimination of only (cati mm?) t
 \section{State of the Art}
 
 - Vicon \& related projects
+
+10+ year history of Vicon+sonification
+
+ Although motion capture devices such as video cameras and Microsoft Kinect devices have provided researchers and sound artist multiple expressive possibilities, the idea of using advanced motion capture systems like Vicon is relatively new and unexploited. (ref despre Kinect, proiecte misto, proiecte cu Vicon) 
+
+- micro
+
+\cite{worrall2013understanding}
 
 - interactive / movement sonification examples\cite{hermann2011sonification}.
 
@@ -154,6 +169,8 @@ Interaction between sound control and human gesture has constantly increased ove
 \subsection{Concept}
 
 === FIG: schema logica cu etape \& gesturi recording/recall ===
+
+sound object = basic building block ~\cite{schaeffer}
 
 \textbf{- Gestures, virtual objects, dynamic mapping}\\ \par
 
