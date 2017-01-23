@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{soundunseen}
 BrianKane.
@@ -37,6 +37,11 @@ D.~S. G. P. R.~B. Norbert~Schnell, Axel~Robel.
 \newblock Mubu and friends assembling tools.
 \newblock {\em International Computer Music Association}, pages 423--426,
   August 2009.
+
+\bibitem{nymoen2011soundsaber}
+K.~Nymoen, S.~A. v.~D. Skogstad, and A.~R. Jensenius.
+\newblock Soundsaber-a motion capture instrument.
+\newblock 2011.
 
 \bibitem{hhmm}
 N.~T. Shai~Fine, Yoram~Singer.
