@@ -63,30 +63,42 @@
 % 1st. author
 \alignauthor
 Ben Trovato\\
-       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{Authors hidden for review}\\
        \affaddr{1932 Wallamaloo Lane}\\
        \affaddr{Wallamaloo, New Zealand}\\
        \email{trovato@corporation.com}
 % 2nd. author
 \alignauthor
 G.K.M. Tobin\\
-       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{Authors hidden for review}\\
        \affaddr{P.O. Box 1212}\\
        \affaddr{Dublin, Ohio 43017-6221}\\
        \email{webmaster@marysville-ohio.com}
 \and
+\alignauthor
+Ben Trovato\\
+\affaddr{Authors hidden for review}\\
+\affaddr{1932 Wallamaloo Lane}\\
+\affaddr{Wallamaloo, New Zealand}\\
+\email{trovato@corporation.com}
+\alignauthor
+G.K.M. Tobin\\
+\affaddr{Authors hidden for review}\\
+\affaddr{P.O. Box 1212}\\
+\affaddr{Dublin, Ohio 43017-6221}\\
+\email{webmaster@marysville-ohio.com}
 % 3rd. author
-\alignauthor Grigore Burloiu\\
-       \affaddr{CINETic}\\
-       \affaddr{UNATC "I.L. Caragiale"}\\
-       \affaddr{Bucharest, Romania}\\
-       \email{gburloiu@gmail.com}
+%\alignauthor Grigore Burloiu\\
+%       \affaddr{CINETic}\\
+%       \affaddr{UNATC "I.L. Caragiale"}\\
+%       \affaddr{Bucharest, Romania}\\
+%       \email{gburloiu@gmail.com}
 % 4th. author
-\alignauthor Bogdan Golumbeanu\\
-\affaddr{CINETic}\\
-\affaddr{UNATC "I.L. Caragiale"}\\
-\affaddr{Bucharest, Romania}\\
-\email{bogdangolumbeanu@yahoo.com}
+%\alignauthor Bogdan Golumbeanu\\
+%\affaddr{CINETic}\\
+%\affaddr{UNATC "I.L. Caragiale"}\\
+%\affaddr{Bucharest, Romania}\\
+%\email{bogdangolumbeanu@yahoo.com}
 }
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
@@ -112,12 +124,16 @@ G.K.M. Tobin\\
 
 \keywords{sonification, motion tracking, gesture spotting, interactive installation, synthesis}
 
-
 \acmclassification1998{
 
-H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2 [Information Interfaces and Presentation] User Interfaces---Auditory (non-speech) feedback}
+H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2 [Information Interfaces and Presentation] User Interfaces---Auditory (non-speech) feedback
+}
 
-
+ 
+% \ccsdesc[500]{Computing methodologies~Motion capture}
+% \ccsdesc[500]{Applied computing~Sound and music computing}
+% \ccsdesc[300]{Human-centered computing~Auditory feedback}
+% \ccsdesc[300]{Human-centered computing~Gestural input}
 
 \section{Introduction}
 
@@ -202,9 +218,9 @@ We can think of SoundThimble as having THREE different narratives: one before th
 Generally, the level of interaction is higher after the object is found, however both situations can overlap (e.g: the performer tries to find the second object while recalling gestures that were assigned to the first object). This repeating scenario is outlined in Figure~\ref{fig:concept}: objects are randomly generated, the performer finds them, defines gestures and interacts sonically with them before arranging them in a pleasing configuration.
 
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 	\centering
-	\includegraphics[width=1\columnwidth]{}
+	\includegraphics[width=1\columnwidth]{img/BlockDiagram1}
 	\caption{... diagram}
 	\label{fig:concept}
 \end{figure}
@@ -225,7 +241,7 @@ Implementation of the concept presented above requires Nexus, Vicon SDK and MAX 
 - \textbf{Vicon extensions (SDK plugin)} \par
 Vicon's SDK is a versatile and simple tool for users to gain easy access to Vicon DataFlow created in Nexus, Blade or Tracker applications.The Vicon DataStream Software Development Kit (SDK) provides intuitive programable access to data with custom functions created in C++. With the help of some functions, Vicon's SDK forwardes the Vicon DataStream to other constructive softwares and plug-ins to create custom applications \footnote{See \url{https://www.vicon.com/products/software/datastream-sdk/}.}. In combination with Open Sound Control protocol, Vicon's SDK forwards data to any software compatible with this communication protocol (eg. MAX). OSC is a protocol for communication among computers, sound synthesizers and other multimedia devices\footnote{See  \url{http://opensoundcontrol.org}.}. Hence, any marker can be routed in MAX using its parameters and coordinates. Also, the Vicon DataStream Software Development Kit (SDK) admits inside changes such as labeling markers, timecode generation and framerate.
 
-\subsubsection{Objects generation \& performance mechanics}
+\subsubsection{Object generation \& interaction mechanics}
 %GRIG: nu e cazul sa prezentam Max pe larg aici. Eventual o propozitie scurta mai sus...
 %Max is a realtime visual programing environment for music and multimedia arts that helps you build stand-alone applications, plugins and mixing audio signals. In order to create interactive sounds, attractive grapichs and special effects, MAX creates a connection between virtual objects and subpatches\footnote{See \url{http://www.cycling74.com/}.}.
 Manipulating objects algorithm consists of some big steps: object generation, finding the object, picking up the object, throwing the object on the floor. 
@@ -277,7 +293,7 @@ Future work on SoundThimble could/will include: multiple performers, eye trackin
 
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
-Our project is hosted by the CINETic research centre.\footnote{See \url{https://cinetic.arts.ro}} We wish to thank Ștefan Pârlog for video production and additional research, Mihai Gheorghiu for additional sound design, and Vlad Constantin for additional research.
+%Our project is hosted by the CINETic research centre.\footnote{See \url{https://cinetic.arts.ro}} We wish to thank Ștefan Pârlog for video production and additional research, Mihai Gheorghiu for additional sound design, and Vlad Constantin for additional research.
 
 %
 % The following two commands are all you need in the
