@@ -215,30 +215,48 @@ This repeating scenario is outlined in Figure~\ref{fig:concept}: objects are ran
 
 %Many interactions and programable elements which are included in the concept have an exactly function and usefulness. These elements are created in MAX with the help of Vicon SDK and OSC C++ library. The concept suppose an interactive action of a performer or a simple user with an virtual object which has associated gestures defined by person. Virtual object interaction acts in sound design utility like a master controller. Searching for a certain object comes with an audio feedback which makes the search easier.  A dynamic mapping of marker's coordinates is necessary to transfer data between Nexus and MAX.
 
-One of the first challenges was to create a method of sending real-time from Vicon to MaxMSP where data would be processed and used to generate and manipulate sound. By default, the Vicon system does not support the Open Sound Control (OSC) protocol (ref), needed to communicate with MaxMSP. To overcome this limitation, some code modifications and additions have been implemented inside Vicon’s Blade sdk.
+%One of the first challenges was to create a method of sending real-time from Vicon to MaxMSP where data would be processed and used to generate and manipulate sound. By default, the Vicon system does not support the Open Sound Control (OSC) protocol (ref), needed to communicate with MaxMSP. To overcome this limitation, some code modifications and additions have been implemented inside Vicon’s Blade sdk.
 
-Max, osc
-Vicon systems do not support OSC out of the box.
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=.8\columnwidth]{img/concept}
+	\caption{\textit{SoundThimble} framework architecture.}
+	\label{fig:archi}
+\end{figure}
+
+The framework architecture diagram is laid out in Figure~\ref{fig:archi}. Three-dimensional sensor data is streamed into the Vicon Nexus software, which is able to reconstruct and label the underlying character skeleton. The gesture recognition and sonification algorithms are programmed in Max\footnote{Max is a state-of-the-art programming environment for realtime multimedia performance: \url{http://cycling74.com/}.}, which generally receives control data via the OSC\footnote{OpenSoundControl is a multimedia communication protocol: \url{http://opensoundcontrol.org/}.} protocol. Since Vicon systems do not support OSC out of the box, we used the \textit{oscpack}\footnote{See \url{http://www.rossbencina.com/code/oscpack}.} library to extend the DataStream C++ SDK and send OSC bundles to Max.
 
 
 \subsubsection{Character design}
 
-Figure~\ref{fig:nexus} shows the Vicon Nexus software 
+Figure~\ref{fig:nexus} shows a skeletal reconstruction in the Nexus environment. Since our project is intended as a public installation, we pursued a minimal amount of markers, for ease of setup and prototyping. The resulting configuration---sufficient for tracking hand and arm gestures, while ensuring the redundancy needed when one marker is obscured from the cameras---consists in 5 markers: two positioned on the head, one on the forearm, and two on the hand (thumb and index finger).
 
-=== FIGURE : Nexus / Bogdan ====
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=.8\columnwidth]{img/concept}
+	\caption{A human performer being tracked in Vicon Nexus.}
+	\label{fig:nexus}
+\end{figure}
 
+Each OSC bundle sent through the SDK consists of the following:
+\begin{itemize}
+	\item 3D coordinates for the head (averaged from the two head markers);
+	\item 3D coordinates for the hand (averaged from the two hand markers);
+	\item distance between thumb and index finger.
+\end{itemize}
 
+All three items are sent only if non-zero, i.e. for the head and hand coordinates at least one of the respective markers is active, while for the distance computation, both markers need to be visible and correctly labelled. The forearm marker is used only for segment reconstruction, and is not sent via OSC.
 
-Implementation of the concept presented above requires Nexus, Vicon SDK and MAX sotware. Every character involved in the scene is defined by a limited number of markers. In this case, two markers are positioned on the head, one marker is positioned on elbow and the others 2 on the hand (thumb and index finger). Every marker has associated a name in Nexus and between them 6 segments are drawn. It is very important in realtime capture motion, that the marker to have assigned correct coordinates.
+%Implementation of the concept presented above requires Nexus, Vicon SDK and MAX sotware. Every character involved in the scene is defined by a limited number of markers. In this case, two markers are positioned on the head, one marker is positioned on elbow and the others 2 on the hand (thumb and index finger). Every marker has associated a name in Nexus and between them 6 segments are drawn. It is very important in realtime capture motion, that the marker to have assigned correct coordinates.
 
-- \textbf{Vicon extensions (SDK plugin)} \par
-Vicon's SDK is a versatile and simple tool for users to gain easy access to Vicon DataFlow created in Nexus, Blade or Tracker applications.The Vicon DataStream Software Development Kit (SDK) provides intuitive programable access to data with custom functions created in C++. With the help of some functions, Vicon's SDK forwardes the Vicon DataStream to other constructive softwares and plug-ins to create custom applications \footnote{See \url{https://www.vicon.com/products/software/datastream-sdk/}.}. In combination with Open Sound Control protocol, Vicon's SDK forwards data to any software compatible with this communication protocol (eg. MAX). OSC is a protocol for communication among computers, sound synthesizers and other multimedia devices\footnote{See  \url{http://opensoundcontrol.org}.}. Hence, any marker can be routed in MAX using its parameters and coordinates. Also, the Vicon DataStream Software Development Kit (SDK) admits inside changes such as labeling markers, timecode generation and framerate.
+%Also, the Vicon DataStream Software Development Kit (SDK) admits inside changes such as labeling markers, timecode generation and framerate.
+
+The described configuration produces highly stable and responsive inputs into the Max system, with a spatial resolution of 1mm and a latency of ...ms at a frame rate of ...hz.
 
 \subsubsection{Object generation \& interaction mechanics}
 %GRIG: nu e cazul sa prezentam Max pe larg aici. Eventual o propozitie scurta mai sus...
 %Max is a realtime visual programing environment for music and multimedia arts that helps you build stand-alone applications, plugins and mixing audio signals. In order to create interactive sounds, attractive grapichs and special effects, MAX creates a connection between virtual objects and subpatches\footnote{See \url{http://www.cycling74.com/}.}.
 Manipulating objects algorithm consists of some big steps: object generation, finding the object, picking up the object, throwing the object on the floor. 
-%GRIG: ar mai fi picking up the object, si eventual throwing...
 
 Object generation is realized by random generators with the help of \textit{drunk} object, but with certain limits. These limitations are influenced by the dimensions of the room in which the Vicon system is installed. Finding the object supposes continuous mathematic operations between the coordinates of the object and coordinates of the left hand's marker. This process comes with an audio feedback. When these coordinates are close enough one to another, the object is retreived and manipulated by performer (eg. define gesture). After all these processes, a simple comparison between the coordinates of the floor and the value of the z axes of the marker is done in order to put down the object. According to this, a performer can handle as many objects as he wants.\\ \par
 
@@ -282,10 +300,13 @@ So far, all sound-design is based on two channels that can either be routed to m
 
 - Eye tracking?
 
+We have shown ... all software we developed, including... is open source ...
+
 %Although we have been working on the project for only a few months it is fairly safe to state that the expressive opportunities of the Vicon system are superior to others such as cameras and Microsoft Kinects. Although a lot more challenging (no native OSC support, difficulties in conducting test at any time, arduous task of integrating Blade to the Jitter interface to the Gesture Recognition patch, and then to the Sound Synthesis patch, great deal of calibration and scaling), new other possibilities are being offered by the high temporal and spatial resolution.
 
 Future work on SoundThimble could/will include: multiple performers, eye tracking, generative visuals, spatial sound, more powerful synthesis and sound manipulation algorithms, different rules added to the narrative of the auditory game.
 
+%GRIG: ar mai fi picking up the object, si eventual throwing...
 
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
