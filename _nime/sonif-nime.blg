@@ -13,15 +13,11 @@ I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "animatie"
 Warning--I didn't find a database entry for "life"
 Warning--I didn't find a database entry for "eng"
-Too many commas in name 1 of "Jules Francoise, Norbert Schnell, Ricardo Borghesi, Frederic Bevilacqua" for entry probabilisticmodels
-while executing---line 1049 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
 while executing---line 1049 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
 while executing---line 1049 of file abbrv.bst
 Warning--empty year in soundunseen
-Too many commas in name 1 of "Jules Francoise, Norbert Schnell, Ricardo Borghesi, Frederic Bevilacqua" for entry probabilisticmodels
-while executing---line 1090 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
 while executing---line 1090 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu
@@ -29,4 +25,4 @@ while executing---line 1090 of file abbrv.bst
 Warning--empty journal in nymoen2011soundsaber
 Warning--empty year in hhmm
 Warning--empty booktitle in worrall2013understanding
-(There were 8 error messages)
+(There were 6 error messages)

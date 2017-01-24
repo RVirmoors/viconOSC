@@ -18,6 +18,12 @@ C.~Dobrian and F.~Bevilacqua.
 \newblock In {\em Proceedings of the 2003 conference on New interfaces for
   musical expression}, pages 161--163. National University of Singapore, 2003.
 
+\bibitem{probabilisticmodels}
+J.~Francoise, N.~Schnell, R.~Borghesi, and F.~Bevilacqua.
+\newblock Probabilistic models for designing motion and sound relationships.
+\newblock {\em International Conference on New Interfaces for Musical
+  Expression}, pages 287--292, June 2014.
+
 \bibitem{hermann2011sonification}
 T.~Hermann, A.~Hunt, and J.~G. Neuhoff.
 \newblock {\em The sonification handbook}.
@@ -27,12 +33,6 @@ T.~Hermann, A.~Hunt, and J.~G. Neuhoff.
 K.~N. Jorge~Solis.
 \newblock {\em Musical Robots and Interactive Multimodal Systems}.
 \newblock Springer-Verlag Berlin Heidelberg, Berlin, 2011.
-
-\bibitem{probabilisticmodels}
-R.~B. F.~B. Jules~Francoise, Norbert~Schnell.
-\newblock Probabilistic models for designing motion and sound relationships.
-\newblock {\em International Conference on New Interfaces for Musical
-  Expression}, pages 287--292, June 2014.
 
 \bibitem{kapur2005framework}
 A.~Kapur, G.~Tzanetakis, N.~Virji-Babul, G.~Wang, and P.~R. Cook.
