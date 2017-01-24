@@ -256,9 +256,16 @@ The described configuration produces highly stable and responsive inputs into th
 \subsubsection{Object generation \& interaction mechanics}
 %GRIG: nu e cazul sa prezentam Max pe larg aici. Eventual o propozitie scurta mai sus...
 %Max is a realtime visual programing environment for music and multimedia arts that helps you build stand-alone applications, plugins and mixing audio signals. In order to create interactive sounds, attractive grapichs and special effects, MAX creates a connection between virtual objects and subpatches\footnote{See \url{http://www.cycling74.com/}.}.
-Manipulating objects algorithm consists of some big steps: object generation, finding the object, picking up the object, throwing the object on the floor. 
+%Manipulating objects algorithm consists of some major steps: object generation, finding the object, picking up the object, dropping the object to the floor.
 
-Object generation is realized by random generators with the help of \textit{drunk} object, but with certain limits. These limitations are influenced by the dimensions of the room in which the Vicon system is installed. Finding the object supposes continuous mathematic operations between the coordinates of the object and coordinates of the left hand's marker. This process comes with an audio feedback. When these coordinates are close enough one to another, the object is retreived and manipulated by performer (eg. define gesture). After all these processes, a simple comparison between the coordinates of the floor and the value of the z axes of the marker is done in order to put down the object. According to this, a performer can handle as many objects as he wants.\\ \par
+The following object-related mechanics are implemented as basic algorithms in Max: generation, detection, dropping.
+
+Object generation is executed randomly within the boundaries of the motion capture field, as defined in the Vicon calibration phase. Detection of the sound-thimble occurs when the distance between hand and object falls below a set threshold. By default this threshold is set at 200mm radial distance; lowering it can make the game considerably more difficult. Once the object is detected, it becomes mobile, its coordinates tracking those of the hand's.
+
+Finally, a simple thresholding of the $z$-axis value of the hand position serves to put down the object. If the velocity computed on the $x$ or $y$ axes is high enough, then the object is pushed in the respective direction, and is able to leave the area of the installation, essentially being removed from the game.
+At this point, a new object is introduced. The system keeps track of all object coordinates, as they appear and disappear over time.
+
+ %According to this, a performer can handle as many objects as he wants.
 
 
 \subsubsection{Gesture recognition}
