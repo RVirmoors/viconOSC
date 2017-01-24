@@ -1,19 +1,18 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: sonif-nime.aux
 The style file: abbrv.bst
 Database file #1: sonif-ref.bib
-I was expecting a `,' or a `}'---line 63 of file sonif-ref.bib
+I was expecting a `,' or a `}'---line 70 of file sonif-ref.bib
  :  
  :  address={Boston},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Illegal end of database file---line 71 of file sonif-ref.bib
+Illegal end of database file---line 78 of file sonif-ref.bib
  :  year={2014}
  :             
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "animatie"
 Warning--I didn't find a database entry for "life"
 Warning--I didn't find a database entry for "eng"
-Warning--I didn't find a database entry for "schaeffer"
 Too many commas in name 1 of "Jules Francoise, Norbert Schnell, Ricardo Borghesi, Frederic Bevilacqua" for entry probabilisticmodels
 while executing---line 1049 of file abbrv.bst
 Too many commas in name 1 of "Norbert Schnell, Axel Robel, Diemo Schwarz, Geoffroy Peeters, Riccardo Borghesi" for entry mubu

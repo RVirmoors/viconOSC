@@ -74,19 +74,7 @@ G.K.M. Tobin\\
        \affaddr{P.O. Box 1212}\\
        \affaddr{Dublin, Ohio 43017-6221}\\
        \email{webmaster@marysville-ohio.com}
-\and
-\alignauthor
-Ben Trovato\\
-\affaddr{Authors hidden for review}\\
-\affaddr{1932 Wallamaloo Lane}\\
-\affaddr{Wallamaloo, New Zealand}\\
-\email{trovato@corporation.com}
-\alignauthor
-G.K.M. Tobin\\
-\affaddr{Authors hidden for review}\\
-\affaddr{P.O. Box 1212}\\
-\affaddr{Dublin, Ohio 43017-6221}\\
-\email{webmaster@marysville-ohio.com}
+%\and
 % 3rd. author
 %\alignauthor Grigore Burloiu\\
 %       \affaddr{CINETic}\\
@@ -125,8 +113,14 @@ G.K.M. Tobin\\
 \keywords{sonification, motion tracking, gesture spotting, interactive installation, synthesis}
 
 \acmclassification1998{
+\begin{itemize}
+	\setlength\itemsep{-0.2em}
+	\item Applied computing~$\rightarrow$~Sound and music computing
+	\item Computing methodologies~$\rightarrow$~Motion capture
+	\item Human-centered computing~$\rightarrow$~Gestural input
+	\item Human-centered computing~$\rightarrow$~Auditory feedback
+\end{itemize}
 
-H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2 [Information Interfaces and Presentation] User Interfaces---Auditory (non-speech) feedback
 }
 
  
@@ -137,31 +131,29 @@ H.5.5 [Information Interfaces and Presentation] Sound and Music Computing, H.5.2
 
 \section{Introduction}
 
-- motivation
+%- motivation
 
-- challenges
+%- challenges
 
-\textbf{- the Vicon system}\\ \par
-
-% concept
+%\textbf{- the Vicon system}\\ \par
 
 
 High resolution three-dimensional motion capture systems are traditionally used for animation in film and games~\cite{animatie}, as well as for life sciences research~\cite{life} and engineering applications~\cite{eng}. This technology has long been mined by the NIME community~\cite{dobrian2003gestural, nymoen2011soundsaber}, although in many early cases, technological limitations meant that the motion data transmission and the sound generation processes were not simultaneous~\cite{dobrian2003gestural, kapur2005framework}.
 
 
+The \textit{SoundThimble} project harnesses current motion tracking technology and gesture detection algorithms to develop new modes of sound exploration in an interactive installation context. Our aim is to push beyond the standard paradigms of isolated body motion audification~\cite{dobrian2003gestural,kapur2005framework} or parameter mapping-based new instruments~\cite{nymoen2011soundsaber}, towards deeper narrative structures coupled with layered arrangement of music patterns.
 
-The \textit{SoundThimble} project harnesses current motion tracking technology and gesture detection software to develop new modes of sound exploration in an interactive installation context.
 
-%With advanced technology and intelligent controls, Vicon Vantage represents a powerful tool to capture motion. 
-Vicon Vantage system used in this project contains 8 5-megapixel cameras which transmit movement in realtime to Nexus. Having accelerometers and temperature sensors, each camera detects any decalibration of the system. \footnote{See  \url{https://www.vicon.com}.}.
+Our implementation uses a state-of-the-art Vicon motion capture system\footnote{See  \url{https://www.vicon.com}.} based on eight Vantage 5-megapixel infrared cameras and two Bonita video cameras. Since the open-source software developed in this project\footnote{Available at  \url{https://github.com/RVirmoors/viconOSC}.} is\linebreak built around Vicon's Datastream SDK,\footnote{See  \url{https://www.vicon.com/products/software/datastream-sdk}.} the platform can be ported to both older and future Vicon-based systems.
 
-%In addition to a high spatial resolution and discrimination of only (cati mm?) the ability of placing a large number of markers makes it possible to track head, hands, elbows, shoulders, torso, feet, thighs and even fingers. By assigning numerous markers to groups, there is possible to  reduce the chance of the system temporarily losing markers, which can happen when using only one marker per limb because cameras' blind spots. 
-These characteristics result in a very accurate and complex motion tracking.
-
-=== FIGURE : Nexus / Bogdan ====
+In the remainder of the paper, we review relevant existing projects and technology (section~\ref{sec:related}), we describe the \textit{SoundThimble} concept and development (section~\ref{sec:proj}), we analyse two practical case studies (section~\ref{sec:case}), and we conclude with a survey of remaining challenges and future perspectives (section~\ref{sec:conc}).
 
 
 \section{Related Work}
+\label{sec:related}
+
+
+- interactive / movement sonification examples\cite{hermann2011sonification}.
 
 - Vicon \& related projects
 
@@ -170,35 +162,28 @@ These characteristics result in a very accurate and complex motion tracking.
 10+ year history of Vicon+sonification
 
 
-perspectives: instrument ~\cite{nymoen2011soundsaber}, audification~\cite{dobrian2003gestural,kapur2005framework}
-
 
 - micro
 
 \cite{worrall2013understanding}
 
-- interactive / movement sonification examples\cite{hermann2011sonification}.
 
+- vicon + OSC de la iem.at
 
-
-%GRIG: mutat de la 3.2
 The current decade has seen qualitative advances in the interaction between human gesture and sound behaviour~\cite{Gestureanalysis}. ... \cite{probabilisticmodels}.
 
 \section{Project Description}
+\label{sec:proj}
 
 \subsection{Concept}
 
-=== FIG: schema logica cu etape \& gesturi recording/recall ===
-
-sound object = basic building block ~\cite{schaeffer}
-
 % inovare = abordarea spatializarii obiectelor sonore / acusmatics
-- \textit{Sound in space} represents another innovative element in this project because introduces the ideea of \textit{controling sound} by movement.
-%GRIG: trebuie o referinta aici. Noi inventam acest concept? Avem nevoie de un concept nou?
-This means that the sound is an entity, gets a materialization and it becomes switchable \cite{soundunseen}. It is not about the \textbf{localization} of sound in space (detecting the direction of sound source), it is about its \textbf{position} in space, the coordinates of the sound object in space, like an actual \textit{object} in a room. \textit{Sound objects} concept represents an innovative tool for multimedia arts such as sketches, imaginary games and realtime interactions.
-%GRIG: As incerca sa reformulam paragraful asta; distinctia intre localization si position este prea vaga.
 
-\textbf{- Gestures, virtual objects, dynamic mapping}\\ \par
+The sound-thimble, as the basic building block of our framework, is based on the concept of \textit{sound object} in the Schaefferian sense, as a clearly delimited sounding unit, open to manipulation, arrangement and composition~\cite{schaeffer1998solfege}.
+
+Such an entity, once instanced, can retain an ambiguous nature (spatially and acousmatically) or can switch to a more material state (positioned in space and tied to a causal source)~\cite{soundunseen}. The duality between the latent positioning of the object (which can be inferred from phenomena other than spatial sound reproduction), and the active sound spatialisation, once tied to motion data, becomes an innovative tool for sonic arts via sound sketching, auditory games and other realtime interaction scenarios.
+
+\subsubsection{Interaction scenario}
 
 SoundThimble can be viewed as both an interactive sound installation and an auditory game.
 
@@ -225,7 +210,9 @@ Generally, the level of interaction is higher after the object is found, however
 	\label{fig:concept}
 \end{figure}
 
-- Performance aesthetic\\
+\subsubsection{Performance aesthetic}
+
+- text Bogdan
 
 \subsection{Implementation}
 
@@ -235,6 +222,10 @@ One of the first challenges was to create a method of sending real-time from Vic
 
 
 \subsubsection{Character design}
+
+Figure~\ref{fig:nexus} shows the Vicon Nexus software 
+
+=== FIGURE : Nexus / Bogdan ====
 
 Implementation of the concept presented above requires Nexus, Vicon SDK and MAX sotware. Every character involved in the scene is defined by a limited number of markers. In this case, two markers are positioned on the head, one marker is positioned on elbow and the others 2 on the hand (thumb and index finger). Every marker has associated a name in Nexus and between them 6 segments are drawn. It is very important in realtime capture motion, that the marker to have assigned correct coordinates.
 
@@ -270,7 +261,7 @@ So far, all sound-design is based on two channels that can either be routed to m
 - Visualisation (jitter)
 
 \section{Case studies}
-
+\label{sec:case}
 
 
 \subsection{Interactive Installation}
@@ -282,11 +273,12 @@ So far, all sound-design is based on two channels that can either be routed to m
 
 
 \section{Conclusions and Future Work}
+\label{sec:conc}
 - Areas of improvement
 
 - Eye tracking?
 
-Although we have been working on the project for only a few months it is fairly safe to state that the expressive opportunities of the Vicon system are superior to others such as cameras and Microsoft Kinects. Although a lot more challenging (no native OSC support, difficulties in conducting test at any time, arduous task of integrating Blade to the Jitter interface to the Gesture Recognition patch, and then to the Sound Synthesis patch, great deal of calibration and scaling), new other possibilities are being offered by the high temporal and spatial resolution.
+%Although we have been working on the project for only a few months it is fairly safe to state that the expressive opportunities of the Vicon system are superior to others such as cameras and Microsoft Kinects. Although a lot more challenging (no native OSC support, difficulties in conducting test at any time, arduous task of integrating Blade to the Jitter interface to the Gesture Recognition patch, and then to the Sound Synthesis patch, great deal of calibration and scaling), new other possibilities are being offered by the high temporal and spatial resolution.
 
 Future work on SoundThimble could/will include: multiple performers, eye tracking, generative visuals, spatial sound, more powerful synthesis and sound manipulation algorithms, different rules added to the narrative of the auditory game.
 
@@ -294,6 +286,7 @@ Future work on SoundThimble could/will include: multiple performers, eye trackin
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
 %Our project is hosted by the CINETic research centre.\footnote{See \url{https://cinetic.arts.ro}} We wish to thank Ștefan Pârlog for video production and additional research, Mihai Gheorghiu for additional sound design, and Vlad Constantin for additional research.
+Hidden for review.
 
 %
 % The following two commands are all you need in the
@@ -301,6 +294,7 @@ Future work on SoundThimble could/will include: multiple performers, eye trackin
 % produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
 \bibliography{sonif-ref} 
+\textbf{TO DO}: review bib!
 
 % That's all folks!
 \end{document}
