@@ -199,8 +199,8 @@ This repeating scenario is outlined in Figure~\ref{fig:concept}: objects are ran
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=1\columnwidth]{img/BlockDiagram1}
-	\caption{... diagram}
+	\includegraphics[width=.8\columnwidth]{img/concept}
+	\caption{\textit{SoundThimble} interaction workflow.}
 	\label{fig:concept}
 \end{figure}
 
@@ -210,13 +210,15 @@ This repeating scenario is outlined in Figure~\ref{fig:concept}: objects are ran
 
 \subsection{Implementation}
 
-=== FIG: Framework Diagram: Camere, Nexus, C++, Max, Speakers ====
+=== FIG: Framework Diagram: Senzori, Camere, Nexus, C++ SDK, Max, Speakers ====
 
 
-%Many interactions and programable elements which are included in the concept have an exactly function and usefulness. These elements are created in MAX with the help of Vicon SDK and OSC C++ library. The concept suppose an interactive action of a performer or a simple user with an virtual object which has associated gestures defined by person. Virtual object interaction acts in sound design utility like a master controller. Searching for a certain object comes with an audio feedback which makes the search easier. Object's asscociated gestures are compatible with sound design patch and contribute at audio performance. A dynamic mapping of marker's coordinates is necessary to transfer data between Nexus and MAX.
+%Many interactions and programable elements which are included in the concept have an exactly function and usefulness. These elements are created in MAX with the help of Vicon SDK and OSC C++ library. The concept suppose an interactive action of a performer or a simple user with an virtual object which has associated gestures defined by person. Virtual object interaction acts in sound design utility like a master controller. Searching for a certain object comes with an audio feedback which makes the search easier.  A dynamic mapping of marker's coordinates is necessary to transfer data between Nexus and MAX.
 
 One of the first challenges was to create a method of sending real-time from Vicon to MaxMSP where data would be processed and used to generate and manipulate sound. By default, the Vicon system does not support the Open Sound Control (OSC) protocol (ref), needed to communicate with MaxMSP. To overcome this limitation, some code modifications and additions have been implemented inside Vicon’s Blade sdk.
 
+Max, osc
+Vicon systems do not support OSC out of the box.
 
 
 \subsubsection{Character design}
@@ -246,6 +248,8 @@ Object generation is realized by random generators with the help of \textit{drun
  \textit{Mubu} containers provided by Ircam laboratories in MAX software represent a handy tool to record and analyze gesture, captured with Vicon system \cite{mubu}. Our gesture recognition algorithm is based on Hierarchical Hidden Markov Models (HHMM) implemented in \textit{mubu.hhmm} object of MAX/MSP. HHMMs are a generalization of HMM where each state is considered to be a self-contained probabilistic model \cite{hhmm}. The system is trained by captured data which is essentially a gesture. This process requires a predefined indicator in order to delimitate gestures from all data flow. The algorithm analyzes all input data and generates a probability of similarity between data and saved gestures. In order to control every generated object, there are associated 2 or 3 gestures saved by the performer, but there is a limited time for the gestures to be executed. Predefined gestures offer the possibility to delete the gesture just saved and also indicate the moment the gesture is recorded.
 
 \subsubsection{Sound design}
+
+%Object's asscociated gestures are compatible with sound design patch and contribute at audio performance.
 
 Although there is a wide range of sonification alternatives available, including triggering of pre-stored sounds, modulating/LFO-ing stored sounds etc. we started experimenting with a few synthesis patches with parameters that could be correlated to XYZ coordinates in a reactive and expressive manner.  In order to exploit the increased spatial resolution, marker positions, grouping of markers and other possibilities of the Vicon system, the development of synthesis  algorithms in MaxMSP seems to be very flexible.  In this way, the whole soundscape can be generated in a continuous, organic manner by correlating markers’ positions with synthesis parameters. 
 
