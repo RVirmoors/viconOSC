@@ -106,8 +106,13 @@ G.K.M. Tobin\\
 	
 %\textit{SoundThimble} is an interactive installation, inspired by the game called Hunt the Thimble in which someone hides an object then guides the other players to its location by stating whether their position is “hot” – closer to the object, or “cold” – farther from the object. 
 
+We introduce \textit{SoundThimble}, a platform for sonic interaction based on the relationship between human motion and virtual objects in 3D space.
 
- The installation is based on a state-of-the-art Vicon motion capture system, used alongside a Max-based platform to track, interpret and sonify the movement and gestures of a performer in 3D space.
+The installation employs a Vicon motion capture system and custom software to track, interpret and sonify the movement and gestures of a performer in 3D space.
+ 
+We distinguish between three interaction scenarios, centred around object searching, manipulation and arrangement. We illustrate the resulting extended possibilities of perception and expression via two case studies: a participative installation and a dance performance.
+
+The software developed is open source and portable to similar hardware systems, leaving room for further extension of the installation mechanics.
 \end{abstract}
 
 \keywords{sonification, motion tracking, gesture spotting, interactive installation, synthesis}
@@ -138,7 +143,7 @@ G.K.M. Tobin\\
 %\textbf{- the Vicon system}\\ \par
 
 
-High resolution three-dimensional motion capture systems are traditionally used for animation in film and games~\cite{animatie}, as well as for life sciences research~\cite{life} and engineering applications~\cite{eng}. This technology has long been mined by the NIME community~\cite{dobrian2003gestural, nymoen2011soundsaber}, although in many early cases, technological limitations meant that the motion data transmission and the sound generation processes were not simultaneous~\cite{dobrian2003gestural, kapur2005framework}.
+High resolution three-dimensional motion capture systems are traditionally used for animation in film and games, as well as for life sciences research and engineering applications~\cite{eng}. This technology has long been mined by the NIME community~\cite{dobrian2003gestural, nymoen2011soundsaber}, although in many early cases, technological limitations meant that the motion data transmission and the sound generation processes were not simultaneous~\cite{dobrian2003gestural, kapur2005framework}.
 
 
 The \textit{SoundThimble} project harnesses current motion tracking technology and gesture detection algorithms to develop new modes of sound exploration in an interactive installation context. Our aim is to push beyond the standard paradigms of isolated body motion audification~\cite{dobrian2003gestural,kapur2005framework} or parameter mapping-based new instruments~\cite{nymoen2011soundsaber}, towards deeper narrative structures coupled with layered arrangement of music patterns.
@@ -146,7 +151,7 @@ The \textit{SoundThimble} project harnesses current motion tracking technology a
 
 Our implementation uses a state-of-the-art Vicon motion capture system\footnote{See  \url{https://www.vicon.com}.} based on eight Vantage 5-megapixel infrared cameras and two Bonita video cameras. Since the open-source software developed in this project\footnote{Available at  \url{https://github.com/RVirmoors/viconOSC}.} is\linebreak built around Vicon's Datastream SDK,\footnote{See  \url{https://www.vicon.com/products/software/datastream-sdk}.} the platform can be ported to both older and future Vicon-based systems.
 
-In the remainder of the paper, we review relevant existing projects and technology (section~\ref{sec:related}), we describe the \textit{SoundThimble} concept and development (section~\ref{sec:proj}), we analyse two practical case studies (section~\ref{sec:case}), and we conclude with a survey of remaining challenges and future perspectives (section~\ref{sec:conc}).
+In the remainder of the paper, we review relevant existing projects and technology (section~\ref{sec:related}), we describe the \textit{SoundThimble} concept and development (section~\ref{sec:proj}), we propose two applied case studies (section~\ref{sec:case}), and we conclude with a survey of remaining challenges and future perspectives (section~\ref{sec:conc}).
 
 
 \section{Related Work}
@@ -318,7 +323,7 @@ read short grains from a sound file and scatter them in either a regular or rand
 
 Another patch uses a concatenative synthesis engine to read through a segmented sound file at a rate and position determined by marker velocity and location.
 
-In the search phase, all sound design is based on two channels that can either be routed to multiple pairs of speakers or downmixed to mono and diffused on an arbitrary number of speakers. In the manipulation phase, the sound is spatialised via second-order Ambisonics (using the ICST implementation\footnote{See \url{https://www.zhdk.ch/index.php?id=icst_ambisonicsexternals}.}) to track the position of the performer. In the arrangement phase, the dropped object retains a ``root" source location, which can relate dynamically to the performer position when a gesture is executed: for instance, the granular patch sends spatialised grains back and forth between the dropped object and the performer.
+In the search phase, all sound design is based on two channels that can either be routed to multiple pairs of speakers or downmixed to mono and diffused on an arbitrary number of speakers. In the manipulation phase, the sound is spatialised using Ambisonics (using the ICST implementation\footnote{See \url{https://www.zhdk.ch/index.php?id=icst_ambisonicsexternals}.}) to track the position of the performer. In the arrangement phase, the dropped object retains a ``root" source location, which can relate dynamically to the performer position when a gesture is executed: for instance, the granular patch sends spatialised grains back and forth between the dropped object and the performer.
 
 In developing the sound design algorithms, we used two input data sources. The first one is motion capture data recorded in Nexus and played back through the SDK. For more flexibility and immediate control, we also developed a basic interface in Jitter to monitor the input data and to manipulate it using the mouse, for instant auditory feedback. This feature comes in useful when certain motion data is not available and needs to be roughly simulated.
 
@@ -327,18 +332,22 @@ In developing the sound design algorithms, we used two input data sources. The f
 \section{Case studies}
 \label{sec:case}
 
+We present two applications of our platform: a participative installation, and a performance piece. They are two manifestations of the \textit{SoundThimble} concept and infrastructure, following a sequence of two experiences: (1) the direct interaction with sound in space, and (2) the mediated interaction with sound and space of an audience member. In both cases, the range of sense and perception is extended through new experiences.
+
 
 \subsection{Interactive installation}
 
-- performance analysis: Bogdan
+- interaction analysis: Bogdan
 
 \subsection{Dance performance}
 
-- work in progress
+The following is a sketch for a work currently under development. A performer enters the motion capture space, and commences a series of improvised motions, silently establishing the action space.
 
-- scenario description: semi-improvisation / dance
+Once a threshold is reached, a virtual object is generated and the movement is no longer completely free, its range of action being directed by the relationship to the object position. Searching and finding the sound-thimble is a process of correlating the sonic characteristics to one's own movement patterns.
 
-- music modulation: tempo, filters, ...
+By ``resonating" with the object's manifestation and locating it, the performer enters the manipulation phase, extending her auditive and tactile perception through embodied listening. The multimodal information processed by the performer is both cochlear and kinaesthetic/proprioceptive, tactile, vestibular and visual. Thus, the information she forms about the shape of the movement, its trajectory and spatial dynamics, is intrinsically linked to the sonic connections to these parameters. This dynamic knowledge informs the timing of new actions and the anticipation of sonic feedback. The resulting action schemas are composed as both spatial and sonic shapes.
+
+Gradually, as the performer's control patterns become crystallised, the sonic nature of the source object moves between the abstract and the concrete. In the latter phase, the performer is able to control high-level parameters such as tempo and orchestration of a coherent musical structure which was partly a result of the generative interaction in the more abstract/exploratory phase.
 
 
 
@@ -346,15 +355,15 @@ In developing the sound design algorithms, we used two input data sources. The f
 \label{sec:conc}
 - Areas of improvement
 
-- Eye tracking?
 
 We have shown ... all software we developed, including... is open source ...
 
 %Although we have been working on the project for only a few months it is fairly safe to state that the expressive opportunities of the Vicon system are superior to others such as cameras and Microsoft Kinects. Although a lot more challenging (no native OSC support, difficulties in conducting test at any time, arduous task of integrating Blade to the Jitter interface to the Gesture Recognition patch, and then to the Sound Synthesis patch, great deal of calibration and scaling), new other possibilities are being offered by the high temporal and spatial resolution.
 
-Future work on SoundThimble could/will include: multiple performers, eye tracking, generative visuals, spatial sound, more powerful synthesis and sound manipulation algorithms, additional mechanics for the auditory game (picking up the object, throwing).
+Future work on SoundThimble could/will include: multiple performers, eye tracking, video projection, extended synthesis and sound manipulation algorithms, additional mechanics for the auditory game (manipulating while dropped, picking up the object, throwing, ...)
 
-... (more details)
+... (more details on each)
+
 
 
 %ACKNOWLEDGMENTS are optional
