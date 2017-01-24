@@ -1,12 +1,12 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: sonif-nime.aux
 The style file: abbrv.bst
 Database file #1: sonif-ref.bib
-I was expecting a `,' or a `}'---line 70 of file sonif-ref.bib
+I was expecting a `,' or a `}'---line 81 of file sonif-ref.bib
  :  
  :  address={Boston},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Illegal end of database file---line 78 of file sonif-ref.bib
+Illegal end of database file---line 89 of file sonif-ref.bib
  :  year={2014}
  :             
 I'm skipping whatever remains of this entry

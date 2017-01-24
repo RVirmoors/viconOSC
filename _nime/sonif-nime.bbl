@@ -5,6 +5,13 @@ BrianKane.
 \newblock {\em Sound Unseen - Acousmatic Sound in Theory and Practice}.
 \newblock Oxford University Press, New York.
 
+\bibitem{caramiaux2015adaptive}
+B.~Caramiaux, N.~Montecchio, A.~Tanaka, and F.~Bevilacqua.
+\newblock Adaptive gesture recognition with variation estimation for
+  interactive systems.
+\newblock {\em ACM Transactions on Interactive Intelligent Systems (TiiS)},
+  4(4):18, 2015.
+
 \bibitem{dobrian2003gestural}
 C.~Dobrian and F.~Bevilacqua.
 \newblock Gestural control of music: using the vicon 8 motion capture system.

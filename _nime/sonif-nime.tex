@@ -262,7 +262,7 @@ The following object-related mechanics are implemented as basic algorithms in Ma
 
 Object generation is executed randomly within the boundaries of the motion capture field, as defined in the Vicon calibration phase. Detection of the sound-thimble occurs when the distance between hand and object falls below a set threshold. By default this threshold is set at 200mm radial distance; lowering it can make the game considerably more difficult. Once the object is detected, it becomes mobile, its coordinates tracking those of the hand's.
 
-Finally, a simple thresholding of the $z$-axis value of the hand position serves to put down the object. If the velocity computed on the $x$ or $y$ axes is high enough, then the object is pushed in the respective direction, and is able to leave the area of the installation, essentially being removed from the game.
+Finally, a simple thresholding of the $z$-axis (height) value of the hand position serves to put down the object. If the velocity computed on the $x$ or $y$ axes (horizontal plane) is high enough, then the object is pushed in the respective direction, and is able to leave the area of the installation, essentially being removed from the game.
 At this point, a new object is introduced. The system keeps track of all object coordinates, as they appear and disappear over time.
 
  %According to this, a performer can handle as many objects as he wants.
@@ -270,7 +270,22 @@ At this point, a new object is introduced. The system keeps track of all object 
 
 \subsubsection{Gesture recognition}
 
- \textit{Mubu} containers provided by Ircam laboratories in MAX software represent a handy tool to record and analyze gesture, captured with Vicon system \cite{mubu}. Our gesture recognition algorithm is based on Hierarchical Hidden Markov Models (HHMM) implemented in \textit{mubu.hhmm} object of MAX/MSP. HHMMs are a generalization of HMM where each state is considered to be a self-contained probabilistic model \cite{hhmm}. The system is trained by captured data which is essentially a gesture. This process requires a predefined indicator in order to delimitate gestures from all data flow. The algorithm analyzes all input data and generates a probability of similarity between data and saved gestures. In order to control every generated object, there are associated 2 or 3 gestures saved by the performer, but there is a limited time for the gestures to be executed. Predefined gestures offer the possibility to delete the gesture just saved and also indicate the moment the gesture is recorded.
+We use the thumb-index finger distance value to enable gesture recording while the two fingers are kept close together. The input data captured into \textit{MuBu} multi-buffer containers~\cite{mubu} consists of pairs of values:
+\begin{itemize}
+	\item $\sqrt{\frac{(\Delta x)^2 + (\Delta y)^2}{2}}$;
+	\item $\Delta z$,
+\end{itemize}
+where $\Delta x$, $\Delta y$, $\Delta z$ are the respective differences between head and hand coordinates. This feature preprocessing serves two purposes:
+
+Firstly, gestures are recorded based on the position of the hand relative to the head, thus becoming invariable to the performer's absolute \textit{position} within the space. Secondly, by composing the $x$ and $y$ values into a single feature, gestures become invariable to the performer's \textit{orientation} on the horizontal plane. Thus, gestures can be recorded and recalled anywhere within the space, irrespective of the direction the performer is facing.
+
+The input features are fed to one of two gesture recognition algorithms, both part of the \textit{MuBu} package. The first, based on Hierarchical Hidden Markov Models (HHMM), is implemented in the \texttt{mubu.hhmm} Max object. HHMMs are a generalization of HMM where each state is considered to be a self-contained probabilistic model~\cite{hhmm}. The second is the \textit{Gesture Follower} \texttt{gf} Max object, based on a Sequential Monte Carlo inference engine~\cite{caramiaux2015adaptive}. 
+
+The first method allows for \textit{gesture spotting}, i.e. it constantly produces likelihood values of a certain gesture being active, together with an approximation of its completion rate. If these are over a certain threshold, the respective gesture is triggered. The second method is more flexible and precise: the detected gesture can be followed at a variable rate or scale, even backwards. The only drawback is that it needs a start trigger input, which we send by quickly attaching and separating the thumb and index finger.
+
+Each generated object has a number of gestures associated to it. Once it is dropped to the floor, gestures can act as on/off switches for a particular sonic behaviour (if they are performed/spotted once at a time), or as continuous controllers (if they are repeated). When several objects are on the floor, one specific movement might act on one or more objects, depending on which gesture likelihoods exceed the threshold. 
+
+%In order to control every generated object, there are associated 2 or 3 gestures saved by the performer, but there is a limited time for the gestures to be executed. Predefined gestures offer the possibility to delete the gesture just saved and also indicate the moment the gesture is recorded.
 
 \subsubsection{Sound design}
 
