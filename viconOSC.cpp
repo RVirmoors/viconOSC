@@ -766,7 +766,6 @@ int main(int argc, char* argv[])
 
 
 				p << osc::EndBundle;
-
 				transmitSocket.Send(p.Data(), p.Size());
 			}
 
@@ -789,6 +788,13 @@ int main(int argc, char* argv[])
 					<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[1] << ", "
 					<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[2] << ")" << std::endl;
 			}
+			/*
+			p << osc::BeginBundleImmediate
+				<< osc::BeginMessage("/latency/")
+				<< (float)MyClient.GetLatencyTotal().Total << osc::EndMessage;
+
+			p << osc::EndBundle;
+			transmitSocket.Send(p.Data(), p.Size());*/
 
 
 			// Count the number of devices

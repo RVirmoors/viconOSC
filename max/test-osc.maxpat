@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1546.0, 84.0, 978.0, 818.0 ],
+		"rect" : [ 1255.0, 296.0, 978.0, 818.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,58 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-52",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 596.0, 251.0, 114.0, 22.0 ],
+					"presentation_rect" : [ 598.0, 253.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "/ 0.013797"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-44",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 573.0, 202.0, 253.0, 22.0 ],
+					"style" : "",
+					"text" : "OSC-route /latency/hardware /latency/timetag"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-42",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 689.0, 151.0, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-38",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "OSCTimeTag" ],
+					"patching_rect" : [ 560.0, 112.0, 113.0, 22.0 ],
+					"style" : "",
+					"text" : "OpenSoundControl"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"format" : 6,
 					"id" : "obj-39",
@@ -408,7 +460,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 2124.0, 106.0, 644.0, 850.0 ],
+						"rect" : [ 1874.0, 106.0, 644.0, 850.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -435,7 +487,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-14",
@@ -470,7 +521,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 395.0, 701.0, 34.0, 22.0 ],
-									"presentation_rect" : [ 392.5, 701.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "gate"
 								}
@@ -1230,21 +1280,21 @@
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
-									"originallengthms" : [ 0.0 ],
-									"timestretch" : [ 0 ],
-									"originaltempo" : [ 120.0 ],
 									"pitchshift" : [ 1.0 ],
-									"play" : [ 0 ],
+									"pitchcorrection" : [ 0 ],
+									"timestretch" : [ 0 ],
 									"formant" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
+									"originallengthms" : [ 0.0 ],
 									"basictuning" : [ 440 ],
-									"mode" : [ "basic" ],
-									"formantcorrection" : [ 0 ],
 									"originallength" : [ 0.0, "ticks" ],
-									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
 									"speed" : [ 1.0 ],
+									"quality" : [ "basic" ],
+									"mode" : [ "basic" ],
 									"followglobaltempo" : [ 0 ],
-									"pitchcorrection" : [ 0 ]
+									"originaltempo" : [ 120.0 ],
+									"formantcorrection" : [ 0 ],
+									"play" : [ 0 ]
 								}
 
 							}
@@ -1254,21 +1304,21 @@
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
-									"originallengthms" : [ 0.0 ],
-									"timestretch" : [ 0 ],
-									"originaltempo" : [ 120.0 ],
 									"pitchshift" : [ 1.0 ],
-									"play" : [ 0 ],
+									"pitchcorrection" : [ 0 ],
+									"timestretch" : [ 0 ],
 									"formant" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
+									"originallengthms" : [ 0.0 ],
 									"basictuning" : [ 440 ],
-									"mode" : [ "basic" ],
-									"formantcorrection" : [ 0 ],
 									"originallength" : [ 0.0, "ticks" ],
-									"quality" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
 									"speed" : [ 1.0 ],
+									"quality" : [ "basic" ],
+									"mode" : [ "basic" ],
 									"followglobaltempo" : [ 0 ],
-									"pitchcorrection" : [ 0 ]
+									"originaltempo" : [ 120.0 ],
+									"formantcorrection" : [ 0 ],
+									"play" : [ 0 ]
 								}
 
 							}
@@ -1870,6 +1920,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-9",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
@@ -2424,7 +2475,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 11.0, 325.0, 114.0, 36.0 ],
+					"patching_rect" : [ 11.0, 325.0, 115.0, 36.0 ],
 					"style" : "",
 					"text" : "/stanga 154.5 -42.5 787.5"
 				}
@@ -2546,9 +2597,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 391.0, 251.0, 318.0, 22.0 ],
+					"patching_rect" : [ 391.0, 251.0, 201.0, 22.0 ],
 					"style" : "",
-					"text" : "/rec/0"
+					"text" : "/ 0.013797"
 				}
 
 			}
@@ -2568,7 +2619,7 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 1 ],
+					"destination" : [ "obj-38", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-1", 0 ]
@@ -2578,6 +2629,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-44", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-1", 0 ]
@@ -2874,6 +2934,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-42", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-38", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -2905,6 +2974,24 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-43", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-44", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-44", 1 ]
 				}
 
 			}
@@ -2981,6 +3068,10 @@
 			}
 , 			{
 				"name" : "OSC-route.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "OpenSoundControl.mxe",
 				"type" : "iLaF"
 			}
  ],
