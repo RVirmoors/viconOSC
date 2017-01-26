@@ -73,3 +73,5 @@ Debug/viconOSC.pch
 x64/Debug/viconOSC.pch
 *.suo
 *.opendb
+_nime/sonif-nime.blg
+*.gz
