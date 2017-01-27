@@ -1,10 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{soundunseen}
-BrianKane.
-\newblock {\em Sound Unseen - Acousmatic Sound in Theory and Practice}.
-\newblock Oxford University Press, New York.
-
 \bibitem{caramiaux2015adaptive}
 B.~Caramiaux, N.~Montecchio, A.~Tanaka, and F.~Bevilacqua.
 \newblock Adaptive gesture recognition with variation estimation for
@@ -18,6 +13,12 @@ C.~Dobrian and F.~Bevilacqua.
 \newblock In {\em Proceedings of the 2003 conference on New interfaces for
   musical expression}, pages 161--163. National University of Singapore, 2003.
 
+\bibitem{eckel2009motion}
+G.~Eckel, D.~Pirro, and G.~K. Sharma.
+\newblock Motion-enabled live electronics.
+\newblock In {\em Proceedings of the 6th Sound and Music Computing Conference,
+  Porto, Portugal}, 2009.
+
 \bibitem{probabilisticmodels}
 J.~Francoise, N.~Schnell, R.~Borghesi, and F.~Bevilacqua.
 \newblock Probabilistic models for designing motion and sound relationships.
@@ -29,21 +30,15 @@ T.~Hermann, A.~Hunt, and J.~G. Neuhoff.
 \newblock {\em The sonification handbook}.
 \newblock Logos Verlag Berlin, 2011.
 
-\bibitem{Gestureanalysis}
-K.~N. Jorge~Solis.
-\newblock {\em Musical Robots and Interactive Multimodal Systems}.
-\newblock Springer-Verlag Berlin Heidelberg, Berlin, 2011.
+\bibitem{soundunseen}
+B.~Kane.
+\newblock {\em Sound Unseen - Acousmatic Sound in Theory and Practice}.
+\newblock Oxford University Press, New York.
 
 \bibitem{kapur2005framework}
 A.~Kapur, G.~Tzanetakis, N.~Virji-Babul, G.~Wang, and P.~R. Cook.
 \newblock A framework for sonification of vicon motion capture data.
 \newblock In {\em Conference on Digital Audio Effects}, pages 47--52, 2005.
-
-\bibitem{mubu}
-D.~S. G. P. R.~B. Norbert~Schnell, Axel~Robel.
-\newblock Mubu and friends assembling tools.
-\newblock {\em International Computer Music Association}, pages 423--426,
-  August 2009.
 
 \bibitem{nymoen2011soundsaber}
 K.~Nymoen, S.~A. v.~D. Skogstad, and A.~R. Jensenius.
@@ -56,10 +51,44 @@ P.~Schaeffer, G.~Reibel, B.~Ferreyra, H.~Chiarucci, F.~Bayle, A.~Tanguy, J.-L.
 \newblock {\em Solf{\`e}ge de l'objet sonore}.
 \newblock INA GRM, 1998.
 
+\bibitem{mubu}
+N.~Schnell, A.~Robel, D.~Schwarz, G.~Peeters, and R.~Borghesi.
+\newblock Mubu and friends assembling tools.
+\newblock {\em International Computer Music Association}, pages 423--426,
+  August 2009.
+
 \bibitem{hhmm}
 N.~T. Shai~Fine, Yoram~Singer.
 \newblock The hierarchical hidden markov model: Analysis and aplications.
 \newblock {\em Machine Learning}.
+
+\bibitem{skogstad2010using}
+S.~A. v.~D. Skogstad, A.~R. Jensenius, and K.~Nymoen.
+\newblock Using ir optical marker based motion capture for exploring musical
+  interaction.
+\newblock 2010.
+
+\bibitem{Gestureanalysis}
+J.~Solis and K.~Ng.
+\newblock {\em Musical Robots and Interactive Multimodal Systems}.
+\newblock Springer-Verlag Berlin Heidelberg, Berlin, 2011.
+
+\bibitem{song2016fast}
+M.-H. Song and R.~I. God{\o}y.
+\newblock How fast is your body motion? determining a sufficient frame rate for
+  an optical motion tracking system using passive markers.
+\newblock {\em PloS one}, 11(3):e0150993, 2016.
+
+\bibitem{vigliensoni2012quantitative}
+G.~Vigliensoni and M.~M. Wanderley.
+\newblock A quantitative comparison of position trackers for the development of
+  a touch-less musical interface.
+\newblock In {\em NIME}, 2012.
+
+\bibitem{welch2002motion}
+G.~Welch and E.~Foxlin.
+\newblock Motion tracking: No silver bullet, but a respectable arsenal.
+\newblock {\em IEEE Computer graphics and Applications}, 22(6):24--38, 2002.
 
 \bibitem{worrall2013understanding}
 D.~Worrall.

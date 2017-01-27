@@ -115,7 +115,7 @@ We distinguish between three interaction scenarios, centred around object search
 The software developed is open source and portable to similar hardware systems, leaving room for further extension of the installation mechanics.
 \end{abstract}
 
-\keywords{sonification, motion tracking, gesture spotting, interactive installation, synthesis}
+\keywords{Sonification, motion capture, gesture spotting, interactive installation, synthesis}
 
 \acmclassification1998{
 \begin{itemize}
@@ -143,39 +143,29 @@ The software developed is open source and portable to similar hardware systems, 
 %\textbf{- the Vicon system}\\ \par
 
 
-High resolution three-dimensional motion capture systems are traditionally used for animation in film and games, as well as for life sciences research and engineering applications~\cite{eng}. This technology has long been mined by the NIME community~\cite{dobrian2003gestural, nymoen2011soundsaber}, although in many early cases, technological limitations meant that the motion data transmission and the sound generation processes were not simultaneous~\cite{dobrian2003gestural, kapur2005framework}.
+High resolution three-dimensional motion tracking is traditionally used for animation in film and games, as well as for life sciences research and engineering applications~\cite{welch2002motion}. This technology has long been mined by the NIME community~\cite{dobrian2003gestural, nymoen2011soundsaber}, although in many early cases, technical limitations meant that the motion data transmission and the sound generation processes were not simultaneous~\cite{dobrian2003gestural, kapur2005framework}.
 
 
-The \textit{SoundThimble} project harnesses current motion tracking technology and gesture detection algorithms to develop new modes of sound exploration in an interactive installation context. Our aim is to push beyond the standard paradigms of isolated body motion audification~\cite{dobrian2003gestural,kapur2005framework} or parameter mapping-based new instruments~\cite{nymoen2011soundsaber}, towards deeper narrative structures coupled with layered arrangement of music patterns.
+The \textit{SoundThimble} project harnesses current motion capture technology and gesture detection algorithms to develop new modes of sound exploration in an interactive installation context. Our aim is to push beyond the standard paradigms of isolated body motion audification~\cite{dobrian2003gestural,kapur2005framework} or sound control interfaces~\cite{eckel2009motion,nymoen2011soundsaber}, towards deeper narrative structures coupled with layered arrangement of music patterns.
 
 
-Our implementation uses a state-of-the-art Vicon motion capture system\footnote{See  \url{https://www.vicon.com}.} based on eight Vantage 5-megapixel infrared cameras and two Bonita video cameras. Since the open-source software developed in this project\footnote{Available at  \url{https://github.com/RVirmoors/viconOSC}.} is\linebreak built around Vicon's Datastream SDK,\footnote{See  \url{https://www.vicon.com/products/software/datastream-sdk}.} the platform can be ported to both older and future Vicon-based systems.
+Our implementation uses a state-of-the-art Vicon motion capture system\footnote{See  \url{https://www.vicon.com}.} containing eight Vantage 5-megapixel infrared cameras and two Bonita video cameras. Since the open-source software developed in this project\footnote{Available at  \url{https://github.com/RVirmoors/viconOSC}.} is\linebreak built around Vicon's Datastream SDK,\footnote{See  \url{https://www.vicon.com/products/software/datastream-sdk}.} the platform can be ported to both older and future Vicon-based systems.
 
 In the remainder of the paper, we review relevant existing projects and technology (section~\ref{sec:related}), we describe the \textit{SoundThimble} concept and development (section~\ref{sec:proj}), we propose two applied case studies (section~\ref{sec:case}), and we conclude with a survey of remaining challenges and future perspectives (section~\ref{sec:conc}).
 
 
-\section{Related Work}
+\section{State of the Art}
 \label{sec:related}
 
 
-- interactive / movement sonification examples\cite{hermann2011sonification}.
+Sonification, as the auditory representation of a datastream, has been a rich tool for the interpretation of human movement~\cite{hermann2011sonification}. From the musical perspective, infrared motion capture systems have been revealed as a powerful for expressive interaction in a controlled environment, with many of the results being translatable to more portable technologies~\cite{skogstad2010using,vigliensoni2012quantitative}.
 
-- Vicon \& related projects
+In particular, Vicon motion capture systems have been used for over a decade for music applications~\cite{dobrian2003gestural,kapur2005framework,eckel2009motion,vigliensoni2012quantitative}. An software bridge for streaming OSC data from Vicon has been developed\footnote{See \url{http://sonenvir.at/downloads/qvicon2osc/}.}~\cite{eckel2009motion} as part of a concluded project, which proved to be incompatible with our current setup.
 
+The current decade has seen qualitative advances in the interaction between human gesture and sound behaviour, made possible by real-time gesture recognition and following tools~\cite{probabilisticmodels}. These allow for more complex scenarios to be designed, where movement is used both for direct sonification and for multi-level control of system behaviour---features which our project channels into a coherent framework.
 
-
-10+ year history of Vicon+sonification
-
-
-
-- micro
-
-\cite{worrall2013understanding}
-
-
-- vicon + OSC de la iem.at
-
-The current decade has seen qualitative advances in the interaction between human gesture and sound behaviour~\cite{Gestureanalysis}. ... \cite{probabilisticmodels}.
+%GRIG: as scoate referinta asta, prea generic
+%~\cite{Gestureanalysis}. ... .
 
 \section{Project Description}
 \label{sec:proj}
@@ -212,6 +202,8 @@ This repeating scenario is outlined in Figure~\ref{fig:concept}: objects are ran
 \subsubsection{Performance aesthetic}
 
 - text Bogdan
+
+Our present approach is informed by Worrall's study~\cite{worrall2013understanding}, which reveals a necessity for the mapping of minute gestural inflections to alter sonic material with a view to certain modes of listening. The aim of \textit{SoundThimble} is to fluctuate between: reflexive, kinaesthetic, connotative, empathetic, reduced.
 
 \subsection{Implementation}
 

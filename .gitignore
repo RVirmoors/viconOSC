@@ -79,3 +79,7 @@ _nime/sonif-nime.blg
 *.gz
 *.blg
 _nime/sonif-nime.synctex.gz
+*.aux
+_nime/sonif-nime.bbl
+*.blg
+_nime/sonif-nime.synctex.gz
