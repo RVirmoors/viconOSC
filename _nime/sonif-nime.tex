@@ -284,40 +284,22 @@ Each generated object has a number of gestures associated to it. When an object 
 
 \subsubsection{Sound design}
 
-Each sound-thimble has a corresponding sound design \textit{patch}, differing in (a) the source sound material used, (b) the synthesis techniques applied, and/or (c) the control mapping schema to the object search and manipulation variables. The various combinations of (a), (b) and (c) give rise to a growing library of objects, each with its own character.
 
-%Object's asscociated gestures are compatible with sound design patch and contribute at audio performance.
+Each sound-thimble has a corresponding sound design patch, differing in (a) the source sound material used, (b) the synthesis techniques applied, and/or (c) the control mapping schema to the object search and manipulation variables. The various combinations of (a), (b) and (c) give rise to a growing library of objects, each with its own character. By designing various interaction rules for each object, segments are linked to different synthesis parameters or groups of parameters resulting in a continuously evolving, organic soundscape.
 
-% GRIG: de reformulat fara "seems" si "experimented". Ce avem nou, ce functioneaza?
-
-%Although there is a wide range of sonification alternatives available, including triggering of pre-stored sounds, modulating/LFO-ing stored sounds etc. we started experimenting with a few synthesis patches with parameters that could be correlated to XYZ coordinates in a reactive and expressive manner.  In order to exploit the increased spatial resolution, marker positions, grouping of markers and other possibilities of the Vicon system, the development of synthesis  algorithms in MaxMSP seems to be very flexible.  
-...
-
-In this way, the whole soundscape can be generated in a continuous, organic manner by correlating markers’ positions with synthesis parameters. 
-
-The interactive experience can be described as having two main paradigms: object finding and object interaction. 
-
-...
-
-%GRIG: vezi mai sus
-%For object finding we have been experimenting with two straightforward patches in MaxMSP: the first is based on a sawtooth wave that is sent to 8 delays. These output a random signal with a settable range which continuously alter the phase and frequency of the sawtooth iterations. This chorus-inspired algorithm has three controllable parameters: main frequency, range and speed of frequency variation. The farthest someone is from the virtual object the more detuning and phase shifting occurs on each of the eight iterations, while approaching it the effect becomes less pronounced to the point where only slight variations of the signal occur. Also, main frequency is associated with movement in the vertical plane. Further modulation can be used to make the sound more complex. The second patch is somewhat based on the same principle of decorrelation: six sine waves with different frequencies are modulated in amplitude by a random~ object which generates control waves with a variable degree of complexity (more or less noise-like shapes). As in this case, distance between the performer and the virtual object is associated with the level of randomness and decorrelation: longer distance translates to a higher degree of decorrelation and randomness. What is interesting about this patch is the effect of amplitude modulation (AM) (referinta ce e AM) when the carrier frequency (?) goes beyond 20hz and sidebands occur. 
-
-By using noise-like carriers, complex sonorities occur with a variable harmonic content. In both cases, the performer tries to find the object by listening to these variations. By correlating small and large variations to its position in the 3d field the performer receives meaningful clues about the object location, as well as an interesting and engaging soundscape. 
-
-Another patch uses granular synthesis to
-%that was initially created for object interaction also seems to be effective for object finding.
-%GRIG: iarasi, fara "seems", fara povesti cu ce am facut. Doar rezultate!
-read short grains from a sound file and scatter them in either a regular or random manner. Among the parameters that can be mapped are: grain position, grain size, envelope shape, level of scattering, pitch, stereo width. Multiple parameter states can be stored, saved as presets and interpolated between. In this way, several parameters can be controlled by a single aspect of the movement. This patch is effective in both the object search and manipulation phases, differentiating the two paradigms by the dimensionality of control.
-
-...
-
-Another patch uses a concatenative synthesis engine to read through a segmented sound file at a rate and position determined by marker velocity and location.
-
-In the search phase, all sound design is based on two channels that can either be routed to multiple pairs of speakers or downmixed to mono and diffused on an arbitrary number of speakers. In the manipulation phase, the sound is spatialised using Ambisonics (using the ICST implementation\footnote{See \url{https://www.zhdk.ch/index.php?id=icst_ambisonicsexternals}.}) to track the position of the performer. In the arrangement phase, the dropped object retains a ``root" source location, which can relate dynamically to the performer position when a gesture is executed: for instance, the granular patch sends spatialised grains back and forth between the dropped object and the performer.
-
-In developing the sound design algorithms, we used two input data sources. The first one is motion capture data recorded in Nexus and played back through the SDK. For more flexibility and immediate control, we also developed a basic interface in Jitter to monitor the input data and to manipulate it using the mouse, for instant auditory feedback. This feature comes in useful when certain motion data is not available and needs to be roughly simulated.
+We differentiate between the three phases of the installation in terms of mapping technique and level of sonic interactivity. The search mode employs straightforward parameter mapping, where human-object distance measures are linked to synthesis parameters, while the manipulation phase relies on a model-based mapping approach where different gestures and actions reach deeper levels of control~\cite{hermann2011sonification}. Finally, variations on both these techniques occur in the arrangement phase.
 
 
+The synthesis patches used for search are built around the process of decorrelation~\cite{101}: the farther the human's hand from the object the more decorrelation occurs, up to the point where each instance of the signal becomes a distinct sonic entity. This is done by constantly modulating each of the copies in terms of pitch (FM) and amplitude (AM) with low frequency oscillators (LFO’s). Changes in frequency, amplitude and wave shape of the LFO’s lead to complex sonorities ranging from regular streams of sound to distinct iterations with a high degree of randomness. %By moving and assessing sonic shifts and the level of decorrelation, the performer is able to intuitively find the object. 
+This mechanism is subtly mixed with a granular engine in a latent state, which gains more prominence in the manipulation phase.
+
+In this mode, the 3D space is split into chunks, each one acting as a zone with its own mappings and interaction laws. The synthesis patches are based on the segmentation of a source sound into short grains. We built a granular synth with these controllable parameters: grain size, grain position, envelope shape, level of scattering, pitch, spectrum and stereo width. Another patch implements a concatenative synth that traverses the grains guided by movement velocity and trajectory. Certain gestures trigger sonic events while interpolating between sets of parameter values via a convergent-mapping scheme~\cite{102}. %This patch is active in both the object search and manipulation phases, differing between them in the dimensionality of control and presence in the auditory scene. %In order for the user-experience to be truly engaging, a great deal of calibration needs to be done in respect to the physical space. This is done by setting and tweaking ranges, scaling laws, assigning thresholds and designing various function curves.
+
+
+In the search phase, all sound design is based on two channels that can either be routed to multiple pairs of speakers or downmixed to mono and diffused on an arbitrary number of speakers. In the manipulation phase, the soundscape is spatialised to track the position of the performer. In the arrangement phase, the dropped object retains a ``root" source location, which can relate dynamically to the performer position when a gesture is executed: for instance, the granular patch sends spatialised grains back and forth between the dropped object and the performer.
+
+
+In developing the sound design algorithms, we used two input data sources. The first one is motion capture data recorded in Nexus and played back through the SDK. For more flexibility and immediate control, we also developed a basic visual interface to monitor the input data and to manipulate it in virtual 3D space using the mouse, for instant auditory feedback. This feature comes in useful when specific motion data is not available and needs to be roughly simulated.
 
 \section{Case studies}
 \label{sec:case}
