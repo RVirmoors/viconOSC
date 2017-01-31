@@ -160,7 +160,7 @@ In the remainder of the paper, we review relevant existing projects and technolo
 \label{sec:related}
 
 
-Sonification, as the auditory representation of a datastream, has been a rich tool for the interpretation of human movement~\cite{hermann2011sonification}. From the musical perspective, infrared motion capture systems have been revealed as a powerful means for expressive interaction in a controlled environment, with many of the results being translatable to more portable technologies~\cite{skogstad2010using,vigliensoni2012quantitative}.
+Sonification, as the auditory representation of a datastream, has been a rich tool for the interpretation of human movement~\cite{hermann2011sonification}. From the musical perspective, infrared motion capture systems have been revealed as a technically superior means for expressive interaction in a controlled environment, with many of the results being translatable to more portable technologies~\cite{skogstad2010using,vigliensoni2012quantitative}.
 
 In particular, Vicon motion capture systems have been used for over a decade for music applications~\cite{dobrian2003gestural,kapur2005framework,eckel2009motion,vigliensoni2012quantitative}. A software bridge for streaming OSC data from Vicon \linebreak exists\footnote{See \url{http://sonenvir.at/downloads/qvicon2osc/}.}~\cite{eckel2009motion} as part of a concluded project, which proved to be incompatible with our current setup.
 
@@ -191,7 +191,7 @@ Once the object is found and attached to the hand, its sonic manifestation gains
 
 Finally, the performer can drop the virtual object to the floor, or discard it by ``pushing" it outside of the installation boundaries. This triggers a new object to be randomly generated, while the player retains a degree of control over the initial object via the recorded gestures. Both objects are now in a latent state, with the new one guiding the player's search, and the previous one responding to the learned set of gestures.
 
-This repeating scenario is outlined in Figure~\ref{fig:concept}: objects are randomly generated, the performer finds them, defines gestures and interacts sonically with them before arranging them in a pleasing configuration. With each spawning of a new object or assignment of a new gesture, the game becomes more challenging and complex, but also more flexible and rewarding.
+This repeating scenario is outlined in Figure~\ref{fig:concept}: objects are randomly generated, the performer finds them, defines gestures and interacts sonically, before arranging them in a pleasing configuration. With each spawning of an object or assignment of a gesture, the game becomes more challenging and complex, but also more flexible and rewarding.
 
 
 \begin{figure}[t]
@@ -252,8 +252,7 @@ All three items are sent only if non-zero, i.e. for the head and hand coordinate
 
 %Also, the Vicon DataStream Software Development Kit (SDK) admits inside changes such as labeling markers, timecode generation and framerate.
 
-The described configuration produces highly stable and responsive inputs into the Max system, with a spatial resolution of 1mm and a latency of 5ms at a frame rate of 500hz.\cite{song2016fast}
-Bonita sub sample ratio 5:1 = 500
+To maximise responsiveness and minimise signal loss, we raised the frame rate to 500Hz, taking into account the maximum movement speed and the minimum spacing between markers~\cite{song2016fast}. This configuration produces highly stable and responsive inputs into the Max system, with a spatial resolution of 1mm and a latency of around 5ms.
 
 \subsubsection{Object generation \& interaction mechanics}
 %GRIG: nu e cazul sa prezentam Max pe larg aici. Eventual o propozitie scurta mai sus...
