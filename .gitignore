@@ -90,3 +90,7 @@ _nime/sonif-nime.aux
 *.gz
 
 *.gz
+*.aux
+_nime/sonif-nime.bbl
+*.blg
+*.gz

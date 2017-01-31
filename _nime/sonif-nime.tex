@@ -179,9 +179,9 @@ The sound-thimble, as the basic building block of our framework, is based on the
 Such an entity, once instanced, can retain an ambiguous nature (spatially and acousmatically) or can switch to a more material state (positioned in space and tied to a causal source)~\cite{soundunseen}. The duality between the latent positioning of the object (which can be inferred from phenomena other than spatial sound reproduction), and the active sound spatialisation, once tied to motion data, becomes an innovative tool for sonic arts through sound sketching, auditory games and other realtime interaction scenarios.
 
 \subsubsection{Interaction scenario}
+\label{sec:scenario}
 
-\textit{SoundThimble} can be viewed as both an interactive sound installation and an auditory game, comprising three phases: search, manipulation, arrangement.
-
+We present the initial application of our framework, in the form of an auditory game comprising three phases: search, manipulation, arrangement.
 
 The game's narrative starts with a human player attempting to find a sound-thimble (a stationary virtual object, randomly positioned in 3D space), by analysing cues that are constantly shifting in the sonic fabric based on the human's movement relative to the object. Analogously to the traditional game of \textit{Hunt the Thimble} (a.k.a \textit{Hot or Cold}), the space between the human and the virtual object is correlated to sound synthesis and modulation parameters. Briefly, the closer one comes to the object, the more coherent the sound and vice-versa. 
 
@@ -194,16 +194,21 @@ This repeating scenario is outlined in Figure~\ref{fig:concept}: objects are ran
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=.65\columnwidth]{img/concept}
+	\includegraphics[width=.65\columnwidth, clip, trim={0 .55cm 0 0}]{img/concept}
 	\caption{\textit{SoundThimble} interaction workflow.}
 	\label{fig:concept}
 \end{figure}
 
 \subsubsection{Performance aesthetic}
+\label{sec:aesthetic}
 
-- text Bogdan
+The human-object dynamic at the core of our framework results in certain interaction features which circumscribe the aesthetics of any application of the platform.
 
-Our present approach is informed by Worrall's study~\cite{worrall2013understanding}, which reveals a necessity for the mapping of minute gestural inflections to alter sonic material with a view to certain modes of listening. The aim of \textit{SoundThimble} is to fluctuate between: reflexive, kinaesthetic, connotative, empathetic, reduced.
+Our approach is informed by Worrall's study~\cite{worrall2013understanding}, which reveals a necessity for the mapping of minute gestural inflections to alter sonic material with a view to certain modes of listening. The aim of \textit{SoundThimble} is to fluctuate between: reflexive, kinaesthetic, connotative, empathetic, reduced.
+
+The cross-modality between different kinds of sense perception guides the performer's attention to the various sonic responses to physical actions. The multi-modal information is processed in real time, continuously redefining the affordances enabled by the system.
+
+Moreover, since the system's responsiveness is reliant on marker visibility, the performer becomes, to a degree, existentially dependent on the ``eye" of the camera. The coexistence of virtual, responsive objects in the same scene can lead to novel mechanics at the limits between presence and absence, real and virtual.
 
 \subsection{Implementation}
 
@@ -213,7 +218,7 @@ Our present approach is informed by Worrall's study~\cite{worrall2013understandi
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=.65\columnwidth]{img/archi}
+	\includegraphics[width=.65\columnwidth, clip, trim={0 3cm 0 0}]{img/archi}
 	\caption{\textit{SoundThimble} framework architecture.}
 	\label{fig:archi}
 \end{figure}
@@ -290,10 +295,10 @@ Each sound-thimble has a corresponding sound design patch, differing in (a) the 
 We differentiate between the three phases of the installation in terms of mapping technique and level of sonic interactivity. The search mode employs straightforward parameter mapping, where human-object distance measures are linked to synthesis parameters, while the manipulation phase relies on a model-based mapping approach where different gestures and actions reach deeper levels of control~\cite{hermann2011sonification}. Finally, variations on both these techniques occur in the arrangement phase.
 
 
-The synthesis patches used for search are built around a process of decorrelation~\cite{101}: the farther the human's hand from the object the more decorrelation occurs, up to the point where each instance of the signal becomes a distinct sonic entity. This is done by continuously modulating each of the copies in terms of pitch (FM) and amplitude (AM) with low frequency oscillators (LFO’s). Changes in frequency, amplitude and wave shape of the LFO’s lead to complex sonorities ranging from regular streams of sound to distinct iterations with a high degree of randomness. %By moving and assessing sonic shifts and the level of decorrelation, the performer is able to intuitively find the object. 
+The synthesis patches used for search are built around a process of decorrelation~\cite{kendall1995decorrelation}: the farther the human's hand from the object the more decorrelation occurs, up to the point where each instance of the signal becomes a distinct sonic entity. This is done by continuously modulating each of the copies in terms of pitch (FM) and amplitude (AM) with low frequency oscillators (LFO’s). Changes in frequency, amplitude and wave shape of the LFO’s lead to complex sonorities ranging from regular streams of sound to distinct iterations with a high degree of randomness. %By moving and assessing sonic shifts and the level of decorrelation, the performer is able to intuitively find the object. 
 This mechanism is subtly mixed with a granular engine in a latent state, which gains more prominence in the manipulation phase.
 
-In this mode, the 3D space is split into chunks, each one acting as a zone with its own mappings and interaction laws. The synthesis patches are based on the segmentation of a source sound into short grains. We built a granular synth with these controllable parameters: grain size, grain position, envelope shape, level of scattering, pitch, timbre and stereo width. Another patch implements a concatenative synth that traverses the grains guided by movement velocity and trajectory. Certain gestures trigger sonic events while interpolating between sets of parameter values via a convergent-mapping scheme~\cite{102}. %This patch is active in both the object search and manipulation phases, differing between them in the dimensionality of control and presence in the auditory scene. 
+In this mode, the 3D space is split into chunks, each one acting as a zone with its own mappings and interaction laws. The synthesis patches are based on the segmentation of a source sound into short grains. We built a granular synth with these controllable parameters: grain size, grain position, envelope shape, level of scattering, pitch, timbre and stereo width. Another patch implements a concatenative synth that traverses the grains guided by movement velocity and trajectory. Certain gestures trigger sonic events while interpolating between sets of parameter values via a convergent-mapping schema~\cite{hunt2000mapping}. %This patch is active in both the object search and manipulation phases, differing between them in the dimensionality of control and presence in the auditory scene. 
 %In order for the user-experience to be truly engaging, a great deal of calibration needs to be done in respect to the physical space. This is done by setting and tweaking ranges, scaling laws, assigning thresholds and designing various function curves.
 
 
@@ -305,12 +310,15 @@ In developing the sound design algorithms, we used two input data sources. The f
 \section{Case studies}
 \label{sec:case}
 
-We present two applications of our platform: a participative installation, and a performance piece. They represent two manifestations of the \textit{SoundThimble} concept and infrastructure, through a pair of experiences: (1) the direct interaction with sound in space, and (2) the mediated interaction with sound and space of an audience member. In both cases, the range of sense and perception is extended through new experiences.
+We present two applications of our platform: a participative installation, and a performance piece. They represent two manifestations of the \textit{SoundThimble} concept and infrastructure, revealing a pair of experiences: (1) the direct interaction with sound in space, and (2) the mediated interaction with sound and space of an audience member. In both cases, the range of sense and perception is extended through new experiences.
 
 
 \subsection{Interactive installation}
 
-- interaction analysis: Bogdan
+The first form conceived for the \textit{SoundThimble} platform was that of an open installation, where visitors become participants and observers in the situation outlined in section~\ref{sec:scenario}.
+
+
+...
 
 \subsection{Dance performance}
 

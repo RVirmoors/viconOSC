@@ -30,6 +30,11 @@ T.~Hermann, A.~Hunt, and J.~G. Neuhoff.
 \newblock {\em The sonification handbook}.
 \newblock Logos Verlag Berlin, 2011.
 
+\bibitem{hunt2000mapping}
+A.~Hunt and R.~Kirk.
+\newblock Mapping strategies for musical performance.
+\newblock {\em Trends in Gestural Control of Music}, 21:231--258, 2000.
+
 \bibitem{soundunseen}
 B.~Kane.
 \newblock {\em Sound Unseen - Acousmatic Sound in Theory and Practice}.
@@ -39,6 +44,11 @@ B.~Kane.
 A.~Kapur, G.~Tzanetakis, N.~Virji-Babul, G.~Wang, and P.~R. Cook.
 \newblock A framework for sonification of vicon motion capture data.
 \newblock In {\em Conference on Digital Audio Effects}, pages 47--52, 2005.
+
+\bibitem{kendall1995decorrelation}
+G.~S. Kendall.
+\newblock The decorrelation of audio signals and its impact on spatial imagery.
+\newblock {\em Computer Music Journal}, 19(4):71--87, 1995.
 
 \bibitem{nymoen2011soundsaber}
 K.~Nymoen, S.~A. v.~D. Skogstad, and A.~R. Jensenius.
@@ -67,11 +77,6 @@ S.~A. v.~D. Skogstad, A.~R. Jensenius, and K.~Nymoen.
 \newblock Using ir optical marker based motion capture for exploring musical
   interaction.
 \newblock 2010.
-
-\bibitem{Gestureanalysis}
-J.~Solis and K.~Ng.
-\newblock {\em Musical Robots and Interactive Multimodal Systems}.
-\newblock Springer-Verlag Berlin Heidelberg, Berlin, 2011.
 
 \bibitem{song2016fast}
 M.-H. Song and R.~I. God{\o}y.
