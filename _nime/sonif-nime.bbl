@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{caramiaux2014mapping}
+B.~Caramiaux, J.~Fran{\c{c}}oise, N.~Schnell, and F.~Bevilacqua.
+\newblock Mapping through listening.
+\newblock {\em Computer Music Journal}, 38(3):34--48, 2014.
+
 \bibitem{caramiaux2015adaptive}
 B.~Caramiaux, N.~Montecchio, A.~Tanaka, and F.~Bevilacqua.
 \newblock Adaptive gesture recognition with variation estimation for
@@ -10,8 +15,9 @@ B.~Caramiaux, N.~Montecchio, A.~Tanaka, and F.~Bevilacqua.
 \bibitem{dobrian2003gestural}
 C.~Dobrian and F.~Bevilacqua.
 \newblock Gestural control of music: using the vicon 8 motion capture system.
-\newblock In {\em Proceedings of the 2003 conference on New interfaces for
-  musical expression}, pages 161--163. National University of Singapore, 2003.
+\newblock In {\em Proceedings of the international conference on New interfaces
+  for musical expression}, pages 161--163. National University of Singapore,
+  2003.
 
 \bibitem{eckel2009motion}
 G.~Eckel, D.~Pirro, and G.~K. Sharma.
@@ -19,11 +25,16 @@ G.~Eckel, D.~Pirro, and G.~K. Sharma.
 \newblock In {\em Proceedings of the 6th Sound and Music Computing Conference,
   Porto, Portugal}, 2009.
 
+\bibitem{hhmm}
+S.~Fine, Y.~Singer, and N.~Tishby.
+\newblock The hierarchical hidden markov model: Analysis and aplications.
+\newblock {\em Machine Learning}, pages 41--62, 1998.
+
 \bibitem{probabilisticmodels}
-J.~Francoise, N.~Schnell, R.~Borghesi, and F.~Bevilacqua.
+J.~Fran{\c{c}}oise, N.~Schnell, R.~Borghesi, and F.~Bevilacqua.
 \newblock Probabilistic models for designing motion and sound relationships.
-\newblock {\em International Conference on New Interfaces for Musical
-  Expression}, pages 287--292, June 2014.
+\newblock In {\em Proceedings of the 2014 international conference on new
+  interfaces for musical expression}, pages 287--292, 2014.
 
 \bibitem{hermann2011sonification}
 T.~Hermann, A.~Hunt, and J.~G. Neuhoff.
@@ -53,7 +64,8 @@ G.~S. Kendall.
 \bibitem{nymoen2011soundsaber}
 K.~Nymoen, S.~A. v.~D. Skogstad, and A.~R. Jensenius.
 \newblock Soundsaber-a motion capture instrument.
-\newblock 2011.
+\newblock In {\em Proceedings of the international conference on New interfaces
+  for musical expression}, 2011.
 
 \bibitem{schaeffer1998solfege}
 P.~Schaeffer, G.~Reibel, B.~Ferreyra, H.~Chiarucci, F.~Bayle, A.~Tanguy, J.-L.
@@ -62,15 +74,10 @@ P.~Schaeffer, G.~Reibel, B.~Ferreyra, H.~Chiarucci, F.~Bayle, A.~Tanguy, J.-L.
 \newblock INA GRM, 1998.
 
 \bibitem{mubu}
-N.~Schnell, A.~Robel, D.~Schwarz, G.~Peeters, and R.~Borghesi.
-\newblock Mubu and friends assembling tools.
-\newblock {\em International Computer Music Association}, pages 423--426,
-  August 2009.
-
-\bibitem{hhmm}
-N.~T. Shai~Fine, Yoram~Singer.
-\newblock The hierarchical hidden markov model: Analysis and aplications.
-\newblock {\em Machine Learning}.
+N.~Schnell, A.~R{\"o}bel, D.~Schwarz, G.~Peeters, R.~Borghesi, et~al.
+\newblock Mubu and friends--assembling tools for content based real-time
+  interactive audio processing in max/msp.
+\newblock In {\em International Computer Music Conference}, 2009.
 
 \bibitem{skogstad2010using}
 S.~A. v.~D. Skogstad, A.~R. Jensenius, and K.~Nymoen.
@@ -99,6 +106,6 @@ G.~Welch and E.~Foxlin.
 D.~Worrall.
 \newblock Understanding the need for micro-gestural inflections in
   parameter-mapping sonification.
-\newblock Georgia Institute of Technology, 2013.
+\newblock In {\em International Conference on Auditory Display}, 2013.
 
 \end{thebibliography}
