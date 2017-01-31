@@ -108,6 +108,8 @@ G.K.M. Tobin\\
 
 We introduce \textit{SoundThimble}, a platform for sonic interaction based on the relationship between human motion and virtual objects in 3D space.
 
+...
+
 The installation employs a Vicon motion capture system and custom software to track, interpret and sonify the movement and gestures of a performer in 3D space.
  
 We distinguish between three interaction scenarios, centred around object searching, manipulation and arrangement. We illustrate the resulting extended possibilities of perception and expression via two case studies: a participative installation and a dance performance.
@@ -146,7 +148,7 @@ The software developed is open source and portable to similar hardware systems, 
 High resolution three-dimensional motion tracking is traditionally used for animation in film and games, as well as for life sciences research and engineering applications~\cite{welch2002motion}. This technology has long been mined by the NIME community~\cite{dobrian2003gestural, nymoen2011soundsaber}, although in many early cases, technical limitations meant that the motion data transmission and the sound generation processes were not simultaneous~\cite{dobrian2003gestural, kapur2005framework}.
 
 
-The \textit{SoundThimble} project harnesses current motion capture technology and gesture detection algorithms to develop new modes of sound exploration in an interactive installation context. Our aim is to push beyond the standard paradigms of isolated body motion audification~\cite{dobrian2003gestural,kapur2005framework} or sound control interfaces~\cite{eckel2009motion,nymoen2011soundsaber}, towards deeper narrative structures coupled with layered arrangement of music patterns.
+The \textit{SoundThimble} project harnesses current motion capture technology and gesture detection algorithms to enable new modes of real-time sound exploration. Our aim is to push beyond the standard paradigms of isolated body motion audification~\cite{dobrian2003gestural,kapur2005framework} or sound control interfaces~\cite{eckel2009motion,nymoen2011soundsaber}, towards deeper narrative structures coupled with layered arrangement of music patterns.
 
 
 Our implementation uses a state-of-the-art Vicon motion capture system\footnote{See  \url{https://www.vicon.com}.} containing eight Vantage 5-megapixel infrared cameras and two Bonita video cameras. Since the open-source software developed in this project\footnote{Available at  \url{https://github.com/RVirmoors/viconOSC}.} is\linebreak built around Vicon's Datastream SDK,\footnote{See  \url{https://www.vicon.com/products/software/datastream-sdk}.} the platform can be ported to both older and future Vicon-based systems.
@@ -158,9 +160,9 @@ In the remainder of the paper, we review relevant existing projects and technolo
 \label{sec:related}
 
 
-Sonification, as the auditory representation of a datastream, has been a rich tool for the interpretation of human movement~\cite{hermann2011sonification}. From the musical perspective, infrared motion capture systems have been revealed as a powerful for expressive interaction in a controlled environment, with many of the results being translatable to more portable technologies~\cite{skogstad2010using,vigliensoni2012quantitative}.
+Sonification, as the auditory representation of a datastream, has been a rich tool for the interpretation of human movement~\cite{hermann2011sonification}. From the musical perspective, infrared motion capture systems have been revealed as a powerful means for expressive interaction in a controlled environment, with many of the results being translatable to more portable technologies~\cite{skogstad2010using,vigliensoni2012quantitative}.
 
-In particular, Vicon motion capture systems have been used for over a decade for music applications~\cite{dobrian2003gestural,kapur2005framework,eckel2009motion,vigliensoni2012quantitative}. An software bridge for streaming OSC data from Vicon has been developed\footnote{See \url{http://sonenvir.at/downloads/qvicon2osc/}.}~\cite{eckel2009motion} as part of a concluded project, which proved to be incompatible with our current setup.
+In particular, Vicon motion capture systems have been used for over a decade for music applications~\cite{dobrian2003gestural,kapur2005framework,eckel2009motion,vigliensoni2012quantitative}. A software bridge for streaming OSC data from Vicon \linebreak exists\footnote{See \url{http://sonenvir.at/downloads/qvicon2osc/}.}~\cite{eckel2009motion} as part of a concluded project, which proved to be incompatible with our current setup.
 
 The current decade has seen qualitative advances in the interaction between human gesture and sound behaviour, made possible by real-time gesture recognition and following tools~\cite{probabilisticmodels}. These allow for more complex scenarios to be designed, where movement is used both for direct sonification and for multi-level control of system behaviour---features which our project channels into a coherent framework.
 
@@ -183,9 +185,9 @@ Such an entity, once instanced, can retain an ambiguous nature (spatially and ac
 
 We present the initial application of our framework, in the form of an auditory game comprising three phases: search, manipulation, arrangement.
 
-The game's narrative starts with a human player attempting to find a sound-thimble (a stationary virtual object, randomly positioned in 3D space), by analysing cues that are constantly shifting in the sonic fabric based on the human's movement relative to the object. Analogously to the traditional game of \textit{Hunt the Thimble} (a.k.a \textit{Hot or Cold}), the space between the human and the virtual object is correlated to sound synthesis and modulation parameters. Briefly, the closer one comes to the object, the more coherent the sound and vice-versa. 
+The game's narrative starts with a human player attempting to find a sound-thimble (a stationary virtual object, randomly positioned in 3D space), by analysing cues that are constantly shifting in the sonic fabric based on the hand's movement relative to the object. Analogously to the traditional game of \textit{Hunt the Thimble} (a.k.a \textit{Hot or Cold}), the space between the human and the virtual object is correlated to sound synthesis and modulation parameters. Briefly, the closer one comes to the object, the more coherent the sound and vice-versa. 
 
-Once the object is found, its sonic manifestation gains a richer causal relationship to the human: the player becomes a performer, and is now able to explore the object's sonic palette, and record a number of gestures that can be re-performed later, re-called, and used to trigger or manipulate sonic shifts and events.
+Once the object is found and attached to the hand, its sonic manifestation gains a richer causal relationship: the player becomes a performer, and is now able to explore the object's sonic palette, and record a number of gestures that can be re-performed later, re-called, and used to trigger or manipulate sonic shifts and events.
 
 Finally, the performer can drop the virtual object to the floor, or discard it by ``pushing" it outside of the installation boundaries. This triggers a new object to be randomly generated, while the player retains a degree of control over the initial object via the recorded gestures. Both objects are now in a latent state, with the new one guiding the player's search, and the previous one responding to the learned set of gestures.
 
@@ -208,7 +210,7 @@ Our approach is informed by Worrall's study~\cite{worrall2013understanding}, whi
 
 The cross-modality between different kinds of sense perception guides the performer's attention to the various sonic responses to physical actions. The multi-modal information is processed in real time, continuously redefining the affordances enabled by the system.
 
-Moreover, since the system's responsiveness is reliant on marker visibility, the performer becomes, to a degree, existentially dependent on the ``eye" of the camera. The coexistence of virtual, responsive objects in the same scene can lead to novel mechanics at the limits between presence and absence, real and virtual.
+Moreover, since the system's responsiveness is reliant on marker visibility, the performer becomes, to a degree, existentially dependent on the camera eye. This, coupled with the coexistence of virtual, responsive objects in the same scene, can lead to novel mechanics at the limits between presence and absence, real and virtual.
 
 \subsection{Implementation}
 
@@ -228,7 +230,7 @@ The framework architecture diagram is laid out in Figure~\ref{fig:archi}. Three-
 
 \subsubsection{Character design}
 
-Figure~\ref{fig:nexus} shows a skeletal reconstruction in the Nexus environment. Since our project is intended as a public installation, we pursued a minimal amount of markers, for ease of setup and prototyping. The resulting configuration---sufficient for tracking hand and arm gestures, while ensuring the redundancy needed when one marker is obscured from the cameras---consists in 5 markers: two positioned on the head, one on the forearm, and two on the hand (thumb and index finger).
+Figure~\ref{fig:nexus} shows a skeletal reconstruction in the Nexus environment for the \textit{SoundThimble} installation. We pursued a minimal amount of markers, for ease of setup and prototyping. The resulting configuration---sufficient for tracking hand and arm gestures, while ensuring the redundancy needed when one marker is obscured from the cameras---consists in 5 markers: two positioned on the head, one on the forearm, and two on the hand (thumb and index finger).
 
 \begin{figure}[ht]
 	\centering
@@ -294,11 +296,10 @@ Each sound-thimble has a corresponding sound design patch, differing in (a) the 
 
 We differentiate between the three phases of the installation in terms of mapping technique and level of sonic interactivity. The search mode employs straightforward parameter mapping, where human-object distance measures are linked to synthesis parameters, while the manipulation phase relies on a model-based mapping approach where different gestures and actions reach deeper levels of control~\cite{hermann2011sonification}. Finally, variations on both these techniques occur in the arrangement phase.
 
+The synthesis patches used for search are built around a process of decorrelation~\cite{kendall1995decorrelation}: the farther the human's hand from the object the more decorrelation occurs, up to the point where each instance of the signal becomes a distinct sonic entity. This is done by continuously modulating each of the copies in terms of pitch (FM) and amplitude (AM) with low frequency oscillators (LFO’s). Changes in frequency, amplitude and wave shape of the LFO’s lead to complex sonorities ranging from coupled streams of sound to distinct iterations with a high degree of randomness. %By moving and assessing sonic shifts and the level of decorrelation, the performer is able to intuitively find the object. 
+This mechanism is subtly mixed with a granular engine in a latent state, which gains more prominence in the next mode.
 
-The synthesis patches used for search are built around a process of decorrelation~\cite{kendall1995decorrelation}: the farther the human's hand from the object the more decorrelation occurs, up to the point where each instance of the signal becomes a distinct sonic entity. This is done by continuously modulating each of the copies in terms of pitch (FM) and amplitude (AM) with low frequency oscillators (LFO’s). Changes in frequency, amplitude and wave shape of the LFO’s lead to complex sonorities ranging from regular streams of sound to distinct iterations with a high degree of randomness. %By moving and assessing sonic shifts and the level of decorrelation, the performer is able to intuitively find the object. 
-This mechanism is subtly mixed with a granular engine in a latent state, which gains more prominence in the manipulation phase.
-
-In this mode, the 3D space is split into chunks, each one acting as a zone with its own mappings and interaction laws. The synthesis patches are based on the segmentation of a source sound into short grains. We built a granular synth with these controllable parameters: grain size, grain position, envelope shape, level of scattering, pitch, timbre and stereo width. Another patch implements a concatenative synth that traverses the grains guided by movement velocity and trajectory. Certain gestures trigger sonic events while interpolating between sets of parameter values via a convergent-mapping schema~\cite{hunt2000mapping}. %This patch is active in both the object search and manipulation phases, differing between them in the dimensionality of control and presence in the auditory scene. 
+In the manipulation phase, the 3D space is split into chunks, each one acting as a zone with its own mappings and interaction laws. The synthesis patches are based on the segmentation of a source sound into short grains. We built a granular synth with these controllable parameters: grain size, grain position, envelope shape, level of scattering, pitch, timbre and stereo width. Another patch implements a concatenative synth that traverses the grains guided by movement velocity and trajectory. Certain gestures trigger sonic events while interpolating between sets of parameter values via a convergent-mapping schema~\cite{hunt2000mapping}. %This patch is active in both the object search and manipulation phases, differing between them in the dimensionality of control and presence in the auditory scene. 
 %In order for the user-experience to be truly engaging, a great deal of calibration needs to be done in respect to the physical space. This is done by setting and tweaking ranges, scaling laws, assigning thresholds and designing various function curves.
 
 
@@ -315,10 +316,9 @@ We present two applications of our platform: a participative installation, and a
 
 \subsection{Interactive installation}
 
-The first form conceived for the \textit{SoundThimble} platform was that of an open installation, where visitors become participants and observers in the situation outlined in section~\ref{sec:scenario}.
+The first form conceived for the \textit{SoundThimble} platform is that of an open installation, where visitors become participants and observers in the situation outlined in section~\ref{sec:scenario}.
 
-
-...
+Beyond the considerations in section~\ref{sec:aesthetic}, the major feature of the auditory game is the layered sequence of search-manipulation-arrangement which translates to a layering of awareness of accumulated experiences. The meshing of sound objects (supplied by the game) and gestures (defined by the player) leads from a state of uncertainty and potential, to phases of exploration, play, composition. Snapshots of interest can be stored for later recall---currently this is done manually, but might be automated in the future.
 
 \subsection{Dance performance}
 
@@ -328,7 +328,7 @@ Once a threshold is reached, a virtual object is generated and the movement is n
 
 By ``resonating" with the object's manifestation and locating it, the performer enters the manipulation phase, extending her auditive and tactile perception through embodied listening. The multimodal information processed by the performer is both cochlear and kinaesthetic/proprioceptive, tactile, vestibular and visual. Thus, the information she forms about the shape of the movement, its trajectory and spatial dynamics, is intrinsically linked to the sonic connections to these parameters. This dynamic knowledge informs the timing of new actions and the anticipation of sonic feedback. The resulting action schemas are composed as both spatial and sonic shapes.
 
-Gradually, as the performer's control patterns become crystallised, the sonic nature of the source object moves between the abstract and the concrete. In the latter phase, the performer is able to control high-level parameters such as tempo and orchestration of a coherent musical structure which was partly a result of the generative interaction in the more abstract/exploratory phase.
+Gradually, as the performer's control patterns become crystallised, the sonic nature of the source object moves between the abstract and the concrete. In the latter phase, the performer is able to control higher-level parameters such as tempo and orchestration of a coherent musical structure which was partly a result of the generative interaction in the more abstract/exploratory phase.
 
 
 
@@ -338,7 +338,7 @@ Gradually, as the performer's control patterns become crystallised, the sonic na
 This paper introduced \textit{SoundThimble}, a multi-layered platform for real-time motion-music interaction.
 All software developed for the project (including the C++ code for data preprocessing and transmission, and the Max patches for gesture tracking and sound design) is open source and publicly available.
 
-The team is currently pursuing several directions for improvement and extension. We are working to support more than one participant at once, implementing mechanics for sharing control of the virtual object. Video projections are planned, e.g. each object having a corresponding reactive video, with the arrangement phase also resulting in a background visual collage. We are also considering adding eye tracking technology to enable an audience member's active involvement in shaping the sound. Meanwhile, work continues on further interaction mechanics and sound design.
+The team is currently pursuing several directions for improvement and extension. We are working to support more than one participant at once, implementing mechanics for sharing control of the virtual object. Video projection support is planned, e.g. each object having a corresponding reactive video, with the arrangement phase also producing a background visual collage. We are also considering eye tracking technology to enable an audience member's active involvement in shaping the sound. Meanwhile, work continues on further interaction mechanics and sound design.
 
 %Although we have been working on the project for only a few months it is fairly safe to state that the expressive opportunities of the Vicon system are superior to others such as cameras and Microsoft Kinects. Although a lot more challenging (no native OSC support, difficulties in conducting test at any time, arduous task of integrating Blade to the Jitter interface to the Gesture Recognition patch, and then to the Sound Synthesis patch, great deal of calibration and scaling), new other possibilities are being offered by the high temporal and spatial resolution.
 
@@ -357,8 +357,7 @@ Hidden for review.
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
-\bibliography{sonif-ref} 
-\textbf{TO DO}: review bib!
+\bibliography{sonif-ref}
 
 % That's all folks!
 \end{document}
