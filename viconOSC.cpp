@@ -312,25 +312,25 @@ int main(int argc, char* argv[])
 		std::cout << std::endl;
 
 		// Enable some different data types
-		MyClient.EnableSegmentData();
+//		MyClient.EnableSegmentData();
 		MyClient.EnableMarkerData();
-		MyClient.EnableUnlabeledMarkerData();
-		MyClient.EnableDeviceData();
-		if (bReadCentroids)
+//		MyClient.EnableUnlabeledMarkerData();
+//		MyClient.EnableDeviceData();
+	/*	if (bReadCentroids)
 		{
 			MyClient.EnableCentroidData();
-		}
+		}*/
 
-		std::cout << "Segment Data Enabled: " << Adapt(MyClient.IsSegmentDataEnabled().Enabled) << std::endl;
+//		std::cout << "Segment Data Enabled: " << Adapt(MyClient.IsSegmentDataEnabled().Enabled) << std::endl;
 		std::cout << "Marker Data Enabled: " << Adapt(MyClient.IsMarkerDataEnabled().Enabled) << std::endl;
-		std::cout << "Unlabeled Marker Data Enabled: " << Adapt(MyClient.IsUnlabeledMarkerDataEnabled().Enabled) << std::endl;
-		std::cout << "Device Data Enabled: " << Adapt(MyClient.IsDeviceDataEnabled().Enabled) << std::endl;
-		std::cout << "Centroid Data Enabled: " << Adapt(MyClient.IsCentroidDataEnabled().Enabled) << std::endl;
+//		std::cout << "Unlabeled Marker Data Enabled: " << Adapt(MyClient.IsUnlabeledMarkerDataEnabled().Enabled) << std::endl;
+//		std::cout << "Device Data Enabled: " << Adapt(MyClient.IsDeviceDataEnabled().Enabled) << std::endl;
+//		std::cout << "Centroid Data Enabled: " << Adapt(MyClient.IsCentroidDataEnabled().Enabled) << std::endl;
 
 		// Set the streaming mode
 		//MyClient.SetStreamMode( ViconDataStreamSDK::CPP::StreamMode::ClientPull );
-		 MyClient.SetStreamMode( ViconDataStreamSDK::CPP::StreamMode::ClientPullPreFetch );
-		//MyClient.SetStreamMode(ViconDataStreamSDK::CPP::StreamMode::ServerPush);
+		// MyClient.SetStreamMode( ViconDataStreamSDK::CPP::StreamMode::ClientPullPreFetch );
+		MyClient.SetStreamMode(ViconDataStreamSDK::CPP::StreamMode::ServerPush);
 
 		// Set the global up axis
 		MyClient.SetAxisMapping(Direction::Forward,
@@ -368,7 +368,7 @@ int main(int argc, char* argv[])
 #endif
 		{
 			// Get a frame
-			output_stream << "Waiting for new frame...";
+//			output_stream << "Waiting for new frame...";
 			while (MyClient.GetFrame().Result != Result::Success)
 			{
 				// Sleep a little so that we don't lumber the CPU with a busy poll
@@ -380,8 +380,8 @@ int main(int argc, char* argv[])
 
 				output_stream << ".";
 			}
-			output_stream << std::endl;
-			if (++Counter == FrameRateWindow)
+//			output_stream << std::endl;
+			/*if (++Counter == FrameRateWindow)
 			{
 				clock_t Now = clock();
 				double FrameRate = (double)(FrameRateWindow * CLOCKS_PER_SEC) / (double)(Now - LastTime);
@@ -407,11 +407,11 @@ int main(int argc, char* argv[])
 
 				LastTime = Now;
 				Counter = 0;
-			}
+			}*/
 
 			// Get the frame number
-			Output_GetFrameNumber _Output_GetFrameNumber = MyClient.GetFrameNumber();
-			output_stream << "Frame Number: " << _Output_GetFrameNumber.FrameNumber << std::endl;
+	//		Output_GetFrameNumber _Output_GetFrameNumber = MyClient.GetFrameNumber();
+	//		output_stream << "Frame Number: " << _Output_GetFrameNumber.FrameNumber << std::endl;
 
 		/*	char buffer[OUTPUT_BUFFER_SIZE];
 			osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
@@ -423,6 +423,7 @@ int main(int argc, char* argv[])
 				
 			transmitSocket.Send(p.Data(), p.Size());
 			*/
+			/*
 			if (EnableHapticTest == true)
 			{
 				for (size_t i = 0; i < HapticOnList.size(); ++i)
@@ -449,10 +450,11 @@ int main(int argc, char* argv[])
 						}
 					}
 				}
-			}
+			}*/
 
-			Output_GetFrameRate Rate = MyClient.GetFrameRate();
-			std::cout << "Frame rate: " << Rate.FrameRateHz << std::endl;
+			//Output_GetFrameRate Rate = MyClient.GetFrameRate();
+			//std::cout << "Frame rate: " << Rate.FrameRateHz << std::endl;
+			/*
 			// Get the timecode
 			Output_GetTimecode _Output_GetTimecode = MyClient.GetTimecode();
 
@@ -467,6 +469,8 @@ int main(int argc, char* argv[])
 				<< _Output_GetTimecode.SubFramesPerFrame << " "
 				<< _Output_GetTimecode.UserBits << std::endl << std::endl;
 
+				*/
+
 	/*		char buffer[OUTPUT_BUFFER_SIZE];
 			osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
 
@@ -479,8 +483,8 @@ int main(int argc, char* argv[])
 			*/
 
 			// Get the latency
-			output_stream << "Latency: " << MyClient.GetLatencyTotal().Total << "s" << std::endl;
-
+	//		output_stream << "Latency: " << MyClient.GetLatencyTotal().Total << "s" << std::endl;
+/*
 			for (unsigned int LatencySampleIndex = 0; LatencySampleIndex < MyClient.GetLatencySampleCount().Count; ++LatencySampleIndex)
 			{
 				std::string SampleName = MyClient.GetLatencySampleName(LatencySampleIndex).Name;
@@ -489,48 +493,48 @@ int main(int argc, char* argv[])
 				output_stream << "  " << SampleName << " " << SampleValue << "s" << std::endl;
 			}
 			output_stream << std::endl;
-
+			*/
 			// Count the number of subjects
 			unsigned int SubjectCount = MyClient.GetSubjectCount().SubjectCount;
-			output_stream << "Subjects (" << SubjectCount << "):" << std::endl;
+		//	output_stream << "Subjects (" << SubjectCount << "):" << std::endl;
 
 			float m_x[10], m_y[10], m_z[10];
 
 			for (unsigned int SubjectIndex = 0; SubjectIndex < SubjectCount; ++SubjectIndex)
 			{
-				output_stream << "  Subject #" << SubjectIndex << std::endl;
+		//		output_stream << "  Subject #" << SubjectIndex << std::endl;
 
 				// Get the subject name
 				std::string SubjectName = MyClient.GetSubjectName(SubjectIndex).SubjectName;
-				output_stream << "    Name: " << SubjectName << std::endl;
+		//		output_stream << "    Name: " << SubjectName << std::endl;
 
 				// Get the root segment
-				std::string RootSegment = MyClient.GetSubjectRootSegmentName(SubjectName).SegmentName;
-				output_stream << "    Root Segment: " << RootSegment << std::endl;
+		//		std::string RootSegment = MyClient.GetSubjectRootSegmentName(SubjectName).SegmentName;
+		//		output_stream << "    Root Segment: " << RootSegment << std::endl;
 
 				// Count the number of segments
-				unsigned int SegmentCount = MyClient.GetSegmentCount(SubjectName).SegmentCount;
-				output_stream << "    Segments (" << SegmentCount << "):" << std::endl;
-				for (unsigned int SegmentIndex = 0; SegmentIndex < SegmentCount; ++SegmentIndex)
-				{
+		//		unsigned int SegmentCount = MyClient.GetSegmentCount(SubjectName).SegmentCount;
+		//		output_stream << "    Segments (" << SegmentCount << "):" << std::endl;
+		//		for (unsigned int SegmentIndex = 0; SegmentIndex < SegmentCount; ++SegmentIndex)
+		//		{
 //					output_stream << "      Segment #" << SegmentIndex << std::endl;
 
 					// Get the segment name
-					std::string SegmentName = MyClient.GetSegmentName(SubjectName, SegmentIndex).SegmentName;
+	//				std::string SegmentName = MyClient.GetSegmentName(SubjectName, SegmentIndex).SegmentName;
 //					output_stream << "        Name: " << SegmentName << std::endl;
 
 					// Get the segment parent
-					std::string SegmentParentName = MyClient.GetSegmentParentName(SubjectName, SegmentName).SegmentName;
+	//				std::string SegmentParentName = MyClient.GetSegmentParentName(SubjectName, SegmentName).SegmentName;
 //					output_stream << "        Parent: " << SegmentParentName << std::endl;
 
 					// Get the segment's children
-					unsigned int ChildCount = MyClient.GetSegmentChildCount(SubjectName, SegmentName).SegmentCount;
+		//			unsigned int ChildCount = MyClient.GetSegmentChildCount(SubjectName, SegmentName).SegmentCount;
 	//				output_stream << "     Children (" << ChildCount << "):" << std::endl;
-					for (unsigned int ChildIndex = 0; ChildIndex < ChildCount; ++ChildIndex)
-					{
-						std::string ChildName = MyClient.GetSegmentChildName(SubjectName, SegmentName, ChildIndex).SegmentName;
+		//			for (unsigned int ChildIndex = 0; ChildIndex < ChildCount; ++ChildIndex)
+		//			{
+		//				std::string ChildName = MyClient.GetSegmentChildName(SubjectName, SegmentName, ChildIndex).SegmentName;
 	//					output_stream << "       " << ChildName << std::endl;
-					}
+		//			}
 
 					/*
 					// Get the static segment translation
@@ -669,31 +673,31 @@ int main(int argc, char* argv[])
 						<< _Output_GetSegmentLocalRotationEulerXYZ.Rotation[2] << ") "
 						<< Adapt(_Output_GetSegmentLocalRotationEulerXYZ.Occluded) << std::endl;
 						*/
-					}
+				//	}
 
 
 				// Count the number of markers
 				unsigned int MarkerCount = MyClient.GetMarkerCount(SubjectName).MarkerCount;
-				output_stream << "    Markers (" << MarkerCount << "):" << std::endl;
+			//	output_stream << "    Markers (" << MarkerCount << "):" << std::endl;
 				for (unsigned int MarkerIndex = 0; MarkerIndex < MarkerCount; ++MarkerIndex)
 				{
 					// Get the marker name
 					std::string MarkerName = MyClient.GetMarkerName(SubjectName, MarkerIndex).MarkerName;
 
 					// Get the marker parent
-					std::string MarkerParentName = MyClient.GetMarkerParentName(SubjectName, MarkerName).SegmentName;
+			//		std::string MarkerParentName = MyClient.GetMarkerParentName(SubjectName, MarkerName).SegmentName;
 
 					// Get the global marker translation
 					Output_GetMarkerGlobalTranslation _Output_GetMarkerGlobalTranslation =
 						MyClient.GetMarkerGlobalTranslation(SubjectName, MarkerName);
 
-					output_stream << "      Marker #" << MarkerIndex << ": "
+				/*	output_stream << "      Marker #" << MarkerIndex << ": "
 						<< MarkerName << " ("
 						<< _Output_GetMarkerGlobalTranslation.Translation[0] << ", "
 						<< _Output_GetMarkerGlobalTranslation.Translation[1] << ", "
 						<< _Output_GetMarkerGlobalTranslation.Translation[2] << ") "
 						<< Adapt(_Output_GetMarkerGlobalTranslation.Occluded) << std::endl;
-					 
+					*/ 
 						char buffer[OUTPUT_BUFFER_SIZE];
 						osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
 
@@ -771,7 +775,7 @@ int main(int argc, char* argv[])
 
 
 //			Sleep(1500);
-
+			/*
 			// Get the unlabeled markers
 			unsigned int UnlabeledMarkerCount = MyClient.GetUnlabeledMarkerCount().MarkerCount;
 			output_stream << "    Unlabeled Markers (" << UnlabeledMarkerCount << "):" << std::endl;
@@ -787,7 +791,7 @@ int main(int argc, char* argv[])
 					<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[0] << ", "
 					<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[1] << ", "
 					<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[2] << ")" << std::endl;
-			}
+			}*/
 			/*
 			p << osc::BeginBundleImmediate
 				<< osc::BeginMessage("/latency/")
@@ -796,7 +800,7 @@ int main(int argc, char* argv[])
 			p << osc::EndBundle;
 			transmitSocket.Send(p.Data(), p.Size());*/
 
-
+			/*
 			// Count the number of devices
 			unsigned int DeviceCount = MyClient.GetDeviceCount().DeviceCount;
 			output_stream << "  Devices (" << DeviceCount << "):" << std::endl;
@@ -841,8 +845,8 @@ int main(int argc, char* argv[])
 							<< Adapt(_Output_GetDeviceOutputValue.Occluded) << std::endl;
 					}
 				}
-			}
-
+			}*/
+			/*
 			// Output the force plate information.
 			unsigned int ForcePlateCount = MyClient.GetForcePlateCount().ForcePlateCount;
 			output_stream << "  Force Plates: (" << ForcePlateCount << ")" << std::endl;
@@ -876,9 +880,10 @@ int main(int argc, char* argv[])
 					output_stream << _Output_GetCentreOfPressure.CentreOfPressure[1] << ", ";
 					output_stream << _Output_GetCentreOfPressure.CentreOfPressure[2] << ")" << std::endl;
 				}
-			}
+			}*/
 
 			// Output eye tracker information.
+			/*
 			unsigned int EyeTrackerCount = MyClient.GetEyeTrackerCount().EyeTrackerCount;
 			output_stream << "  Eye Trackers: (" << EyeTrackerCount << ")" << std::endl;
 
@@ -900,7 +905,8 @@ int main(int argc, char* argv[])
 				output_stream << _Output_GetEyeTrackerGlobalGazeVector.GazeVector[2] << ") ";
 				output_stream << Adapt(_Output_GetEyeTrackerGlobalGazeVector.Occluded) << std::endl;
 			}
-
+			*/
+			/*
 			if (bReadCentroids)
 			{
 				unsigned int CameraCount = MyClient.GetCameraCount().CameraCount;
@@ -927,21 +933,21 @@ int main(int argc, char* argv[])
 						//output_stream << "        Accuracy: ("  << _Output_GetCentroidPosition.Accuracy << ")" << std::endl;
 					}
 				}
-			}
+			}*/
 		}
 
 		if (EnableMultiCast)
 		{
 			MyClient.StopTransmittingMulticast();
 		}
-		MyClient.DisableSegmentData();
+//		MyClient.DisableSegmentData();
 		MyClient.DisableMarkerData();
-		MyClient.DisableUnlabeledMarkerData();
+	/*	MyClient.DisableUnlabeledMarkerData();
 		MyClient.DisableDeviceData();
 		if (bReadCentroids)
 		{
 			MyClient.DisableCentroidData();
-		}
+		}*/
 
 		// Disconnect and dispose
 		int t = clock();
