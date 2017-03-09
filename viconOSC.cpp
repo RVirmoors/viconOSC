@@ -746,7 +746,7 @@ int main(int argc, char* argv[])
 			if (!m_z[3]) m_z[3] = m_z[4];
 			if (!m_z[4]) m_z[4] = m_z[3];
 
-			if (! (!m_x[0] || !m_x[3]) ) {
+			if (m_x[0] && m_x[3] ) {
 				p << osc::BeginBundleImmediate
 					<< osc::BeginMessage("/markers/cap")
 					<< (m_x[0] + m_x[2]) / 2 << (m_y[0] + m_y[2]) / 2 << (m_z[0] + m_z[2]) / 2 << osc::EndMessage;
@@ -762,7 +762,7 @@ int main(int argc, char* argv[])
 				p << osc::BeginMessage("/rec/dist")	<< dist
 					<< osc::EndMessage;
 
-				if (dist < 3000 && dist)
+				if (dist < 3000 && dist > 1)
 					p << osc::BeginMessage("/rec/1") << osc::EndMessage;
 				else
 					if (dist >= 3000)
