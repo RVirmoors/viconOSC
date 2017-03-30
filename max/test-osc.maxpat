@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1103.0, 189.0, 1084.0, 839.0 ],
+		"rect" : [ -31958.0, -31916.0, 1084.0, 839.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1259,6 +1259,30 @@
 						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 492.5, 524.0, 24.0, 24.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 404.0, 533.0, 24.0, 24.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-103",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -2403,7 +2427,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 67.0, 109.0, 640.0, 480.0 ],
+										"rect" : [ 420.0, 342.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2892,6 +2916,15 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-45", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-101", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -3018,6 +3051,15 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-46", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-70", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -3115,20 +3157,20 @@
 								"loop" : 0,
 								"content_state" : 								{
 									"pitchshift" : [ 1.0 ],
-									"followglobaltempo" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"quality" : [ "basic" ],
-									"slurtime" : [ 0.0 ],
-									"basictuning" : [ 440 ],
 									"originaltempo" : [ 120.0 ],
-									"timestretch" : [ 0 ],
-									"mode" : [ "basic" ],
-									"originallengthms" : [ 0.0 ],
+									"quality" : [ "basic" ],
+									"pitchcorrection" : [ 0 ],
 									"speed" : [ 1.0 ],
-									"originallength" : [ 0.0, "ticks" ],
+									"followglobaltempo" : [ 0 ],
+									"timestretch" : [ 0 ],
+									"formantcorrection" : [ 0 ],
 									"play" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"pitchcorrection" : [ 0 ]
+									"originallengthms" : [ 0.0 ],
+									"mode" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"basictuning" : [ 440 ],
+									"formant" : [ 1.0 ]
 								}
 
 							}
@@ -3139,20 +3181,20 @@
 								"loop" : 0,
 								"content_state" : 								{
 									"pitchshift" : [ 1.0 ],
-									"followglobaltempo" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"quality" : [ "basic" ],
-									"slurtime" : [ 0.0 ],
-									"basictuning" : [ 440 ],
 									"originaltempo" : [ 120.0 ],
-									"timestretch" : [ 0 ],
-									"mode" : [ "basic" ],
-									"originallengthms" : [ 0.0 ],
+									"quality" : [ "basic" ],
+									"pitchcorrection" : [ 0 ],
 									"speed" : [ 1.0 ],
-									"originallength" : [ 0.0, "ticks" ],
+									"followglobaltempo" : [ 0 ],
+									"timestretch" : [ 0 ],
+									"formantcorrection" : [ 0 ],
 									"play" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"pitchcorrection" : [ 0 ]
+									"originallengthms" : [ 0.0 ],
+									"mode" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"basictuning" : [ 440 ],
+									"formant" : [ 1.0 ]
 								}
 
 							}
