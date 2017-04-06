@@ -1,6 +1,6 @@
 \section{Introduction}
 
-High resolution three-dimensional motion tracking is traditionally used for animation in film and games, as well as for life sciences research and engineering applications~\cite{welch2002motion}. This technology has long been mined by the NIME community, although in many early cases, technical limitations meant that the motion data transmission and the sound generation processes were not simultaneous~\cite{dobrian2003gestural, kapur2005framework}.
+High resolution three-dimensional motion tracking is traditionally used for animation in film and games, as well as for life sciences research and engineering applications~\cite{welch2002motion}. This technology has long been mined by the audio computing community, although in many early cases, technical limitations meant that the motion data transmission and the sound generation processes were not simultaneous~\cite{dobrian2003gestural, kapur2005framework}.
 
 
 The \textit{SoundThimble} project harnesses current motion capture technology and gesture detection algorithms to enable new modes of real-time sound exploration. Our aim is to push beyond the standard paradigms of isolated body motion audification~\cite{dobrian2003gestural,kapur2005framework} or sound control interfaces~\cite{eckel2009motion,nymoen2011soundsaber}, towards deeper narrative structures coupled with layered arrangement of music patterns.
@@ -8,7 +8,7 @@ The \textit{SoundThimble} project harnesses current motion capture technology an
 
 Our implementation uses a state-of-the-art Vicon motion capture system\footnote{See  \url{https://www.vicon.com}.} containing eight Vantage 5-megapixel infrared cameras and two Bonita video cameras. Since the open-source software developed in this project\footnote{Available at  \url{https://github.com/RVirmoors/viconOSC}.} is\linebreak built around Vicon's Datastream SDK,\footnote{See  \url{https://www.vicon.com/products/software/datastream-sdk}.} the platform can be ported to both older and future Vicon-based systems.
 
-In the remainder of the paper, we review relevant literature and technology (section~\ref{sec:related}), we describe the \textit{SoundThimble} concept and implementation (section~\ref{sec:proj}), we propose two applied case studies (section~\ref{sec:case}), and we conclude with a survey of remaining challenges and future perspectives (section~\ref{sec:conc}).
+In the remainder of the paper, we review relevant literature and technology (section~\ref{sec:related}), we describe the \textit{SoundThimble} concept and implementation (sections~\ref{sec:proj},~\ref{sec:implem}), and finish with a survey of future challenges and perspectives (section~\ref{sec:conc}).
 
 \section{State of the Art}
 \label{sec:related}
@@ -19,21 +19,21 @@ In particular, Vicon motion capture systems have been used for over a decade for
 
 This decade has seen qualitative advances in the interaction between human gesture and sound behaviour, made possible by real-time gesture recognition and following\linebreak tools~\cite{caramiaux2014mapping,caramiaux2015adaptive,probabilisticmodels}. These allow for more complex scenarios, where movement is used both for direct sonification and for multi-level control of system behaviour---features which our project channels into a coherent framework.
 
-\subsection{Concept}
+\section{Concept}
 \label{sec:proj}
 
 % inovare = abordarea spatializarii obiectelor sonore / acusmatics
 
 The ``sound-thimble", as the basic building block of our framework, is based on the concept of \textit{sound object} in the Schaefferian sense, as a clearly delimited sounding unit, open to manipulation, arrangement and composition~\cite{schaeffer1998solfege}.
 
-Such an entity, once instanced, can retain an ambiguous nature (spatially and acousmatically) or can switch to a more material state (positioned in space and tied to a causal source)~\cite{soundunseen}. The duality between the latent positioning of the object (which can be inferred from phenomena other than spatial sound reproduction), and the active sound spatialisation and transformation, becomes an innovative tool for the sonic arts through sound sketching, auditory games and other real-time interaction setups.
+Such an entity, once instanced, can retain an ambiguous nature (spatially and acousmatically) or can switch to a more material state (positioned in space and tied to a causal source)~\cite{soundunseen}. The duality between the latent positioning of the object (which can be inferred from phenomena other than spatial sound reproduction), and the active sound spatialisation and transformation, becomes an innovative tool for the sonic arts, by enabling sound sketching, auditory games and other real-time interaction setups.
 
-\subsubsection{Interaction scenario}
+\subsection{Interaction scenario}
 \label{sec:scenario}
 
-We present the initial application of our framework, in the form of an auditory game comprising three phases: search, manipulation, arrangement.
+We present the initial application of our framework, in the form of an interactive installation comprising three phases: search, manipulation, arrangement.
 
-The game's narrative starts with a human player attempting to find a sound-thimble (a stationary virtual object, randomly positioned in 3D space), by analysing cues that are constantly shifting in the sonic fabric based on the hand's movement relative to the object. Analogously to the traditional game of \textit{Hunt the Thimble} (a.k.a \textit{Hot or Cold}), the space between the human and the virtual object is correlated to sound synthesis and modulation parameters. Briefly, the closer one comes to the object, the more coherent the sound and vice-versa. 
+The narrative begins as an immersive game, with a human player attempting to find a sound-thimble (a stationary virtual object, randomly positioned in 3D space), by analysing cues that are constantly shifting in the sonic fabric based on the hand's movement relative to the object. Analogously to the traditional game of \textit{Hunt the Thimble} (a.k.a \textit{Hot or Cold}), the space between the human and the virtual object is correlated to sound synthesis and modulation parameters. Briefly, the closer one comes to the object, the more coherent the sound and vice-versa. 
 
 Once the object is found and attached to the hand, its sonic manifestation gains a richer causal relationship: the player becomes a performer, and is now able to explore the object's sonic palette, and record a number of gestures that can be re-performed later, re-called, and used to trigger or manipulate sonic shifts and events.
 
@@ -49,7 +49,7 @@ This repeating scenario is outlined in Figure~\ref{fig:concept}: objects are ran
 	\label{fig:concept}
 \end{figure}
 
-\subsubsection{Performance aesthetic}
+\subsection{Performance aesthetic}
 \label{sec:aesthetic}
 
 The human-object dynamic at the core of our framework results in certain interaction features which circumscribe the aesthetics of any application of the platform.
@@ -60,7 +60,8 @@ The cross-modality between different kinds of sense perception guides the perfor
 
 Moreover, since the system's responsiveness is reliant on marker visibility, the performer becomes, to a degree, existentially dependent on the camera eye. This, coupled with the coexistence of virtual, responsive objects in the same scene, can lead to novel mechanics at the limits between presence and absence, real and virtual.
 
-\subsection{Implementation}
+\section{Implementation}
+\label{sec:implem}
 
 %Many interactions and programable elements which are included in the concept have an exactly function and usefulness. These elements are created in MAX with the help of Vicon SDK and OSC C++ library. The concept suppose an interactive action of a performer or a simple user with an virtual object which has associated gestures defined by person. Virtual object interaction acts in sound design utility like a master controller. Searching for a certain object comes with an audio feedback which makes the search easier.  A dynamic mapping of marker's coordinates is necessary to transfer data between Nexus and MAX.
 
@@ -73,22 +74,22 @@ Moreover, since the system's responsiveness is reliant on marker visibility, the
 	\label{fig:archi}
 \end{figure}
 
-The framework architecture diagram is laid out in Figure~\ref{fig:archi}. Three-dimensional sensor data is streamed into the Vicon Nexus software, which is able to reconstruct and label the underlying character skeleton. The gesture recognition and sonification algorithms are programmed in Max\footnote{Max is a state-of-the-art programming environment for real-time multimedia: \url{http://cycling74.com/}.}, which generally receives control data via the OSC\footnote{OpenSoundControl is a multimedia communication protocol: \url{http://opensoundcontrol.org/}.} protocol. Since Vicon systems do not support OSC out of the box, we used the \textit{oscpack}\footnote{See \url{http://www.rossbencina.com/code/oscpack}.} library to extend the DataStream C++ SDK and send OSC bundles to Max.
+The framework architecture diagram is laid out in Figure~\ref{fig:archi}. Three-dimensional sensor data is streamed into the Vicon Nexus software, which is able to reconstruct and label the underlying character skeleton. The gesture recognition and sonification algorithms are programmed in Max\footnote{Max is a state-of-the-art programming environment for real-time multimedia: \url{http://cycling74.com/}.}, which receives control data via the OSC\footnote{OpenSoundControl is a multimedia communication protocol: \url{http://opensoundcontrol.org/}.} protocol. Since Vicon systems do not support OSC out of the box, we used the \textit{oscpack}\footnote{See \url{http://www.rossbencina.com/code/oscpack}.} library to extend the DataStream C++ SDK and send OSC bundles to Max.
 
 The following description is tailored to our installation application, but any \textit{SoundThimble}-based project involves similar conditions.
 
-\subsubsection{Character design}
+\subsection{Character design}
 
 Figure~\ref{fig:nexus} shows a skeletal reconstruction in the Nexus environment. We pursued a minimal amount of markers, for ease of setup and prototyping. The resulting configuration---sufficient for tracking hand gestures, while ensuring redundancy in case a marker is obscured from the cameras---consists of 5 markers: two positioned on the head, one on the forearm, and two on the hand (thumb and index finger).
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\columnwidth, clip, trim={12cm 0 0 0}]{img/nexus}
-	\caption{A performer tracked in Vicon Nexus. Two visible segments: head-forearm, forearm-hand.}
+	\caption{A performer being tracked in Vicon Nexus. Two visible segments: head-forearm, forearm-hand.}
 	\label{fig:nexus}
 \end{figure}
 
-Each OSC bundle sent through the SDK consists of the following:
+Each OSC bundle sent through the SDK consists of the following data:
 \begin{itemize}
 	\item 3D coordinates for the head (averaged from the two head markers);
 	\item 3D coordinates for the hand (averaged from the two hand markers);
@@ -103,41 +104,35 @@ Each of the three items is sent only if non-zero, i.e. for the head and hand coo
 
 To maximise responsiveness and minimise data loss, we raised the frame rate to 500Hz, taking into account the maximum movement speed and the minimum spacing between markers~\cite{song2016fast}. This configuration produces highly stable and responsive inputs into the Max system, with a spatial resolution of 1mm and a latency of around 5ms.
 
-\subsubsection{Object generation \& interaction mechanics}
-%GRIG: nu e cazul sa prezentam Max pe larg aici. Eventual o propozitie scurta mai sus...
-%Max is a realtime visual programing environment for music and multimedia arts that helps you build stand-alone applications, plugins and mixing audio signals. In order to create interactive sounds, attractive grapichs and special effects, MAX creates a connection between virtual objects and subpatches\footnote{See \url{http://www.cycling74.com/}.}.
-%Manipulating objects algorithm consists of some major steps: object generation, finding the object, picking up the object, dropping the object to the floor.
+\subsection{Object generation \& interaction mechanics}
 
-The following object-related mechanics are implemented as basic algorithms in Max: generation, detection, dropping.
+The following object-related mechanics are implemented as basic algorithms in Max: generation, detection, release.
 
-Object generation is executed randomly within the boundaries of the motion capture field, as defined in the Vicon calibration phase. Detection of the sound-thimble occurs when the distance between hand and object falls below a set threshold. By default this threshold is set at 200mm radial distance; lowering it can make the game considerably more difficult. Once the object is detected, it becomes mobile, its coordinates tracking those of the hand's.
+Objects are generated at random positions within the boundaries of the motion capture field. Detection of the sound-thimble occurs when the distance between hand and object falls below a set threshold. By default this threshold is set at 200mm radial distance; lowering it can make the game considerably more difficult. Once the object is detected, it becomes mobile, its coordinates tracking those of the hand's.
 
-Finally, a simple thresholding of the $z$-axis (height) value of the hand position serves to put down the object. If the velocity computed on the $x$ or $y$ axes (horizontal plane) is high enough, then the object is pushed in the respective direction, and is able to leave the area of the installation, essentially being removed from the game.
-At this point, a new object is introduced. The system keeps track of all object coordinates, as they appear and disappear over time.
-
-%According to this, a performer can handle as many objects as he wants.
+Finally, a simple thresholding of the $z$-axis (height) value of the hand position serves to release the object. If the velocity computed on the $x$ or $y$ axes (horizontal plane) is high enough, then the object is pushed in the respective direction, and is able to leave the area of the installation, essentially being removed from the game.
+At this point, a new object is generated. The system keeps track of all object coordinates, as they appear and disappear over time.
 
 
-\subsubsection{Gesture recognition}
+\subsection{Gesture recognition}
 
-We use the thumb-index finger distance value to enable gesture recording while the two fingers are kept close together. The input features captured into \textit{MuBu} multi-buffer containers~\cite{mubu} consist of pairs of values:
+We use the thumb-index finger distance value to enable gesture recording while the two fingers are kept close together. The input features captured into \textit{MuBu} multi-buffer containers~\cite{mubu} consist of cylindrical triplets:
 \begin{itemize}
-	\item $\sqrt{\frac{(\Delta x)^2 + (\Delta y)^2}{2}}$;
-	\item $\Delta z$,
+	\item $\Delta \theta / \Delta t$, with $\theta = \tan^{-1}(\frac{y}{x})$;
+	\item $r = \sqrt{x^2 + y^2}$;
+	\item $z$,
 \end{itemize}
-where $\Delta x$, $\Delta y$, $\Delta z$ are the respective differences between head and hand coordinates. This feature preprocessing\linebreak serves two purposes:
+where $x$, $y$, $z$ are the respective differences between head and hand Cartesian coordinates, as received via OSC. This feature preprocessing serves two purposes:
 
-Firstly, gestures are recorded based on the position of the hand relative to the head, thus becoming invariable to the performer's absolute \textit{position} within the space. Secondly, by composing the $x$ and $y$ values into a single feature, gestures become invariable to the performer's \textit{orientation} on the horizontal plane. Thus, gestures can be recorded and recalled anywhere within the space, irrespective of the direction the performer is facing.
+Firstly, gestures are recorded based on the position of the hand relative to the head, thus becoming invariable to the performer's absolute \textit{position} within the space. Secondly, by considering the variation of angle $\theta$ over time (as opposed to its absolute value), gestures become invariable to the performer's \textit{orientation} on the horizontal plane. Thus, gestures can be recorded and recalled anywhere within the space, irrespective of the direction the performer is facing.
 
-The input features are fed to one of two gesture recognition algorithms, both part of the \textit{MuBu} package. The first, based on Hierarchical Hidden Markov Models (HHMM), is implemented in the \texttt{mubu.hhmm} Max object. HHMMs are a generalization of HMM where each state is considered to be a self-contained probabilistic model~\cite{probabilisticmodels,hhmm}. The second is the \textit{Gesture Follower} \texttt{gf} Max object, based on a Sequential Monte Carlo inference engine~\cite{caramiaux2015adaptive}. 
+The input features are fed to the \textit{Gesture Follower} \texttt{gf} Max object, part of the \textit{MuBu} package. The algorithm, based on a Sequential Monte Carlo inference engine~\cite{caramiaux2015adaptive}, allows for \textit{gesture spotting}, i.e. it constantly produces likelihood values of a certain gesture being active, together with an approximation of its completion rate. If these exceed a certain threshold, the respective gesture is triggered. Once detected, the gesture can be followed at a variable rate or scale, even backwards. %The only drawback is that it requires a start trigger, which we send by quickly attaching and separating the thumb and index finger.
 
-The first method allows for \textit{gesture spotting}, i.e. it constantly produces likelihood values of a certain gesture being active, together with an approximation of its completion rate. If these exceed a certain threshold, the respective gesture is triggered. The second method is more flexible and precise: the detected gesture can be followed at a variable rate or scale, even backwards. The only drawback is that it requires a start trigger, which we send by quickly attaching and separating the thumb and index finger.
-
-In the game, each generated object has a number of gestures associated to it. When an object is dropped to the floor, the classifier is (re)trained with the new data, and consequently gestures can act as on/off switches for a particular sonic behaviour (if they are performed/spotted once at a time), or as continuous controllers (if they are repeated). When several objects exist on the floor, a specific movement might act on one or more objects, depending on which detection likelihoods exceed the threshold. 
+In the game, each generated object has a number of gestures associated to it. When an object is released to the floor, the classifier is (re)trained with the new data, and consequently gestures can act as on/off switches for a particular sonic behaviour (if they are performed/spotted once at a time), or as continuous controllers (if they are repeated). When several objects exist on the floor, a specific movement might act on one or more objects, depending on which detection likelihoods exceed the threshold. 
 
 %In order to control every generated object, there are associated 2 or 3 gestures saved by the performer, but there is a limited time for the gestures to be executed. Predefined gestures offer the possibility to delete the gesture just saved and also indicate the moment the gesture is recorded.
 
-\subsubsection{Sound design}
+\subsection{Sound design}
 
 
 Each sound-thimble has a corresponding sound design patch, differing in (a) the source sound material used, (b) the synthesis techniques applied, and/or (c) the control mapping schema to the object search and manipulation variables. The various combinations of (a), (b) and (c) give rise to a growing library of objects, each with its own character. By designing various interaction rules for each object, segments are linked to different synthesis parameters or groups of parameters resulting in a continuously evolving, organic soundscape.
@@ -156,27 +151,27 @@ In the search phase, all sound design is based on two channels that can either b
 
 In developing the sound design algorithms, we used two input data sources. The first one is motion capture data recorded in Nexus and played back through the SDK. For more flexibility and immediate control, we also developed a basic visual interface to monitor the input data and to manipulate it in virtual 3D space using the mouse, for instant auditory feedback. This feature comes in useful when specific motion data is not available and needs to be roughly simulated.
 
-\section{Case studies}
-\label{sec:case}
-
-We present two applications of our platform: a participative installation, and a performance piece. They represent two manifestations of the \textit{SoundThimble} concept and infrastructure, revealing a pair of experiences: (a) the direct interaction with sound in space, and (b) the mediated interaction with sound and space of an audience member. In both cases, the range of sense and perception is extended through new experiences.
-
-
-\subsection{Interactive installation}
-
-The first form conceived for the \textit{SoundThimble} platform is that of an open installation, where visitors become participants and observers in the situation outlined in section~\ref{sec:scenario}.
-
-Beyond the considerations in section~\ref{sec:aesthetic}, the major feature of the auditory game is the layered sequence of search-manipulation-arrangement which translates to a layering of awareness of accumulated experiences. The meshing of sound objects (supplied by the game) and gestures (defined by the player) leads from a state of uncertainty and potential, to phases of exploration, play, composition. Snapshots of interest can be stored for later recall---currently this is done manually, but might be automated in the future.
-
-\subsection{Dance performance}
-
-The following is a sketch for a work currently under development. A performer enters the motion capture space, and commences a series of improvised motions, silently establishing the action space.
-
-Once a threshold is reached, a virtual object is generated and the movement is no longer completely free, its range of action being directed by the relationship to the object position. Searching and finding the sound-thimble is a process of correlating the sonic characteristics to one's own movement patterns.
-
-By ``resonating" with the object's manifestation and locating it, the performer enters the manipulation phase, extending her auditive and tactile perception through embodied listening. The multimodal information processed by the performer is both cochlear and kinaesthetic/proprioceptive, tactile, vestibular and visual. Thus, the information she forms about the shape of the movement, its trajectory and spatial dynamics, is intrinsically linked to the sonic connections to these parameters. This dynamic knowledge influences the timing of new actions and the anticipation of sonic feedback. The resulting action schemas are composed as both spatial and sonic shapes.
-
-Gradually, as the performer's control patterns become crystallised, the sonic nature of the source object moves between the abstract and the concrete. In the latter phase, the performer is able to control higher-level parameters such as tempo and orchestration of a coherent musical structure which was partly a result of the generative interaction in the more abstract/exploratory phase.
+%\section{Case studies}
+%\label{sec:case}
+%
+%We present two applications of our platform: a participative installation, and a performance piece. They represent two manifestations of the \textit{SoundThimble} concept and infrastructure, revealing a pair of experiences: (a) the direct interaction with sound in space, and (b) the mediated interaction with sound and space of an audience member. In both cases, the range of sense and perception is extended through new experiences.
+%
+%
+%\subsection{Interactive installation}
+%
+%The first form conceived for the \textit{SoundThimble} platform is that of an open installation, where visitors become participants and observers in the situation outlined in section~\ref{sec:scenario}.
+%
+%Beyond the considerations in section~\ref{sec:aesthetic}, the major feature of the auditory game is the layered sequence of search-manipulation-arrangement which translates to a layering of awareness of accumulated experiences. The meshing of sound objects (supplied by the game) and gestures (defined by the player) leads from a state of uncertainty and potential, to phases of exploration, play, composition. Snapshots of interest can be stored for later recall---currently this is done manually, but might be automated in the future.
+%
+%\subsection{Dance performance}
+%
+%The following is a sketch for a work currently under development. A performer enters the motion capture space, and commences a series of improvised motions, silently establishing the action space.
+%
+%Once a threshold is reached, a virtual object is generated and the movement is no longer completely free, its range of action being directed by the relationship to the object position. Searching and finding the sound-thimble is a process of correlating the sonic characteristics to one's own movement patterns.
+%
+%By ``resonating" with the object's manifestation and locating it, the performer enters the manipulation phase, extending her auditive and tactile perception through embodied listening. The multimodal information processed by the performer is both cochlear and kinaesthetic/proprioceptive, tactile, vestibular and visual. Thus, the information she forms about the shape of the movement, its trajectory and spatial dynamics, is intrinsically linked to the sonic connections to these parameters. This dynamic knowledge influences the timing of new actions and the anticipation of sonic feedback. The resulting action schemas are composed as both spatial and sonic shapes.
+%
+%Gradually, as the performer's control patterns become crystallised, the sonic nature of the source object moves between the abstract and the concrete. In the latter phase, the performer is able to control higher-level parameters such as tempo and orchestration of a coherent musical structure which was partly a result of the generative interaction in the more abstract/exploratory phase.
 
 
 
@@ -186,10 +181,8 @@ Gradually, as the performer's control patterns become crystallised, the sonic na
 This paper introduced \textit{SoundThimble}, a multi-layered platform for real-time motion-music interaction.
 All software developed for the project (including the C++ code for data preprocessing and transmission, and the Max patches for gesture tracking and sound design) is open source and publicly available.
 
-The team is currently pursuing several directions for improvement and extension. We are working to support more than one participant at once, implementing mechanics for sharing control of the virtual object. Video projection support is planned, e.g. each object having a corresponding reactive video, with the arrangement phase also producing a background visual collage. We are also considering eye tracking technology to enable an audience member's active involvement in shaping the sound. Meanwhile, work continues on further interaction mechanics and sound design.
+The team is currently pursuing several directions for improvement and extension. We are working to support more than one participant at once, implementing mechanics for sharing control of the virtual object. %Video projection support is planned, e.g. each object having a corresponding reactive video, with the arrangement phase also producing a background visual collage. We are also considering eye tracking technology to enable an audience member's active involvement in shaping the sound. 
+Meanwhile, work continues on enriching the interaction and sound design.
 
-%Although we have been working on the project for only a few months it is fairly safe to state that the expressive opportunities of the Vicon system are superior to others such as cameras and Microsoft Kinects. Although a lot more challenging (no native OSC support, difficulties in conducting test at any time, arduous task of integrating Blade to the Jitter interface to the Gesture Recognition patch, and then to the Sound Synthesis patch, great deal of calibration and scaling), new other possibilities are being offered by the high temporal and spatial resolution.
-
-%Future work on SoundThimble could/will include: multiple performers, eye tracking, video projection, extended synthesis and sound manipulation algorithms, additional mechanics for the auditory game (manipulating while dropped, picking up the object, throwing, ...)
 
 Finally, we are commencing the outreach to composers, artists and creative programmers, to apply our platform to new innovative projects and engage in practice-led research.
