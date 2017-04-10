@@ -97,3 +97,5 @@ _nime/sonif-nime.bbl
 *.gz
 *.gz
 _nime/sonif-nime.synctex.gz
+
+_am/am-paper.pdf
