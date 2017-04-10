@@ -31,7 +31,7 @@ Such an entity, once instanced, can retain an ambiguous nature (spatially and ac
 \subsection{Interaction scenario}
 \label{sec:scenario}
 
-We present an initial application of our framework, in the form of an interactive installation comprising three phases: search, manipulation, arrangement---corresponding to schemas of play, performance, and composition, respectively.
+We present an initial application of our framework, in the form of an interactive installation comprising three phases: search, manipulation, arrangement---corresponding to\linebreak schemas of play, performance, and composition, respectively.
 
 The narrative begins as an immersive game, with a human player attempting to find a sound-thimble (a stationary virtual object, randomly positioned in 3D space), by analysing cues that are constantly shifting in the sonic fabric based on the hand's movement relative to the object. Analogously to the traditional game of \textit{Hunt the Thimble} (a.k.a \textit{Hot or Cold}), the space between the human and the virtual object is correlated to dynamic sound generation parameters, guiding the player's hand towards its target.
 
@@ -40,7 +40,7 @@ Once the object is found it attaches to the hand, and its sonic manifestation ga
 Finally, the human can place the virtual object on the floor, or discard it by ``pushing" it outside of the installation boundaries. This triggers a new object to be randomly generated, while the player retains a degree of control over the initial object by recalling recorded gestures. Both objects are now in a latent state, with the new one guiding the player's search, and the previous one responding to the learned set of gestures.
 
 This repeating scenario is outlined in Figure~\ref{fig:concept}. %: objects are randomly generated, the performer finds them, defines gestures and interacts sonically, before arranging them in a pleasing configuration. 
-With each spawning of an object or assignment of a gesture, the game becomes more challenging and complex, but also more flexible and rewarding. A demonstration video of the installation project is available online\footnote{See YOUTUBE LINK.}.
+With each spawning of an object or assignment of a gesture, the game becomes more challenging and complex, but also more flexible and rewarding. A demonstration video of the installation project in its current state is available online\footnote{See \url{https://youtu.be/K2Xni2lWswg}.}.
 
 
 \begin{figure}[t]
@@ -147,7 +147,7 @@ Each sound-thimble has a corresponding sound design Max patch, differing in (a) 
 
 %In the search phase, all sound design is based on two channels that can either be routed to multiple pairs of speakers or downmixed to mono and diffused on an arbitrary number of speakers. In the manipulation phase, the soundscape is spatialised to track the position of the performer. In the arrangement phase, the dropped object retains a ``root" source location, which can relate dynamically to the performer position when a gesture is executed: for instance, the granular patch sends spatialised grains back and forth between the dropped object and the performer.
 
-In addition, we enable the definition of ``hotspots" in 3D space, each acting as a zone with its own mappings and interaction laws. A higher resolution of hotspots allows for more detailed design schemas.
+In addition, we enable the definition of "hotspots" in 3D space, each acting as a zone with its own mappings and interaction laws. A higher resolution of hotspots allows for more detailed design schemas.
 
 
 For developing sonification algorithms, we provide two input data sources. The first one is motion capture data recorded via Nexus into MuBu containers. For more flexibility and immediate control, we also created a basic visual interface to monitor the input data and to manipulate it in virtual 3D space using the mouse, for instant auditory feedback. This feature comes in useful when specific motion data is not available and needs to be roughly simulated.
