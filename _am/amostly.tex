@@ -31,9 +31,9 @@ Such an entity, once instanced, can retain an ambiguous nature (spatially and ac
 \subsection{Interaction scenario}
 \label{sec:scenario}
 
-We present an initial application of our framework, in the form of an interactive installation comprising three phases: search, manipulation, release---corresponding to schemas of play, performance, and composition, respectively.
+We present an initial application of our framework, in the form of an interactive installation comprising three phases: search, manipulation, arrangement---corresponding to schemas of play, performance, and composition, respectively.
 
-The narrative begins as an immersive game, with a human player attempting to find a sound-thimble (a stationary virtual object, randomly positioned in 3D space), by analysing cues that are constantly shifting in the sonic fabric based on the hand's movement relative to the object. Analogously to the traditional game of \textit{Hunt the Thimble} (a.k.a \textit{Hot or Cold}), the space between the human and the virtual object is correlated to dynamic sound generation parameters. Briefly, the closer one comes to the object, the more ``coherent" the sound and vice-versa.
+The narrative begins as an immersive game, with a human player attempting to find a sound-thimble (a stationary virtual object, randomly positioned in 3D space), by analysing cues that are constantly shifting in the sonic fabric based on the hand's movement relative to the object. Analogously to the traditional game of \textit{Hunt the Thimble} (a.k.a \textit{Hot or Cold}), the space between the human and the virtual object is correlated to dynamic sound generation parameters, guiding the player's hand towards its target.
 
 Once the object is found it attaches to the hand, and its sonic manifestation gains a richer causal relationship: the player becomes a performer, and is now able to explore the object's sonic palette, and record a number of gestures that can be re-performed later, re-called, and used to trigger or manipulate sonic shifts and events.
 
@@ -99,11 +99,8 @@ Each OSC bundle sent through the SDK consists of the following data:
 \end{itemize}
 
 Each of the three items is sent only if non-zero, i.e. for the head and hand coordinates at least one of the respective markers is active, while for the distance computation, both markers need to be visible and correctly labelled. The forearm marker only serves for skeleton reconstruction, and is not sent via OSC.
-
 %Implementation of the concept presented above requires Nexus, Vicon SDK and MAX sotware. Every character involved in the scene is defined by a limited number of markers. In this case, two markers are positioned on the head, one marker is positioned on elbow and the others 2 on the hand (thumb and index finger). Every marker has associated a name in Nexus and between them 6 segments are drawn. It is very important in realtime capture motion, that the marker to have assigned correct coordinates.
-
 %Also, the Vicon DataStream Software Development Kit (SDK) admits inside changes such as labeling markers, timecode generation and framerate.
-
 To maximise responsiveness and minimise data loss, we raised the frame rate to 500Hz, taking into account the maximum movement speed and the minimum spacing between markers~\cite{song2016fast}. This configuration produces highly stable and responsive inputs into the Max system, with a spatial resolution of 1mm and a latency of around 5ms.
 
 \subsection{Object generation \& interaction mechanics}
@@ -112,7 +109,7 @@ The following object-related mechanics are implemented as basic algorithms in Ma
 
 Objects are generated at random positions within the boundaries of the motion capture field. Detection of the sound-thimble occurs when the distance between hand and object falls below a set threshold. By default this threshold is set at 200mm radial distance; lowering it can make the game considerably more difficult. Once the object is detected, it becomes mobile, its coordinates tracking those of the hand's.
 
-Finally, a simple thresholding of the $z$-axis (height) value of the hand position serves to release the object. If the velocity computed on the $x$ or $y$ axes (horizontal plane) is high enough, then the object is pushed in the respective direction, and is able to leave the area of the installation, essentially being removed from the game.
+Finally, a simple thresholding of the $z$-axis (height) value of the hand position serves to release the object. If the velocity computed on the $x$ or $y$ axes (horizontal plane) is high enough, then the object is able to leave the installation space, essentially being removed from the game.
 At this point, a new object is generated. The system keeps track of all object coordinates, as they appear and disappear over time.
 
 
@@ -150,6 +147,7 @@ Each sound-thimble has a corresponding sound design Max patch, differing in (a) 
 
 %In the search phase, all sound design is based on two channels that can either be routed to multiple pairs of speakers or downmixed to mono and diffused on an arbitrary number of speakers. In the manipulation phase, the soundscape is spatialised to track the position of the performer. In the arrangement phase, the dropped object retains a ``root" source location, which can relate dynamically to the performer position when a gesture is executed: for instance, the granular patch sends spatialised grains back and forth between the dropped object and the performer.
 
+In addition, we enable the definition of ``hotspots" in 3D space, each acting as a zone with its own mappings and interaction laws. A higher resolution of hotspots allows for more detailed design schemas.
 
 
 For developing sonification algorithms, we provide two input data sources. The first one is motion capture data recorded via Nexus into MuBu containers. For more flexibility and immediate control, we also created a basic visual interface to monitor the input data and to manipulate it in virtual 3D space using the mouse, for instant auditory feedback. This feature comes in useful when specific motion data is not available and needs to be roughly simulated.
