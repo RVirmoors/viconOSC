@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 2,
+			"revision" : 4,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
@@ -96,7 +96,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1112.0, 118.0, 93.0, 35.0 ],
+					"patching_rect" : [ 1112.0, 118.0, 93.0, 36.0 ],
 					"style" : "",
 					"text" : "loadmess color 0.58 0.6 0.22 1"
 				}
@@ -162,7 +162,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 538.0, 155.5, 93.0, 35.0 ],
+					"patching_rect" : [ 538.0, 155.5, 93.0, 36.0 ],
 					"style" : "",
 					"text" : "loadmess color 0.88 0. 0. 1"
 				}
@@ -280,9 +280,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 20.0, 224.0, 164.0, 22.0 ],
+					"patching_rect" : [ 20.0, 224.0, 228.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.window viz @size 800 450"
+					"text" : "jit.window viz @size 800 450 @floating 1"
 				}
 
 			}
@@ -309,8 +309,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 4,
 							"architecture" : "x86",
 							"modernui" : 1
 						}
@@ -1285,8 +1285,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1638,8 +1638,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
