@@ -38,6 +38,48 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-100",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 565.0, 98.0, 50.0, 22.0 ],
+					"style" : "",
+					"text" : "r status"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-123",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 445.0, 132.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 439.0, 605.502991, 150.0, 20.0 ],
+					"style" : "",
+					"text" : "Gesture Phase State\n"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-120",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 565.0, 132.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 559.0, 605.502991, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -80,7 +122,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 353.0, 372.0, 30.0, 30.0 ],
-					"presentation_rect" : [ 353.0, 370.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -106,7 +147,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 353.0, 123.0, 30.0, 30.0 ],
-					"presentation_rect" : [ 353.0, 121.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -125,7 +165,16 @@
 
 			}
  ],
-		"lines" : [  ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-120", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-100", 0 ]
+				}
+
+			}
+ ],
 		"dependency_cache" : [  ],
 		"autosave" : 0
 	}
