@@ -3,13 +3,13 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 2,
-			"revision" : 4,
-			"architecture" : "x86",
+			"minor" : 3,
+			"revision" : 1,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 84.0, 1901.0, 1239.0 ],
+		"rect" : [ 34.0, 72.0, 1886.0, 946.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -263,19 +263,6 @@
 					"patching_rect" : [ 39.0, 107.0, 60.0, 22.0 ],
 					"style" : "",
 					"text" : "loadbang"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-129",
-					"maxclass" : "newobj",
-					"numinlets" : 6,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 918.0, 700.0, 139.0, 22.0 ],
-					"style" : "",
-					"text" : "scale 0\\, 4000. 0. 13000."
 				}
 
 			}
@@ -827,7 +814,7 @@
 ,
 					"style" : "",
 					"text" : "pattr 7",
-					"varname" : "u005000611"
+					"varname" : "u600001342"
 				}
 
 			}
@@ -911,9 +898,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 2,
-							"revision" : 4,
-							"architecture" : "x86",
+							"minor" : 3,
+							"revision" : 1,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -980,9 +967,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 2,
-											"revision" : 4,
-											"architecture" : "x86",
+											"minor" : 3,
+											"revision" : 1,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -1674,7 +1661,7 @@
 ,
 					"style" : "",
 					"text" : "pattr 6",
-					"varname" : "u599000628"
+					"varname" : "u202001359"
 				}
 
 			}
@@ -1686,14 +1673,14 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1410.75, 758.0, 44.0, 22.0 ],
-					"restore" : [ 7421.45166 ],
+					"restore" : [ 5507.211075 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
 					"text" : "pattr 5",
-					"varname" : "u744000630"
+					"varname" : "u309001361"
 				}
 
 			}
@@ -1705,14 +1692,14 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1314.5, 758.0, 44.0, 22.0 ],
-					"restore" : [ 7346.485352 ],
+					"restore" : [ 5307.211068 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
 					"text" : "pattr 4",
-					"varname" : "u379000632"
+					"varname" : "u086001363"
 				}
 
 			}
@@ -1761,7 +1748,7 @@
 ,
 					"style" : "",
 					"text" : "pattr 2",
-					"varname" : "u991000634"
+					"varname" : "u908001365"
 				}
 
 			}
@@ -1835,14 +1822,14 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 353.0, 746.006042, 44.0, 22.0 ],
-					"restore" : [ 512.0, 0.0, 1.0, 0.0, 0.0, 0, 145.527405, 0.402387, 0, 169.703506, 0.609478, 0, 201.723969, 0.823475, 0, 255.519135, 1.0, 0, 327.085785, 0.578912, 0, 386.161682, 0.398444, 0, 497.029694, 0.303767, 0, "linear" ],
+					"restore" : [ 512.0, 0.0, 1.0, 0.0, 0.0, 0, 8.752137, 0.0, 0, 8.752137, 1.0, 0, 83.145302, 0.5, 0, 161.914536, 0.267857, 0, 236.307693, 0.071429, 0, 288.820526, 0.089286, 0, 428.854706, 0.035714, 2, 512.0, 0.0, 0, "linear" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
 					"text" : "pattr 1",
-					"varname" : "u483000638"
+					"varname" : "u312001369"
 				}
 
 			}
@@ -1862,7 +1849,7 @@
 ,
 					"style" : "",
 					"text" : "pattrstorage",
-					"varname" : "u861000640"
+					"varname" : "u255001371"
 				}
 
 			}
@@ -3792,7 +3779,7 @@
 			}
 , 			{
 				"box" : 				{
-					"addpoints" : [ 0.0, 0.0, 0, 145.527405, 0.402387, 0, 169.703506, 0.609478, 0, 201.723969, 0.823475, 0, 255.519135, 1.0, 0, 327.085785, 0.578912, 0, 386.161682, 0.398444, 0, 497.029694, 0.303767, 0 ],
+					"addpoints" : [ 0.0, 0.0, 0, 8.752137, 0.0, 0, 8.752137, 1.0, 0, 83.145302, 0.5, 0, 161.914536, 0.267857, 0, 236.307693, 0.071429, 0, 288.820526, 0.089286, 0, 428.854706, 0.035714, 2, 512.0, 0.0, 0 ],
 					"bgcolor" : [ 0.8, 0.8, 0.8, 1.0 ],
 					"domain" : 512.0,
 					"gridcolor" : [ 0.5, 0.5, 0.5, 0.5 ],
@@ -4283,6 +4270,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-162", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-135", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -4572,15 +4568,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-126", 4 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-154", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-161", 0 ],
 					"disabled" : 0,
 					"hidden" : 1,
@@ -4630,6 +4617,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-161", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-126", 4 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-162", 1 ]
 				}
 
 			}
@@ -5035,24 +5031,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-217", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-129", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-218", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-129", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-218", 0 ]
 				}
 
 			}
@@ -5795,7 +5773,49 @@
 				}
 
 			}
- ]
+ ],
+		"parameters" : 		{
+			"obj-81" : [ "live.drop", "live.drop", 0 ]
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "poly_D.maxpat",
+				"bootpath" : "~/Desktop/viconOSC-masterr/viconOSC-master/max",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pan2.maxpat",
+				"bootpath" : "C:/ProgramData/Max 7/examples/spatialization/panning/lib",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "rchoose.maxpat",
+				"bootpath" : "C:/ProgramData/Max 7/examples/sampling/granular/lib",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "transratio.maxpat",
+				"bootpath" : "C:/ProgramData/Max 7/examples/max-tricks/notes-and-pitch/pitch-to-freq-ratio",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "wfmodes.png",
+				"bootpath" : "C74:/media/max/picts",
+				"type" : "PNG ",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "wfknob.png",
+				"bootpath" : "C74:/media/max/picts",
+				"type" : "PNG ",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
