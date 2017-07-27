@@ -3154,7 +3154,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 2021.0, 417.0, 483.0, 698.0 ],
+						"rect" : [ 2021.0, 417.0, 307.0, 669.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3346,7 +3346,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 41.0, 110.0, 52.0, 22.0 ],
+									"patching_rect" : [ 41.0, 128.0, 52.0, 22.0 ],
 									"style" : "",
 									"text" : "r st_xyz"
 								}
