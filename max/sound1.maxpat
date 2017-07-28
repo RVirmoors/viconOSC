@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 967.0, 410.0, 1442.0, 888.0 ],
+		"rect" : [ 34.0, 76.0, 1886.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,19 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-141",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 54.0, 483.0, 60.0, 22.0 ],
+					"style" : "",
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-128",
 					"maxclass" : "newobj",
@@ -1038,14 +1051,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 41.5, 752.0, 44.0, 22.0 ],
-					"restore" : [ 159, 159 ],
+					"patching_rect" : [ 41.5, 752.0, 116.0, 22.0 ],
+					"restore" : [ 208, 208 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "pattr 7",
+					"text" : "pattr grain_distance",
 					"varname" : "grain_distance"
 				}
 
@@ -1885,14 +1898,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 258.0, 746.006042, 44.0, 22.0 ],
-					"restore" : [ 297 ],
+					"patching_rect" : [ 258.0, 746.006042, 115.0, 22.0 ],
+					"restore" : [ 123 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "pattr 6",
+					"text" : "pattr grain_duration",
 					"varname" : "grain_duration"
 				}
 
@@ -1904,14 +1917,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 1410.75, 758.0, 44.0, 22.0 ],
-					"restore" : [ 6253.991211 ],
+					"patching_rect" : [ 1410.75, 758.0, 55.0, 22.0 ],
+					"restore" : [ 711.859436 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "pattr 5",
+					"text" : "pattr out",
 					"varname" : "out"
 				}
 
@@ -1923,14 +1936,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 1314.5, 758.0, 44.0, 22.0 ],
-					"restore" : [ 5554.535156 ],
+					"patching_rect" : [ 1314.5, 758.0, 47.0, 22.0 ],
+					"restore" : [ 84.739235 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "pattr 4",
+					"text" : "pattr in",
 					"varname" : "in"
 				}
 
@@ -1972,14 +1985,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 817.0, 758.0, 44.0, 22.0 ],
+					"patching_rect" : [ 817.0, 758.0, 63.0, 22.0 ],
 					"restore" : [ 0.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "pattr 2",
+					"text" : "pattr pitch",
 					"varname" : "pitch"
 				}
 
@@ -2053,14 +2066,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 353.0, 746.006042, 44.0, 22.0 ],
-					"restore" : [ 512.0, 0.0, 1.0, 0.0, 0.0, 0, 74.312675, 0.768794, 0, 119.235176, 0.808808, 0, 158.695908, 0.894768, 0, 243.512192, 1.0, 0, 349.83963, 0.94605, 0, 387.30304, 0.797103, 0, 470.555084, 0.643257, 0, 512.0, 0.0, 0, "linear" ],
+					"patching_rect" : [ 374.0, 746.006042, 87.0, 22.0 ],
+					"restore" : [ 512.0, 0.0, 1.0, 0.0, 0.0, 0, 201.886185, 0.076923, 0, 210.21138, 0.435897, 0, 235.186996, 0.769231, 0, 264.325195, 1.0, 0, 305.951233, 0.307692, 0, 380.878052, 0.051282, 0, 512.0, 0.0, 0, "linear" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "pattr 1",
+					"text" : "pattr envelope",
 					"varname" : "envelope"
 				}
 
@@ -2069,29 +2082,21 @@
 				"box" : 				{
 					"autorestore" : "Sound1_Settings.json",
 					"id" : "obj-94",
-					"interp" : 					{
-						"envelope" : [ 4, 0.85 ],
-						"grain_duration" : [ 4, 0.85 ],
-						"in" : [ 4, 0.85 ],
-						"out" : [ 4, 0.85 ],
-						"pitch" : [ 4, 0.85 ],
-						"grain_distance" : [ 4, 0.85 ]
-					}
-,
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 664.0, 1172.006104, 73.0, 22.0 ],
+					"patching_rect" : [ 639.5, 1199.5, 89.0, 36.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1737, 961, 2515, 1132 ],
+						"client_rect" : [ 613, 507, 1349, 708 ],
 						"parameter_enable" : 0,
 						"storage_rect" : [ 583, 69, 1034, 197 ]
 					}
 ,
 					"style" : "",
-					"text" : "pattrstorage",
-					"varname" : "u194010260"
+					"text" : "pattrstorage @savemode 2",
+					"varname" : "u398009444"
 				}
 
 			}
@@ -4021,7 +4026,7 @@
 			}
 , 			{
 				"box" : 				{
-					"addpoints" : [ 0.0, 0.0, 0, 74.312675, 0.768794, 0, 119.235176, 0.808808, 0, 158.695908, 0.894768, 0, 243.512192, 1.0, 0, 349.83963, 0.94605, 0, 387.30304, 0.797103, 0, 470.555084, 0.643257, 0, 512.0, 0.0, 0 ],
+					"addpoints" : [ 0.0, 0.0, 0, 201.886185, 0.076923, 0, 210.21138, 0.435897, 0, 235.186996, 0.769231, 0, 264.325195, 1.0, 0, 305.951233, 0.307692, 0, 380.878052, 0.051282, 0, 512.0, 0.0, 0 ],
 					"bgcolor" : [ 0.8, 0.8, 0.8, 1.0 ],
 					"domain" : 512.0,
 					"gridcolor" : [ 0.5, 0.5, 0.5, 0.5 ],
@@ -4714,6 +4719,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-140", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-188", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-141", 0 ]
 				}
 
 			}
@@ -6276,7 +6290,61 @@
 				}
 
 			}
- ]
+ ],
+		"parameters" : 		{
+			"obj-81" : [ "live.drop", "live.drop", 0 ]
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "poly_D.maxpat",
+				"bootpath" : "~/viconOSC/max",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pan2.maxpat",
+				"bootpath" : "C:/ProgramData/Max 7/examples/spatialization/panning/lib",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "rchoose.maxpat",
+				"bootpath" : "C:/ProgramData/Max 7/examples/sampling/granular/lib",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "transratio.maxpat",
+				"bootpath" : "C:/ProgramData/Max 7/examples/max-tricks/notes-and-pitch/pitch-to-freq-ratio",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Sound1_Settings.json",
+				"bootpath" : "~/viconOSC/max",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "wfmodes.png",
+				"bootpath" : "C74:/media/max/picts",
+				"type" : "PNG ",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "wfknob.png",
+				"bootpath" : "C74:/media/max/picts",
+				"type" : "PNG ",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Quadrants.maxpat",
+				"bootpath" : "~/viconOSC/max",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
