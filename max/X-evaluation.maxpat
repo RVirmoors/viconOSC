@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 506.0, 493.0, 965.0, 830.0 ],
+		"rect" : [ 1544.0, 359.0, 965.0, 830.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -43,7 +43,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 859.0, 184.0, 24.0, 20.0 ],
-					"presentation_rect" : [ 859.0, 185.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "ms"
 				}
@@ -83,7 +82,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 660.0, 264.0, 187.0, 22.0 ],
-					"presentation_rect" : [ 659.0, 264.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -1158,7 +1156,7 @@
 					"cursor_shape" : "bar",
 					"cursor_size" : 3,
 					"cursor_visible" : 1,
-					"domain_bounds" : [ 0.0, 1.0 ],
+					"domain_bounds" : [ -0.0, 1.1 ],
 					"domainruler_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"domainruler_fgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"domainruler_grid" : 0,
@@ -1213,14 +1211,14 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.0,
 					"id" : "obj-63",
-					"linecount" : 10,
+					"linecount" : 8,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 50.0, 241.0, 118.0, 135.0 ],
+					"patching_rect" : [ 50.0, 241.0, 128.0, 110.0 ],
 					"style" : "",
-					"text" : "mubu.track decizie loglike @predef yes @samplerate 500 @matrixcols 3 @info gui \"interface multiwave, bounds -100. 0. , shape envelope, colormode rainbow\" @maxsize 30s"
+					"text" : "mubu.track decizie loglike @predef yes @samplerate 100 @matrixcols 3 @info gui \"interface multiwave, bounds -100. 0. , shape envelope, colormode rainbow\" @maxsize 30s"
 				}
 
 			}
