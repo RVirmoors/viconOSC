@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ -47.0, 168.0, 965.0, 830.0 ],
+		"rect" : [ 42.0, 84.0, 876.0, 914.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,31 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-26",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 534.0, 264.0, 57.0, 20.0 ],
+					"style" : "",
+					"text" : "bad data"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-24",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 495.0, 264.0, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "-60"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-37",
 					"maxclass" : "newobj",
@@ -542,7 +567,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 156.0, 118.0, 79.0, 50.0 ],
 					"style" : "",
-					"text" : "-588.969055 -32.854839 -567.422241"
+					"text" : "-5.78544 -29.028641 -31.354416"
 				}
 
 			}
@@ -1146,7 +1171,7 @@
 					"cursor_shape" : "bar",
 					"cursor_size" : 3,
 					"cursor_visible" : 1,
-					"domain_bounds" : [ 0.0, 2310.0 ],
+					"domain_bounds" : [ 0.0, 1.1 ],
 					"domainruler_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"domainruler_fgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"domainruler_grid" : 0,
@@ -1369,6 +1394,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-43", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-137", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1522,7 +1556,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "test",
+				"name" : "gest3",
 				"bootpath" : "~/viconOSC/evaluation",
 				"type" : "TEXT",
 				"implicit" : 1
