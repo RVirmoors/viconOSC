@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 840.0, 181.0, 1678.0, 1176.0 ],
+		"rect" : [ 1002.0, 84.0, 876.0, 914.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -445,6 +445,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 796.5, 79.428589, 85.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 501.5, -83.071411, 85.0, 20.0 ],
 					"style" : "",
 					"text" : "EVALUATION"
 				}
@@ -459,6 +461,8 @@
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 796.5, 105.428589, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 501.5, -57.071411, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -1673,6 +1677,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 1033.0, 212.928589, 62.0, 62.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 21.5, -84.5, 62.0, 62.0 ],
 					"style" : ""
 				}
 
@@ -2583,6 +2589,8 @@
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1720.0, 193.0, 101.0, 101.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 601.0, -11.5, 101.0, 101.0 ],
 					"setminmax" : [ 0.0, 1.0 ],
 					"setstyle" : 1,
 					"size" : 2,
@@ -2626,6 +2634,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1720.0, 33.5, 32.5, 21.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 601.0, -43.5, 32.5, 21.0 ],
 					"style" : "",
 					"text" : "train",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -2741,6 +2751,8 @@
 					"outputtimeselection" : 0,
 					"outputvalues" : 0,
 					"patching_rect" : [ 1077.5, 552.5, 565.0, 331.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 21.5, -11.5, 565.0, 331.0 ],
 					"rangeruler_grid" : 0,
 					"rangeruler_size" : 35,
 					"rangeruler_visible" : 0,
