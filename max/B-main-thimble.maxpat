@@ -162,9 +162,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 51.0, 647.0, 52.0, 50.0 ],
+					"patching_rect" : [ 57.0, 281.0, 54.0, 50.0 ],
 					"style" : "",
-					"text" : "1296. -617. 698."
+					"text" : "372. -124.5 753."
 				}
 
 			}
@@ -326,7 +326,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 539.5, 517.5, 50.0, 50.0 ],
 					"style" : "",
-					"text" : "1110. -595.5 1692.5"
+					"text" : "8. -351.5 1669."
 				}
 
 			}
@@ -709,8 +709,8 @@
 					"orientation" : 1,
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 129.0, 912.571411, 104.0, 49.0 ],
-					"presentation_rect" : [ 0.0, 0.0, 50.0, 49.0 ],
+					"patching_rect" : [ 129.0, 912.571411, 104.0, 35.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 50.0, 35.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~",
@@ -1052,7 +1052,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 152.0, 101.0, 52.0, 50.0 ],
 									"style" : "",
-									"text" : "1296. -617. 698."
+									"text" : "372. -124.5 753."
 								}
 
 							}
@@ -1066,7 +1066,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 340.0, 112.0, 50.0, 50.0 ],
 									"style" : "",
-									"text" : "1110. -595.5 1692.5"
+									"text" : "8. -351.5 1669."
 								}
 
 							}
@@ -1870,7 +1870,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1462.0, 258.928589, 53.0, 64.0 ],
 					"style" : "",
-					"text" : "-0.140984 -0.731759 -0.994"
+					"text" : "0.227492 -0.127547 -0.916"
 				}
 
 			}
@@ -1884,7 +1884,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1576.0, 221.0, 53.0, 50.0 ],
 					"style" : "",
-					"text" : "1110. -595.5 1692.5"
+					"text" : "8. -351.5 1669."
 				}
 
 			}
@@ -1898,7 +1898,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1426.0, 172.0, 55.0, 50.0 ],
 					"style" : "",
-					"text" : "1296. -617. 698."
+					"text" : "372. -124.5 753."
 				}
 
 			}
@@ -2042,7 +2042,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 691.0, 474.0, 69.0, 50.0 ],
 					"style" : "",
-					"text" : "-0.140984 -0.731759 -0.994"
+					"text" : "0.227492 -0.127547 -0.916"
 				}
 
 			}
@@ -2276,14 +2276,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
-									"linecount" : 5,
+									"linecount" : 6,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 152.0, 101.0, 35.0, 64.0 ],
 									"style" : "",
-									"text" : "1296. -617. 698."
+									"text" : "372. -124.5 753."
 								}
 
 							}
@@ -2297,7 +2297,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 340.0, 112.0, 50.0, 50.0 ],
 									"style" : "",
-									"text" : "1110. -595.5 1692.5"
+									"text" : "8. -351.5 1669."
 								}
 
 							}
@@ -3109,7 +3109,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 643.0, 121.5, 55.0, 50.0 ],
 					"style" : "",
-					"text" : "1296. -617. 698."
+					"text" : "372. -124.5 753."
 				}
 
 			}
@@ -5335,17 +5335,17 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-3.1::obj-84::obj-81" : [ "live.drop", "live.drop", 0 ],
 			"obj-3.6::obj-84::obj-81" : [ "live.drop[5]", "live.drop", 0 ],
-			"obj-3.4::obj-84::obj-81" : [ "live.drop[3]", "live.drop", 0 ],
-			"obj-15" : [ "live.gain~", "live.gain~", 0 ],
 			"obj-3.2::obj-84::obj-81" : [ "live.drop[1]", "live.drop", 0 ],
-			"obj-3.10::obj-84::obj-81" : [ "live.drop[9]", "live.drop", 0 ],
+			"obj-3.4::obj-84::obj-81" : [ "live.drop[3]", "live.drop", 0 ],
+			"obj-3.9::obj-84::obj-81" : [ "live.drop[8]", "live.drop", 0 ],
+			"obj-3.1::obj-84::obj-81" : [ "live.drop", "live.drop", 0 ],
 			"obj-3.7::obj-84::obj-81" : [ "live.drop[6]", "live.drop", 0 ],
-			"obj-3.5::obj-84::obj-81" : [ "live.drop[4]", "live.drop", 0 ],
 			"obj-3.3::obj-84::obj-81" : [ "live.drop[2]", "live.drop", 0 ],
-			"obj-3.8::obj-84::obj-81" : [ "live.drop[7]", "live.drop", 0 ],
-			"obj-3.9::obj-84::obj-81" : [ "live.drop[8]", "live.drop", 0 ]
+			"obj-3.5::obj-84::obj-81" : [ "live.drop[4]", "live.drop", 0 ],
+			"obj-15" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-3.10::obj-84::obj-81" : [ "live.drop[9]", "live.drop", 0 ],
+			"obj-3.8::obj-84::obj-81" : [ "live.drop[7]", "live.drop", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
