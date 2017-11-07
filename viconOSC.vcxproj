@@ -85,7 +85,7 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(ProjectDir)..\Vicon\sdk-x64;$(ProjectDir)..\oscpack_1_1_0;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)..\Vicon\sdk-x64;$(LibraryPath)</LibraryPath>
-    <ReferencePath>C:\Users\Vicon\Documents\viconOSC;$(ReferencePath)</ReferencePath>
+    <ReferencePath>$(ProjectDir);$(ReferencePath)</ReferencePath>
     <SourcePath>C:\Users\Vicon\Documents\viconOSC;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
