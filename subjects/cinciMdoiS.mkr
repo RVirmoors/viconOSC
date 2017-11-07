@@ -1,0 +1,15 @@
+!MKR#2
+[Display]
+capB
+cot
+capF
+mana1
+manaT
+
+capB,cot
+capB,capF
+cot,capF
+cot,mana1
+cot,manaT
+mana1,manaT
+
