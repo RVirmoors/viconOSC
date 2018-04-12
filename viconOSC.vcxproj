@@ -156,7 +156,9 @@
   <ItemGroup>
     <ClCompile Include="..\oscpack_1_1_0\ip\IpEndpointName.cpp" />
     <ClCompile Include="..\oscpack_1_1_0\ip\win32\NetworkingUtils.cpp" />
-    <ClCompile Include="..\oscpack_1_1_0\ip\win32\UdpSocket.cpp" />
+    <ClCompile Include="..\oscpack_1_1_0\ip\win32\UdpSocket.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\oscpack_1_1_0\osc\OscOutboundPacketStream.cpp" />
     <ClCompile Include="..\oscpack_1_1_0\osc\OscTypes.cpp" />
     <ClCompile Include="stdafx.cpp">

@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 578.0, 406.0, 1084.0, 839.0 ],
+		"rect" : [ 469.0, 333.0, 1084.0, 839.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -878,7 +878,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 689.0, 151.0, 50.0, 22.0 ],
+					"patching_rect" : [ 623.0, 155.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -2941,21 +2941,21 @@
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
-									"timestretch" : [ 0 ],
-									"followglobaltempo" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"basictuning" : [ 440 ],
 									"originaltempo" : [ 120.0 ],
-									"speed" : [ 1.0 ],
-									"pitchcorrection" : [ 0 ],
-									"play" : [ 0 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"formant" : [ 1.0 ],
-									"quality" : [ "basic" ],
-									"mode" : [ "basic" ],
-									"originallengthms" : [ 0.0 ],
 									"slurtime" : [ 0.0 ],
-									"pitchshift" : [ 1.0 ]
+									"timestretch" : [ 0 ],
+									"pitchcorrection" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"mode" : [ "basic" ],
+									"quality" : [ "basic" ],
+									"speed" : [ 1.0 ],
+									"formantcorrection" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"play" : [ 0 ],
+									"basictuning" : [ 440 ],
+									"originallengthms" : [ 0.0 ]
 								}
 
 							}
@@ -2965,21 +2965,21 @@
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
-									"timestretch" : [ 0 ],
-									"followglobaltempo" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"basictuning" : [ 440 ],
 									"originaltempo" : [ 120.0 ],
-									"speed" : [ 1.0 ],
-									"pitchcorrection" : [ 0 ],
-									"play" : [ 0 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"formant" : [ 1.0 ],
-									"quality" : [ "basic" ],
-									"mode" : [ "basic" ],
-									"originallengthms" : [ 0.0 ],
 									"slurtime" : [ 0.0 ],
-									"pitchshift" : [ 1.0 ]
+									"timestretch" : [ 0 ],
+									"pitchcorrection" : [ 0 ],
+									"pitchshift" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"mode" : [ "basic" ],
+									"quality" : [ "basic" ],
+									"speed" : [ 1.0 ],
+									"formantcorrection" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"play" : [ 0 ],
+									"basictuning" : [ 440 ],
+									"originallengthms" : [ 0.0 ]
 								}
 
 							}

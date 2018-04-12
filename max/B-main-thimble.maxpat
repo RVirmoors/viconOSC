@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 76.0, 1852.0, 930.0 ],
+		"rect" : [ 42.0, 84.0, 1852.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 2343.0, 866.0, 59.0, 29.0 ],
+					"patching_rect" : [ 2343.0, 866.0, 60.0, 29.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 536.0, 126.0, 103.0, 29.0 ],
 					"style" : ""
@@ -1159,7 +1159,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1720.0, 416.5, 50.0, 50.0 ],
+					"patching_rect" : [ 1720.0, 416.5, 53.0, 50.0 ],
 					"style" : "",
 					"text" : "0. -100. -100. -100."
 				}
@@ -1425,7 +1425,7 @@
 					"outlettype" : [ "bang", "int" ],
 					"patching_rect" : [ 997.0, 105.428589, 34.0, 22.0 ],
 					"style" : "",
-					"text" : "t b 0"
+					"text" : "t b 1"
 				}
 
 			}
@@ -2845,7 +2845,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 401.5, 312.0, 85.0, 22.0 ],
 					"style" : "",
-					"text" : "loadmess 125"
+					"text" : "loadmess 256"
 				}
 
 			}
@@ -4174,7 +4174,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 393.0, 275.0, 110.0, 34.0 ],
 					"style" : "",
-					"text" : "Test hand-object distance"
+					"text" : "Test hand-object distance 125"
 				}
 
 			}
@@ -4758,7 +4758,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-104",
-									"int" : 1,
 									"maxclass" : "gswitch",
 									"numinlets" : 3,
 									"numoutlets" : 1,
@@ -4787,6 +4786,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-91",
+									"int" : 1,
 									"maxclass" : "gswitch",
 									"numinlets" : 3,
 									"numoutlets" : 1,
@@ -5766,28 +5766,10 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-32", 0 ],
-					"disabled" : 0,
-					"hidden" : 1,
-					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-18", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-19", 0 ]
 				}
 
 			}
@@ -5977,24 +5959,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-31", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-34", 0 ],
-					"disabled" : 0,
-					"hidden" : 1,
-					"source" : [ "obj-32", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-94", 0 ],
-					"disabled" : 0,
-					"hidden" : 1,
-					"source" : [ "obj-32", 0 ]
 				}
 
 			}
@@ -6441,6 +6405,42 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-32", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-29", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-34", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-32", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-94", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-32", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-51", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -6450,17 +6450,17 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-3.2::obj-84::obj-81" : [ "live.drop[3]", "live.drop", 0 ],
-			"obj-3.1::obj-84::obj-81" : [ "live.drop", "live.drop", 0 ],
-			"obj-3.10::obj-84::obj-81" : [ "live.drop[10]", "live.drop", 0 ],
-			"obj-3.8::obj-84::obj-81" : [ "live.drop[8]", "live.drop", 0 ],
 			"obj-15" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-3.8::obj-84::obj-81" : [ "live.drop[8]", "live.drop", 0 ],
+			"obj-3.10::obj-84::obj-81" : [ "live.drop[10]", "live.drop", 0 ],
 			"obj-3.6::obj-84::obj-81" : [ "live.drop[6]", "live.drop", 0 ],
-			"obj-3.3::obj-84::obj-81" : [ "live.drop[2]", "live.drop", 0 ],
 			"obj-3.4::obj-84::obj-81" : [ "live.drop[4]", "live.drop", 0 ],
-			"obj-3.9::obj-84::obj-81" : [ "live.drop[9]", "live.drop", 0 ],
+			"obj-3.2::obj-84::obj-81" : [ "live.drop[3]", "live.drop", 0 ],
 			"obj-3.7::obj-84::obj-81" : [ "live.drop[7]", "live.drop", 0 ],
-			"obj-3.5::obj-84::obj-81" : [ "live.drop[5]", "live.drop", 0 ]
+			"obj-3.1::obj-84::obj-81" : [ "live.drop", "live.drop", 0 ],
+			"obj-3.9::obj-84::obj-81" : [ "live.drop[9]", "live.drop", 0 ],
+			"obj-3.5::obj-84::obj-81" : [ "live.drop[5]", "live.drop", 0 ],
+			"obj-3.3::obj-84::obj-81" : [ "live.drop[2]", "live.drop", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
