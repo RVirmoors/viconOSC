@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 156.0, 158.0, 354.0, 839.0 ],
+		"rect" : [ 481.0, 160.0, 1093.0, 839.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -296,7 +296,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 194.666672, 202.666672, 157.0, 36.0 ],
 									"style" : "",
-									"text" : "224. 718.5 1523.5 155. 563. 1294."
+									"text" : "19. -1246. 1151. 26. -1302. 692."
 								}
 
 							}
@@ -700,7 +700,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 118.0, 198.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "23891"
+									"text" : "37508"
 								}
 
 							}
@@ -1065,7 +1065,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 769.0, 312.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "31586."
+									"text" : "3029."
 								}
 
 							}
@@ -1688,7 +1688,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 132.0, 421.0, 50.0, 36.0 ],
 													"style" : "",
-													"text" : "99554.046875"
+													"text" : "260.232727"
 												}
 
 											}
@@ -2942,21 +2942,21 @@
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
-									"originallength" : [ 0.0, "ticks" ],
-									"timestretch" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"pitchcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"pitchshift" : [ 1.0 ],
-									"play" : [ 0 ],
-									"basictuning" : [ 440 ],
 									"quality" : [ "basic" ],
-									"mode" : [ "basic" ],
+									"originallength" : [ 0.0, "ticks" ],
+									"pitchshift" : [ 1.0 ],
+									"slurtime" : [ 0.0 ],
 									"speed" : [ 1.0 ],
+									"play" : [ 0 ],
+									"timestretch" : [ 0 ],
+									"basictuning" : [ 440 ],
+									"formantcorrection" : [ 0 ],
 									"originaltempo" : [ 120.0 ],
+									"mode" : [ "basic" ],
+									"pitchcorrection" : [ 0 ],
 									"followglobaltempo" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"slurtime" : [ 0.0 ]
+									"formant" : [ 1.0 ],
+									"originallengthms" : [ 0.0 ]
 								}
 
 							}
@@ -2966,21 +2966,21 @@
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
-									"originallength" : [ 0.0, "ticks" ],
-									"timestretch" : [ 0 ],
-									"formantcorrection" : [ 0 ],
-									"pitchcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"pitchshift" : [ 1.0 ],
-									"play" : [ 0 ],
-									"basictuning" : [ 440 ],
 									"quality" : [ "basic" ],
-									"mode" : [ "basic" ],
+									"originallength" : [ 0.0, "ticks" ],
+									"pitchshift" : [ 1.0 ],
+									"slurtime" : [ 0.0 ],
 									"speed" : [ 1.0 ],
+									"play" : [ 0 ],
+									"timestretch" : [ 0 ],
+									"basictuning" : [ 440 ],
+									"formantcorrection" : [ 0 ],
 									"originaltempo" : [ 120.0 ],
+									"mode" : [ "basic" ],
+									"pitchcorrection" : [ 0 ],
 									"followglobaltempo" : [ 0 ],
-									"originallengthms" : [ 0.0 ],
-									"slurtime" : [ 0.0 ]
+									"formant" : [ 1.0 ],
+									"originallengthms" : [ 0.0 ]
 								}
 
 							}
@@ -3076,7 +3076,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 341.0, 239.0, 50.0, 49.0 ],
 									"style" : "",
-									"text" : "224. 718.5 1523.5"
+									"text" : "19. -1246. 1151."
 								}
 
 							}
@@ -3090,7 +3090,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 255.0, 282.0, 50.0, 49.0 ],
 									"style" : "",
-									"text" : "224. 718.5 1523.5"
+									"text" : "19. -1246. 1151."
 								}
 
 							}
@@ -3588,7 +3588,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 341.0, 239.0, 96.0, 22.0 ],
 									"style" : "",
-									"text" : "162. 557. 1293."
+									"text" : "33. -1308. 690."
 								}
 
 							}
@@ -3602,7 +3602,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 255.0, 282.0, 50.0, 50.0 ],
 									"style" : "",
-									"text" : "162. 557. 1293."
+									"text" : "33. -1308. 690."
 								}
 
 							}
@@ -4138,7 +4138,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 11.0, 325.0, 115.0, 36.0 ],
 					"style" : "",
-					"text" : "/stanga 162. 557. 1293."
+					"text" : "/stanga 33. -1308. 690."
 				}
 
 			}
