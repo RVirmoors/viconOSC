@@ -704,10 +704,11 @@ int main(int argc, char* argv[])
 						/*
 						p << osc::BeginBundleImmediate
 							<< osc::BeginMessage("/markers")
-							<< (osc::int32)SubjectIndex << (osc::int32)MarkerIndex << m_x << m_z << m_y << osc::EndMessage
-							<< osc::EndBundle;
+							<< (osc::int32)SubjectIndex << (osc::int32)MarkerIndex << m_x << m_z << m_y 
+							<< (MarkerName.c_str()) << osc::EndMessage
+							<< osc::EndBundle; */
 
-						transmitSocket.Send(p.Data(), p.Size()); */
+						transmitSocket.Send(p.Data(), p.Size()); 
 
 						m_x[MarkerIndex] = (osc::int32)_Output_GetMarkerGlobalTranslation.Translation[0];
 						m_y[MarkerIndex] = (osc::int32)_Output_GetMarkerGlobalTranslation.Translation[1];
@@ -725,6 +726,10 @@ int main(int argc, char* argv[])
 			char buffer[OUTPUT_BUFFER_SIZE];
 			osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
 
+			// 0, 2 = head
+			// 1, 3 = elbow
+			// 4, 5 = hand
+
 			if (!m_x[0]) m_x[0] = m_x[2];
 			if (!m_x[2]) m_x[2] = m_x[0];
 			if (!m_y[0]) m_y[0] = m_y[2];
@@ -739,14 +744,14 @@ int main(int argc, char* argv[])
 			if (!m_z[1]) m_z[1] = m_z[2];
 			if (!m_z[2]) m_z[2] = m_z[1];*/
 
-			if (!m_x[3]) m_x[3] = m_x[4];
-			if (!m_x[4]) m_x[4] = m_x[3];
-			if (!m_y[3]) m_y[3] = m_y[4];
-			if (!m_y[4]) m_y[4] = m_y[3];
-			if (!m_z[3]) m_z[3] = m_z[4];
-			if (!m_z[4]) m_z[4] = m_z[3];
+			if (!m_x[5]) m_x[5] = m_x[4];
+			if (!m_x[4]) m_x[4] = m_x[5];
+			if (!m_y[5]) m_y[5] = m_y[4];
+			if (!m_y[4]) m_y[4] = m_y[5];
+			if (!m_z[5]) m_z[5] = m_z[4];
+			if (!m_z[4]) m_z[4] = m_z[5];
 
-			if (m_x[0] && m_x[3] ) {
+			if (m_x[0] && m_x[5] ) {
 				p << osc::BeginBundleImmediate
 					<< osc::BeginMessage("/markers/cap")
 					<< (m_x[0] + m_x[2]) / 2 << (m_y[0] + m_y[2]) / 2 << (m_z[0] + m_z[2]) / 2 << osc::EndMessage;
@@ -755,9 +760,9 @@ int main(int argc, char* argv[])
 				//	<< (m_x[1] + m_x[2]) /2 << (m_y[1] + m_y[2]) / 2 << (m_z[1] + m_z[2]) / 2 << osc::EndMessage;
 
 				p << osc::BeginMessage("/markers/stanga")
-					<< (m_x[4] + m_x[3]) / 2 << (m_y[4] + m_y[3]) / 2 << (m_z[4] + m_z[3]) / 2 << osc::EndMessage;
+					<< (m_x[4] + m_x[5]) / 2 << (m_y[4] + m_y[5]) / 2 << (m_z[4] + m_z[5]) / 2 << osc::EndMessage;
 
-				float dist = pow(m_x[3] - m_x[4], 2) + pow(m_y[3] - m_y[4], 2) + pow(m_z[3] - m_z[4], 2);
+				float dist = pow(m_x[5] - m_x[4], 2) + pow(m_y[5] - m_y[4], 2) + pow(m_z[5] - m_z[4], 2);
 
 				p << osc::BeginMessage("/rec/dist")	<< dist
 					<< osc::EndMessage;
