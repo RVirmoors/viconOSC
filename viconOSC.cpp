@@ -180,8 +180,6 @@ int main(int argc, char* argv[])
 	// define OSC send target
 	UdpTransmitSocket transmitSocket(IpEndpointName("localhost", 444));
 
-
-
 	// Program options
 
 	std::string HostName = "localhost:801";
