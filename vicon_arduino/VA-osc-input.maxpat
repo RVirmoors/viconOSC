@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1134.0, 667.0, 813.0, 640.0 ],
+		"rect" : [ 702.0, 84.0, 782.0, 1274.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,474 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-74",
+					"maxclass" : "multislider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 670.0, 254.0, 161.5, 119.0 ],
+					"presentation_rect" : [ 759.75, 1014.0, 0.0, 0.0 ],
+					"setminmax" : [ -17348.0, 5961.0 ],
+					"setstyle" : 1,
+					"size" : 3,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-73",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 577.0, 220.0, 144.75, 22.0 ],
+					"style" : "",
+					"text" : "16 -35 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-69",
+					"maxclass" : "multislider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 497.75, 1058.0, 161.5, 119.0 ],
+					"presentation_rect" : [ 752.0, 1097.0, 0.0, 0.0 ],
+					"setminmax" : [ -0.529, 0.431 ],
+					"setstyle" : 1,
+					"size" : 3,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-70",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 5,
+					"outlettype" : [ "", "float", "int", "int", "" ],
+					"patching_rect" : [ 497.75, 976.0, 129.0, 22.0 ],
+					"style" : "",
+					"text" : "mubu.play vicon accel"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-68",
+					"maxclass" : "multislider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 672.75, 1058.0, 161.5, 119.0 ],
+					"presentation_rect" : [ 830.0, 1055.0, 0.0, 0.0 ],
+					"setminmax" : [ -17348.0, 5961.0 ],
+					"setstyle" : 1,
+					"size" : 3,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 672.75, 913.0, 20.0, 20.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-67",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 672.75, 938.0, 49.0, 22.0 ],
+					"style" : "",
+					"text" : "play $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-66",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 5,
+					"outlettype" : [ "", "float", "int", "int", "" ],
+					"patching_rect" : [ 672.75, 976.0, 141.0, 22.0 ],
+					"style" : "",
+					"text" : "mubu.play arduino accel"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-65",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 820.0, 552.0, 48.0, 22.0 ],
+					"presentation_rect" : [ 820.0, 552.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "writeall"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-64",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 366.0, 609.0, 48.0, 22.0 ],
+					"style" : "",
+					"text" : "writeall"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-62",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 108.5, 782.0, 67.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-60",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 129.0, 714.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-58",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "" ],
+					"patching_rect" : [ 108.5, 750.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "timer"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-57",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 562.0, 636.0, 49.0, 22.0 ],
+					"style" : "",
+					"text" : "clearall"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-50",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 6.5, 847.5, 175.0, 64.0 ],
+					"style" : "",
+					"text" : "mubu.track vicon accel @samplerate 100 @maxsize 10s @predef yes @matrixcols 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.38, 0.38, 0.38, 1.0 ],
+					"bgcolor2" : [ 0.3, 0.3, 0.3, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+					"bgfillcolor_color1" : [ 0.38, 0.38, 0.38, 1.0 ],
+					"bgfillcolor_color2" : [ 0.3, 0.3, 0.3, 1.0 ],
+					"bgfillcolor_proportion" : 0.39,
+					"bgfillcolor_type" : "gradient",
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"gradient" : 1,
+					"id" : "obj-51",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 6.5, 759.0, 61.0, 22.0 ],
+					"presentation_rect" : [ -39.0, 755.5, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "record $1",
+					"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-52",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 108.5, 664.0, 20.0, 20.0 ],
+					"presentation_rect" : [ 24.5, 755.5, 0.0, 0.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-53",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 34.5, 810.5, 141.0, 22.0 ],
+					"style" : "",
+					"text" : "mubu.record vicon accel"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"alignviewbounds" : 0,
+					"autobounds" : 0,
+					"autoupdate" : 120.0,
+					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bufferchooser_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bufferchooser_fgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bufferchooser_position" : 1,
+					"bufferchooser_shape" : "buttons",
+					"bufferchooser_size" : 15,
+					"bufferchooser_visible" : 1,
+					"cursor_color" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"cursor_followmouse" : 0,
+					"cursor_position" : -1.0,
+					"cursor_shape" : "bar",
+					"cursor_size" : 3,
+					"cursor_visible" : 1,
+					"domain_bounds" : [ 0.0, 9990.0 ],
+					"domainruler_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"domainruler_fgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"domainruler_grid" : 0,
+					"domainruler_position" : 0,
+					"domainruler_size" : 15,
+					"domainruler_unit" : 0,
+					"domainruler_visible" : 1,
+					"domainscrollbar_color" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"domainscrollbar_size" : 10,
+					"domainscrollbar_visible" : 1,
+					"embed" : 0,
+					"externalfiles" : 1,
+					"id" : "obj-54",
+					"layout" : 0,
+					"maxclass" : "imubu",
+					"name" : "vicon",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"opacity" : 0.0,
+					"opacityprogressive" : 0,
+					"orientation" : 0,
+					"outlettype" : [ "" ],
+					"outputkeys" : 0,
+					"outputmouse" : 0,
+					"outputselection" : 0,
+					"outputtimeselection" : 0,
+					"outputvalues" : 0,
+					"patching_rect" : [ 193.5, 641.5, 330.0, 263.0 ],
+					"presentation_rect" : [ 193.5, 640.0, 0.0, 0.0 ],
+					"rangeruler_grid" : 0,
+					"rangeruler_size" : 30,
+					"rangeruler_visible" : 1,
+					"region_bounds" : [ 0.0, 0.0 ],
+					"region_color" : [ 0.8, 0.7, 0.7, 1.0 ],
+					"region_visible" : 1,
+					"split_color" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"split_size" : 2,
+					"split_visible" : 1,
+					"tabs_position" : 0,
+					"tabs_size" : 20,
+					"tabs_visible" : 1,
+					"toolbar_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"toolbar_position" : 1,
+					"toolbar_size" : 30,
+					"toolbar_visible" : 1,
+					"useplaceholders" : 1,
+					"windresize" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-49",
+					"linecount" : 2,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 649.0, 838.0, 260.0, 36.0 ],
+					"style" : "",
+					"text" : "mubu.track arduino accel @samplerate 50 @maxsize 10s @predef yes @matrixcols 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.38, 0.38, 0.38, 1.0 ],
+					"bgcolor2" : [ 0.3, 0.3, 0.3, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+					"bgfillcolor_color1" : [ 0.38, 0.38, 0.38, 1.0 ],
+					"bgfillcolor_color2" : [ 0.3, 0.3, 0.3, 1.0 ],
+					"bgfillcolor_proportion" : 0.39,
+					"bgfillcolor_type" : "gradient",
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"gradient" : 1,
+					"id" : "obj-47",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 680.0, 755.5, 61.0, 22.0 ],
+					"style" : "",
+					"text" : "record $1",
+					"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-48",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 743.5, 755.5, 20.0, 20.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-44",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 656.0, 804.0, 153.0, 22.0 ],
+					"style" : "",
+					"text" : "mubu.record arduino accel"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"alignviewbounds" : 0,
+					"autobounds" : 0,
+					"autoupdate" : 120.0,
+					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bufferchooser_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bufferchooser_fgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bufferchooser_position" : 1,
+					"bufferchooser_shape" : "buttons",
+					"bufferchooser_size" : 15,
+					"bufferchooser_visible" : 1,
+					"cursor_color" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"cursor_followmouse" : 0,
+					"cursor_position" : -1.0,
+					"cursor_shape" : "bar",
+					"cursor_size" : 3,
+					"cursor_visible" : 1,
+					"domain_bounds" : [ 0.0, 9980.0 ],
+					"domainruler_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"domainruler_fgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"domainruler_grid" : 0,
+					"domainruler_position" : 0,
+					"domainruler_size" : 15,
+					"domainruler_unit" : 0,
+					"domainruler_visible" : 1,
+					"domainscrollbar_color" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"domainscrollbar_size" : 10,
+					"domainscrollbar_visible" : 1,
+					"embed" : 0,
+					"externalfiles" : 1,
+					"id" : "obj-43",
+					"layout" : 0,
+					"maxclass" : "imubu",
+					"name" : "arduino",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"opacity" : 0.0,
+					"opacityprogressive" : 0,
+					"orientation" : 0,
+					"outlettype" : [ "" ],
+					"outputkeys" : 0,
+					"outputmouse" : 0,
+					"outputselection" : 0,
+					"outputtimeselection" : 0,
+					"outputvalues" : 0,
+					"patching_rect" : [ 912.5, 640.0, 330.0, 263.0 ],
+					"rangeruler_grid" : 0,
+					"rangeruler_size" : 30,
+					"rangeruler_visible" : 1,
+					"region_bounds" : [ 0.0, 0.0 ],
+					"region_color" : [ 0.8, 0.7, 0.7, 1.0 ],
+					"region_visible" : 1,
+					"split_color" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"split_size" : 2,
+					"split_visible" : 1,
+					"tabs_position" : 0,
+					"tabs_size" : 20,
+					"tabs_visible" : 1,
+					"toolbar_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"toolbar_position" : 1,
+					"toolbar_size" : 30,
+					"toolbar_visible" : 1,
+					"useplaceholders" : 1,
+					"windresize" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-41",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -46,7 +514,7 @@
 					"patching_rect" : [ 46.0, 444.0, 208.0, 22.0 ],
 					"presentation_rect" : [ 49.0, 437.0, 0.0, 0.0 ],
 					"style" : "",
-					"text" : "-0.155183 -0.165282 0.077827"
+					"text" : "-0.013387 0.319948 -0.144534"
 				}
 
 			}
@@ -60,6 +528,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 21.0, 470.0, 129.0, 150.0 ],
 					"presentation_rect" : [ 10.0, 473.0, 0.0, 0.0 ],
+					"setminmax" : [ -3.0, 3.0 ],
 					"setstyle" : 1,
 					"size" : 3,
 					"style" : ""
@@ -113,8 +582,9 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 562.0, 366.0, 129.0, 150.0 ],
+					"patching_rect" : [ 562.0, 366.0, 195.0, 245.0 ],
 					"presentation_rect" : [ 553.0, 370.0, 0.0, 0.0 ],
+					"setminmax" : [ -0.2, 0.2 ],
 					"setstyle" : 1,
 					"size" : 3,
 					"style" : ""
@@ -152,11 +622,11 @@
 					"id" : "obj-26",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 407.0, 228.0, 103.0, 22.0 ],
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 407.0, 173.0, 133.0, 22.0 ],
 					"style" : "",
-					"text" : "OSC-route /accel"
+					"text" : "OSC-route /accel /gyro"
 				}
 
 			}
@@ -277,7 +747,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 407.0, 366.0, 129.0, 150.0 ],
+					"patching_rect" : [ 366.0, 316.0, 129.0, 150.0 ],
 					"setstyle" : 1,
 					"size" : 3,
 					"style" : ""
@@ -295,7 +765,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 175.0, 494.0, 270.0, 102.0 ],
-					"text" : "/modosc/points/marker/pos : [708, -273, 1656],\n/modosc/points/marker/acc : [0.302408, -0.130506, -0.0712801],\n/modosc/points/marker/acc_mag : 0.336991",
+					"text" : "/modosc/points/marker/pos : [494, -2283, 1079],\n/modosc/points/marker/acc : [-0.0133867, 0.319948, -0.144534],\n/modosc/points/marker/acc_mag : 0.351335",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -346,7 +816,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 46.0, 302.0, 95.0, 22.0 ],
 					"style" : "",
-					"text" : "706 -275 1657"
+					"text" : "494 -2283 1079"
 				}
 
 			}
@@ -487,6 +957,33 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-44", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-73", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-26", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-74", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-26", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -568,6 +1065,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-53", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-5", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -577,10 +1083,172 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-44", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-47", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-47", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-48", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-53", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-51", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-48", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-52", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-51", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-52", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-60", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-52", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-43", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-57", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-54", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-57", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-62", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-58", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-60", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-60", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-54", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-64", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-43", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-65", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-68", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-66", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-66", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-67", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-70", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-67", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-67", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-69", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-70", 0 ]
 				}
 
 			}
@@ -658,6 +1326,22 @@
 			}
 , 			{
 				"name" : "o.var.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
+				"type" : "iLaF"
+			}
+, 			{
+				"name" : "mubu.mxe",
 				"type" : "iLaF"
 			}
  ],
