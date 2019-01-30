@@ -1,9 +1,10 @@
-// viconOSC.cpp : Defines the entry point for the console application.
+// viconArduinoOSC.cpp : Send marker data to Max for comparison w/ Arduino data
 //
 
 #include "osc/OscOutboundPacketStream.h"
 #include "ip/UdpSocket.h"
 #define OUTPUT_BUFFER_SIZE 1024
+
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -18,8 +19,9 @@
 
 #include "Client.h"
 
+#ifdef _MSC_VER
 #define _CRT_SECURE_NO_WARNINGS
-
+#endif
 #include <iostream>
 #include <fstream>
 #include <cassert>
@@ -304,26 +306,26 @@ int main(int argc, char* argv[])
 #ifdef WIN32
 			Sleep(1000);
 #else
-			Sleep(1);
+			sleep(1);
 #endif
 		}
 		std::cout << std::endl;
 
 		// Enable some different data types
-		//		MyClient.EnableSegmentData();
+		MyClient.EnableSegmentData();
 		MyClient.EnableMarkerData();
-		//		MyClient.EnableUnlabeledMarkerData();
-		//		MyClient.EnableDeviceData();
-		/*	if (bReadCentroids)
+		MyClient.EnableUnlabeledMarkerData();
+		MyClient.EnableDeviceData();
+		if (bReadCentroids)
 		{
-		MyClient.EnableCentroidData();
-		}*/
+			MyClient.EnableCentroidData();
+		}
 
-		//		std::cout << "Segment Data Enabled: " << Adapt(MyClient.IsSegmentDataEnabled().Enabled) << std::endl;
+		std::cout << "Segment Data Enabled: " << Adapt(MyClient.IsSegmentDataEnabled().Enabled) << std::endl;
 		std::cout << "Marker Data Enabled: " << Adapt(MyClient.IsMarkerDataEnabled().Enabled) << std::endl;
-		//		std::cout << "Unlabeled Marker Data Enabled: " << Adapt(MyClient.IsUnlabeledMarkerDataEnabled().Enabled) << std::endl;
-		//		std::cout << "Device Data Enabled: " << Adapt(MyClient.IsDeviceDataEnabled().Enabled) << std::endl;
-		//		std::cout << "Centroid Data Enabled: " << Adapt(MyClient.IsCentroidDataEnabled().Enabled) << std::endl;
+		std::cout << "Unlabeled Marker Data Enabled: " << Adapt(MyClient.IsUnlabeledMarkerDataEnabled().Enabled) << std::endl;
+		std::cout << "Device Data Enabled: " << Adapt(MyClient.IsDeviceDataEnabled().Enabled) << std::endl;
+		std::cout << "Centroid Data Enabled: " << Adapt(MyClient.IsCentroidDataEnabled().Enabled) << std::endl;
 
 		// Set the streaming mode
 		//MyClient.SetStreamMode( ViconDataStreamSDK::CPP::StreamMode::ClientPull );
@@ -366,7 +368,7 @@ int main(int argc, char* argv[])
 #endif
 		{
 			// Get a frame
-			//			output_stream << "Waiting for new frame...";
+//			output_stream << "Waiting for new frame...";
 			while (MyClient.GetFrame().Result != Result::Success)
 			{
 				// Sleep a little so that we don't lumber the CPU with a busy poll
@@ -378,168 +380,48 @@ int main(int argc, char* argv[])
 
 				output_stream << ".";
 			}
-			//			output_stream << std::endl;
-			/*if (++Counter == FrameRateWindow)
-			{
-			clock_t Now = clock();
-			double FrameRate = (double)(FrameRateWindow * CLOCKS_PER_SEC) / (double)(Now - LastTime);
-			if (!LogFile.empty())
-			{
-			time_t rawtime;
-			struct tm * timeinfo = NULL;
-			time(&rawtime);
-			//timeinfo = localtime(&rawtime);
-			#ifdef WIN32
-			localtime_s(timeinfo, &rawtime);
-			#else
-			//localtime_r(&rawtime, timeinfo);
-			#endif
 
-			#ifdef WIN32
-			char str[26];
-			ofs << "Frame rate = " << FrameRate << " at " << asctime_s(str, 26, timeinfo) << std::endl;
-			#else
-			ofs << "Frame rate = " << FrameRate << " at " << asctime(timeinfo) << std::endl;
-			#endif
-			}
-
-			LastTime = Now;
-			Counter = 0;
-			}*/
-
-			// Get the frame number
-			//		Output_GetFrameNumber _Output_GetFrameNumber = MyClient.GetFrameNumber();
-			//		output_stream << "Frame Number: " << _Output_GetFrameNumber.FrameNumber << std::endl;
-
-			/*	char buffer[OUTPUT_BUFFER_SIZE];
-			osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
-
-			p << osc::BeginBundleImmediate
-			<< osc::BeginMessage("FrameNumber")
-			<< true << (osc::int32)_Output_GetFrameNumber.FrameNumber << osc::EndMessage
-			<< osc::EndBundle;
-
-			transmitSocket.Send(p.Data(), p.Size());
-			*/
-			/*
-			if (EnableHapticTest == true)
-			{
-			for (size_t i = 0; i < HapticOnList.size(); ++i)
-			{
-			if (Counter % 2 == 0)
-			{
-			Output_SetApexDeviceFeedback Output = MyClient.SetApexDeviceFeedback(HapticOnList[i], true);
-			if (Output.Result == Result::Success)
-			{
-			output_stream << "Turn haptic feedback on for device: " << HapticOnList[i] << std::endl;
-			}
-			else if (Output.Result == Result::InvalidDeviceName)
-			{
-			output_stream << "Device doesn't exist: " << HapticOnList[i] << std::endl;
-			}
-			}
-			if (Counter % 20 == 0)
-			{
-			Output_SetApexDeviceFeedback Output = MyClient.SetApexDeviceFeedback(HapticOnList[i], false);
-
-			if (Output.Result == Result::Success)
-			{
-			output_stream << "Turn haptic feedback off for device: " << HapticOnList[i] << std::endl;
-			}
-			}
-			}
-			}*/
-
-			//Output_GetFrameRate Rate = MyClient.GetFrameRate();
-			//std::cout << "Frame rate: " << Rate.FrameRateHz << std::endl;
-			/*
-			// Get the timecode
-			Output_GetTimecode _Output_GetTimecode = MyClient.GetTimecode();
-
-			output_stream << "Timecode: "
-			<< _Output_GetTimecode.Hours << "h "
-			<< _Output_GetTimecode.Minutes << "m "
-			<< _Output_GetTimecode.Seconds << "s "
-			<< _Output_GetTimecode.Frames << "f "
-			<< _Output_GetTimecode.SubFrame << "sf "
-			<< Adapt(_Output_GetTimecode.FieldFlag) << " "
-			<< _Output_GetTimecode.Standard << " "
-			<< _Output_GetTimecode.SubFramesPerFrame << " "
-			<< _Output_GetTimecode.UserBits << std::endl << std::endl;
-
-			*/
-
-			/*		char buffer[OUTPUT_BUFFER_SIZE];
-			osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
-
-			p << osc::BeginBundleImmediate
-			<< osc::BeginMessage("TimeCode")
-			<< true << (osc::int32)_Output_GetTimecode.Seconds << (osc::int32)_Output_GetTimecode.Frames << osc::EndMessage
-			<< osc::EndBundle;
-
-			transmitSocket.Send(p.Data(), p.Size());
-			*/
-
-			// Get the latency
-			//		output_stream << "Latency: " << MyClient.GetLatencyTotal().Total << "s" << std::endl;
-			/*
-			for (unsigned int LatencySampleIndex = 0; LatencySampleIndex < MyClient.GetLatencySampleCount().Count; ++LatencySampleIndex)
-			{
-			std::string SampleName = MyClient.GetLatencySampleName(LatencySampleIndex).Name;
-			double      SampleValue = MyClient.GetLatencySampleValue(SampleName).Value;
-
-			output_stream << "  " << SampleName << " " << SampleValue << "s" << std::endl;
-			}
-			output_stream << std::endl;
-			*/
-			// Count the number of subjects
-			unsigned int SubjectCount = MyClient.GetSubjectCount().SubjectCount;
-			//	output_stream << "Subjects (" << SubjectCount << "):" << std::endl;
-
-			float m_x[10], m_y[10], m_z[10];
-
-			char buffer[OUTPUT_BUFFER_SIZE];
-			osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
-		
+			int m_x[10], m_y[10], m_z[10];
 			// Get the unlabeled markers
 			unsigned int UnlabeledMarkerCount = MyClient.GetUnlabeledMarkerCount().MarkerCount;
-			output_stream << "    Unlabeled Markers (" << UnlabeledMarkerCount << "):" << std::endl;
-
-
-			for (unsigned int UnlabeledMarkerIndex = 0; UnlabeledMarkerIndex < 10; ++UnlabeledMarkerIndex)
+			//output_stream << "    Unlabeled Markers (" << UnlabeledMarkerCount << "):" << std::endl;
+			for (unsigned int UnlabeledMarkerIndex = 0; UnlabeledMarkerIndex < UnlabeledMarkerCount; ++UnlabeledMarkerIndex)
 			{
 				// Get the global marker translation
 				Output_GetUnlabeledMarkerGlobalTranslation _Output_GetUnlabeledMarkerGlobalTranslation =
-				MyClient.GetUnlabeledMarkerGlobalTranslation(UnlabeledMarkerIndex);
-
-				//output_stream << "      Marker #" << UnlabeledMarkerIndex << ": ("
-				//<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[0] << ", "
-				//<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[1] << ", "
-				//<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[2] << ")" << std::endl;
+					MyClient.GetUnlabeledMarkerGlobalTranslation(UnlabeledMarkerIndex);
 
 				m_x[UnlabeledMarkerIndex] = (osc::int32)_Output_GetUnlabeledMarkerGlobalTranslation.Translation[0];
 				m_y[UnlabeledMarkerIndex] = (osc::int32)_Output_GetUnlabeledMarkerGlobalTranslation.Translation[1];
 				m_z[UnlabeledMarkerIndex] = (osc::int32)_Output_GetUnlabeledMarkerGlobalTranslation.Translation[2];
+
+				char buffer[OUTPUT_BUFFER_SIZE];
+				osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
+				p << osc::BeginBundleImmediate
+					<< osc::BeginMessage("/3d/marker")
+					<< m_x[0] << m_y[0]<< m_z[0] << osc::EndMessage;
+				p << osc::EndBundle;
+				transmitSocket.Send(p.Data(), p.Size());
+
+				/*output_stream << "      Marker #" << UnlabeledMarkerIndex << ": ("
+					<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[0] << ", "
+					<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[1] << ", "
+					<< _Output_GetUnlabeledMarkerGlobalTranslation.Translation[2] << ")" << std::endl;*/
 			}
-			p << osc::BeginBundleImmediate
-				<< osc::BeginMessage("/3d/marker")
-				<< m_x[0] << m_y[0] << m_z[0] << osc::EndMessage;
-			p << osc::EndBundle;
-			transmitSocket.Send(p.Data(), p.Size());
 		}
 
 		if (EnableMultiCast)
 		{
 			MyClient.StopTransmittingMulticast();
 		}
-		//		MyClient.DisableSegmentData();
+		MyClient.DisableSegmentData();
 		MyClient.DisableMarkerData();
-		/*	MyClient.DisableUnlabeledMarkerData();
+		MyClient.DisableUnlabeledMarkerData();
 		MyClient.DisableDeviceData();
 		if (bReadCentroids)
 		{
-		MyClient.DisableCentroidData();
-		}*/
+			MyClient.DisableCentroidData();
+		}
 
 		// Disconnect and dispose
 		int t = clock();

@@ -697,7 +697,7 @@ int main(int argc, char* argv[])
 						<< Adapt(_Output_GetMarkerGlobalTranslation.Occluded) << std::endl;
 					*/ 
 						char buffer[OUTPUT_BUFFER_SIZE];
-						osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
+						//osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
 
 						/*
 						p << osc::BeginBundleImmediate
@@ -706,7 +706,7 @@ int main(int argc, char* argv[])
 							<< (MarkerName.c_str()) << osc::EndMessage
 							<< osc::EndBundle; */
 
-						transmitSocket.Send(p.Data(), p.Size()); 
+						//transmitSocket.Send(p.Data(), p.Size()); 
 
 						m_x[MarkerIndex] = (osc::int32)_Output_GetMarkerGlobalTranslation.Translation[0];
 						m_y[MarkerIndex] = (osc::int32)_Output_GetMarkerGlobalTranslation.Translation[1];
