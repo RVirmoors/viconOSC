@@ -84,7 +84,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1084.0, 1149.0, 202.0, 22.0 ],
-					"style" : ""
+					"style" : "",
+					"text" : "-0.450225 0.172467 0.337772"
 				}
 
 			}
@@ -743,7 +744,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 46.0, 444.0, 208.0, 22.0 ],
 					"style" : "",
-					"text" : "-0.139756 -0.176924 -0.144231"
+					"text" : "-0.041639 0.042872 0.184759"
 				}
 
 			}
@@ -922,7 +923,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 175.0, 494.0, 270.0, 102.0 ],
-					"text" : "/modosc/points/marker/pos : [-799., 122., 1851.],\n/modosc/points/marker/acc : [-0.139756, -0.176924, -0.144231],\n/modosc/points/marker/acc_mag : 0.26765",
+					"text" : "/modosc/points/marker/pos : [-146., 941., 1000.],\n/modosc/points/marker/acc : [-0.0416387, 0.0428722, 0.184759],\n/modosc/points/marker/acc_mag : 0.194185",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
