@@ -4,7 +4,6 @@ sysbuild
 *.sln
 *.opensdf
 log.txt
-externals
 support
 build
 *.o
