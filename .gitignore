@@ -99,3 +99,16 @@ _nime/sonif-nime.bbl
 _nime/sonif-nime.synctex.gz
 
 _am/am-paper.pdf
+*.maxhelp
+*.html
+*.help
+*.png
+*.js
+*.css
+*.jpg
+max-sdk-8.0.3/html/figures/simul.maxpat
+max-sdk-8.0.3/html/header.pxm
+max-sdk-8.0.3/LICENSE.md
+max-sdk-8.0.3/MaxAPI.pdf
+max-sdk-8.0.3/package-info.json
+max-sdk-8.0.3/README.md
