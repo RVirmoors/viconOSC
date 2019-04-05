@@ -61,10 +61,10 @@ static void init(ekf_t * ekf)
 
     int i;
 
-    for (i=0; i<8; ++i)
+    for (i=0; i<8; ++i) // obs
         ekf->P[i][i] = P0;
 
-    for (i=0; i<4; ++i)
+    for (i=0; i<4; ++i) // state
         ekf->R[i][i] = R0;
 
     // position

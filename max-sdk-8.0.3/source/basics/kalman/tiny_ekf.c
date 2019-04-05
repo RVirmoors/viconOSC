@@ -300,12 +300,20 @@ int ekf_step(void * v, double * z)
 
     ekf_t ekf;
     unpack(v, &ekf, n, m); 
+
+	// PREDICT
  
     /* P_k = F_{k-1} P_{k-1} F^T_{k-1} + Q_{k-1} */
     mulmat(ekf.F, ekf.P, ekf.tmp0, n, n, n);
     transpose(ekf.F, ekf.Ft, n, n);
     mulmat(ekf.tmp0, ekf.Ft, ekf.Pp, n, n, n);
     accum(ekf.Pp, ekf.Q, n, n);
+
+	// V_k^b = V_k-1^b + xB_k^b * T
+
+	// S_k^w = S_k-1^w + Rbw_k * ( V_k-1^b * T )	-> \hat{x_k}
+
+	// UPDATE
 
     /* G_k = P_k H^T_k (H_k P_k H^T_k + R)^{-1} */
     transpose(ekf.H, ekf.Ht, m, n);

@@ -9,17 +9,19 @@
  */
 
 /* states */
-#define Nsta 8	// x y z positions, velocities, clock bias
+#define Nsta 3	// x y z positions
 
 /* observables */
-#define Mobs 2	// 3x mocap + 6x accel
+#define Mobs 9	// 3x mocap + 6x accel
 
 typedef struct {
 
     int n;           /* number of state values */
     int m;           /* number of observables */
 
-    double x[Nsta];     /* state vector */
+    double x[Nsta];     /* state vector (world) */
+	double xB[Nsta];	// body state
+	double Rbw[Nsta][Nsta]; // body - world transition
 
     double P[Nsta][Nsta];  /* prediction error covariance */
     double Q[Nsta][Nsta];  /* process noise covariance */

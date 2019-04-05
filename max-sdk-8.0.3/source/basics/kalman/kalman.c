@@ -26,79 +26,60 @@ static void blkfill(ekf_t * ekf, const double * a, int off)
 
 static void init(ekf_t * ekf)
 {
-	// Set Q, see [1]
-	const double Sf = 36;
-	const double Sg = 0.01;
-	const double sigma = 5;         // state transition variance
-	const double Qb[4] = { Sf*T + Sg * T*T*T / 3, Sg*T*T / 2, Sg*T*T / 2, Sg*T };
-	const double Qxyz[4] = { sigma*sigma*T*T*T / 3, sigma*sigma*T*T / 2, sigma*sigma*T*T / 2, sigma*sigma*T };
-
-	blkfill(ekf, Qxyz, 0);
-	blkfill(ekf, Qxyz, 1);
-	blkfill(ekf, Qxyz, 2);
-	blkfill(ekf, Qb, 3);
 
 	// initial covariances of state noise, measurement noise
-	double P0 = 10;
-	double R0 = 36;
+	double P0 = 1;
+	double R0 = 1;
 
-	int i;
+	int i, j;
 
-	for (i = 0; i < 8; ++i)
+	for (i = 0; i < 3; ++i) {
 		ekf->P[i][i] = P0;
+		ekf->Q[i][i] = 1;
+		for (j = 0; j < 3; ++j) {
+			ekf->Rbw[i][j] = 0;
+		}
+	}
 
 	for (i = 0; i < 9; ++i)
 		ekf->R[i][i] = R0;
 
 	// position
 	ekf->x[0] = 0;
-	ekf->x[2] = 0;
-	ekf->x[4] = 0;
-
-	// velocity
 	ekf->x[1] = 0;
-	ekf->x[3] = 0;
-	ekf->x[5] = 0;
-
-	// clock bias
-	ekf->x[6] = 0;
-
-	// clock drift
-	ekf->x[7] = 0;
+	ekf->x[2] = 0;
+	ekf->xB[0] = 0;
+	ekf->xB[1] = 0;
+	ekf->xB[2] = 0;
 }
 
-static void model(ekf_t * ekf, double SV[Mobs][3])
+static void model(ekf_t * ekf, double SV[Mobs], double SV_Rho[Nsta]) // vicon, acc, angles
 {
-
 	int i, j;
 
-	for (j = 0; j < 8; j += 2) {
-		ekf->fx[j] = ekf->x[j] + T * ekf->x[j + 1];
-		ekf->fx[j + 1] = ekf->x[j + 1];
+	// state model
+	for (i = 0; i < Nsta; i++) {
+		ekf->x[i] = ekf->x[i] + ekf->Q[i][i];
 	}
 
-	for (j = 0; j < 8; ++j)
+	// meas model
+	for (i = 0; i < Nsta; i++) {
+		SV_Rho[i] = SV[i] + ekf->R[i][i];
+	}
+
+	for (j = 0; j < Nsta; j++) {
+		ekf->fx[j] = ekf->x[j];
+	}
+
+	for (j = 0; j < Nsta; ++j)
 		ekf->F[j][j] = 1;
 
-	for (j = 0; j < 4; ++j)
-		ekf->F[2 * j][2 * j + 1] = T;
-
-	double dx[9][3];
-
-	for (i = 0; i < 9; ++i) {
+	for (i = 0; i < Mobs; ++i) {
 		ekf->hx[i] = 0;
-		for (j = 0; j < 3; ++j) {
-			double d = ekf->fx[j * 2] - SV[i][j];
-			dx[i][j] = d;
-			ekf->hx[i] += d * d;
-		}
-		ekf->hx[i] = pow(ekf->hx[i], 0.5) + ekf->fx[6];
 	}
 
-	for (i = 0; i < 9; ++i) {
-		for (j = 0; j < 3; ++j)
-			ekf->H[i][j * 2] = dx[i][j] / ekf->hx[i];
-		ekf->H[i][6] = 1;
+	for (i = 0; i < Nsta; ++i) {
+		ekf->H[i][i] = 1;
 	}
 }
 
@@ -121,7 +102,7 @@ void *kalman_class;
 
 ekf_t ekf;
 // Make a place to store the data from the inlet and the output of the EKF
-double SV_Pos[Mobs][3];
+double SV_Pos[Mobs];
 double SV_Rho[Mobs]; //is zero
 
 void ext_main(void *r)
@@ -164,24 +145,22 @@ void kalman_free(t_kalman *x)
 }
 
 void kalman_input(t_kalman *x, t_symbol *s, long argc, t_atom *argv) {
-	if (argc != (Mobs * 3)) {
+	if (argc != (Mobs)) {
 		object_error((t_object *)x, "wrong number of params! Need %d observations.", Mobs);
 	}
 	else {
 		// get position measurements
 		for (int i = 0; i < Mobs; i++) {
-			for (int j = 0; j < 3; ++j) {
-				SV_Pos[i][j] = atom_getfloat(&argv[i*3 + j]);
-			}
+			SV_Pos[i] = atom_getfloat(&argv[i]);
 		}
 
-		model(&ekf, SV_Pos);
-		ekf_step(&ekf, SV_Rho);
+		model(&ekf, SV_Pos, SV_Rho);
+		ekf_step(&ekf, SV_Rho);  // sv_rho is the output of the meas. model
 
 		t_atom result[3];
 		// get result from EKF output
 		for (int k = 0; k < 3; ++k)
-			atom_setfloat(&result[k], ekf.x[2 * k]);
+			atom_setfloat(&result[k], ekf.x[k]);
 		// print result to outlet
 		outlet_list(x->m_outlet1, 0L, 3, result);
 	}
