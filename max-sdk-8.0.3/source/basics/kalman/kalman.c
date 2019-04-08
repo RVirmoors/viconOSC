@@ -29,18 +29,16 @@ static void blkfill(ekf_t * ekf, const double * a, int off)
 static void init(ekf_t * ekf)
 {
 
-	// initial covariances of state noise, measurement noise
+	// initial covariances of state noise, measurement noise, process noise
 	double P0 = 1;
 	double R0 = 1;
+	double Q0 = 0.05;
 
 	int i, j;
 
 	for (i = 0; i < 3; ++i) {
 		ekf->P[i][i] = P0;
-		ekf->Q[i][i] = 1;
-		for (j = 0; j < 3; ++j) {
-			ekf->Rbw[i][j] = 0;
-		}
+		ekf->Q[i][i] = Q0;
 	}
 
 	for (i = 0; i < 9; ++i)
@@ -62,15 +60,15 @@ static void model(ekf_t * ekf, double SV[Mobs], double SV_Meas[Nsta])
 	double a[3];
 
 	// state model
-	for (i = 0; i < Nsta; i++) {
-		ekf->x[i] = ekf->x[i] + ekf->Q[i][i];
-	}
+//	for (i = 0; i < Nsta; i++) {
+//		ekf->x[i] = ekf->x[i] + ekf->Q[i][i];
+//	}
 
 	// meas model
 	for (i = 0; i < Nsta; i++) {
-		SV_Meas[i] = SV[i] + ekf->R[i][i];	// world meas
-		ekf->xB[i] = SV[i+3] + ekf->R[i+3][i+3]; // body meas
-		a[i] = SV[i+6] + ekf->R[i+6][i+6]; // angular rate meas
+		SV_Meas[i] = SV[i];// +ekf->R[i][i];	// world meas
+		ekf->xB[i] = SV[i + 3];// +ekf->R[i + 3][i + 3]; // body meas
+		a[i] = SV[i + 6];// +ekf->R[i + 6][i + 6]; // angular rate meas
 		ekf->o[i] += a[i] * T;			// body orientation
 	}
 
