@@ -112,3 +112,5 @@ max-sdk-8.0.3/LICENSE.md
 max-sdk-8.0.3/MaxAPI.pdf
 max-sdk-8.0.3/package-info.json
 max-sdk-8.0.3/README.md
+*.db
+*.db
