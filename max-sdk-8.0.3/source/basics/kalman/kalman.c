@@ -5,13 +5,15 @@
 	@ingroup	examples
 */
 
+// positioning interval
+//static const double T = 1;
+
 #include "ext.h"							// standard Max include, always required
 #include "ext_obex.h"						// required for new style Max object
 #include "tinyekf_cfg.h"
 #include "tiny_ekf.h"
 
-// positioning interval
-static const double T = 1;
+
 
 static void blkfill(ekf_t * ekf, const double * a, int off)
 {
@@ -48,14 +50,16 @@ static void init(ekf_t * ekf)
 	ekf->x[0] = 0;
 	ekf->x[1] = 0;
 	ekf->x[2] = 0;
+	// acc (body)
 	ekf->xB[0] = 0;
 	ekf->xB[1] = 0;
 	ekf->xB[2] = 0;
 }
 
-static void model(ekf_t * ekf, double SV[Mobs], double SV_Rho[Nsta]) // vicon, acc, angles
+static void model(ekf_t * ekf, double SV[Mobs], double SV_Meas[Nsta])
 {
 	int i, j;
+	double a[3];
 
 	// state model
 	for (i = 0; i < Nsta; i++) {
@@ -64,9 +68,27 @@ static void model(ekf_t * ekf, double SV[Mobs], double SV_Rho[Nsta]) // vicon, a
 
 	// meas model
 	for (i = 0; i < Nsta; i++) {
-		SV_Rho[i] = SV[i] + ekf->R[i][i];
+		SV_Meas[i] = SV[i] + ekf->R[i][i];	// world meas
+		ekf->xB[i] = SV[i+3] + ekf->R[i+3][i+3]; // body meas
+		a[i] = SV[i+6] + ekf->R[i+6][i+6]; // angular rate meas
+		ekf->o[i] += a[i] * T;			// body orientation
 	}
 
+	// body - world transf matrix
+	ekf->Rbw[0][0] = cos(ekf->o[1])*cos(ekf->o[2]);
+	ekf->Rbw[0][1] = cos(ekf->o[1])*sin(ekf->o[2]);
+	ekf->Rbw[0][2] = -sin(ekf->o[1]);
+	ekf->Rbw[1][0] = sin(ekf->o[0])*sin(ekf->o[1])*cos(ekf->o[2])-
+					 sin(ekf->o[0])*sin(ekf->o[2]);
+	ekf->Rbw[1][1] = sin(ekf->o[0])*sin(ekf->o[1])*sin(ekf->o[2]) -
+					 cos(ekf->o[0])*cos(ekf->o[2]);
+	ekf->Rbw[1][2] = sin(ekf->o[0])*cos(ekf->o[1]);
+	ekf->Rbw[2][0] = cos(ekf->o[0])*sin(ekf->o[1])*cos(ekf->o[2]) +
+					 sin(ekf->o[0])*sin(ekf->o[2]);
+	ekf->Rbw[2][1] = cos(ekf->o[0])*sin(ekf->o[1])*sin(ekf->o[2]) -
+					 sin(ekf->o[0])*cos(ekf->o[2]);
+	ekf->Rbw[2][2] = cos(ekf->o[0])*cos(ekf->o[1]);
+	
 	for (j = 0; j < Nsta; j++) {
 		ekf->fx[j] = ekf->x[j];
 	}
@@ -103,7 +125,7 @@ void *kalman_class;
 ekf_t ekf;
 // Make a place to store the data from the inlet and the output of the EKF
 double SV_Pos[Mobs];
-double SV_Rho[Mobs]; //is zero
+double SV_Meas[Mobs]; 
 
 void ext_main(void *r)
 {
@@ -154,8 +176,10 @@ void kalman_input(t_kalman *x, t_symbol *s, long argc, t_atom *argv) {
 			SV_Pos[i] = atom_getfloat(&argv[i]);
 		}
 
-		model(&ekf, SV_Pos, SV_Rho);
-		ekf_step(&ekf, SV_Rho);  // sv_rho is the output of the meas. model
+		model(&ekf, SV_Pos, SV_Meas);  // sv_pos: vicon, acc, gyro
+
+		post("input is %f %f", SV_Pos[0], SV_Meas[0]);
+		ekf_step(&ekf, SV_Meas);  // sv_rho is the output of the meas. model
 
 		t_atom result[3];
 		// get result from EKF output
@@ -163,6 +187,7 @@ void kalman_input(t_kalman *x, t_symbol *s, long argc, t_atom *argv) {
 			atom_setfloat(&result[k], ekf.x[k]);
 		// print result to outlet
 		outlet_list(x->m_outlet1, 0L, 3, result);
+		post("error is %f %f", ekf.P[0][0], ekf.P[1][1]);
 	}
 }
 

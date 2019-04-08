@@ -20,7 +20,9 @@ typedef struct {
     int m;           /* number of observables */
 
     double x[Nsta];     /* state vector (world) */
-	double xB[Nsta];	// body state
+	double xB[Nsta];	// body state (accel)
+	double V[Nsta];		// body speed
+	double o[Nsta];		// body orientation
 	double Rbw[Nsta][Nsta]; // body - world transition
 
     double P[Nsta][Nsta];  /* prediction error covariance */
@@ -46,5 +48,6 @@ typedef struct {
     double tmp3[Mobs][Mobs];
     double tmp4[Mobs][Mobs];
     double tmp5[Mobs]; 
+	double tmp6[Nsta];
 
 } ekf_t;

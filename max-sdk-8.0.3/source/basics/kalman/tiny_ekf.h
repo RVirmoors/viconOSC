@@ -6,6 +6,7 @@
  * MIT License
  */
 
+#define T 1
 
 /**
   * Initializes an EKF structure.

@@ -197,6 +197,10 @@ static void mat_addeye(double * a, int n)
 typedef struct {
 
     double * x;    /* state vector */
+	double * xB;
+	double * V;
+	double * o;
+	double * Rbw;
 
     double * P;  /* prediction error covariance */
     double * Q;  /* process noise covariance */
@@ -221,6 +225,7 @@ typedef struct {
     double * tmp3;
     double * tmp4;
     double * tmp5; 
+	double * tmp6;
 
 } ekf_t;
 
@@ -233,6 +238,14 @@ static void unpack(void * v, ekf_t * ekf, int n, int m)
     double * dptr = (double *)cptr;
     ekf->x = dptr;
     dptr += n;
+	ekf->xB = dptr;
+	dptr += n;
+	ekf->V = dptr;
+	dptr += n;
+	ekf->o = dptr;
+	dptr += n;
+	ekf->Rbw = dptr;
+	dptr += n*n;
     ekf->P = dptr;
     dptr += n*n;
     ekf->Q = dptr;
@@ -266,6 +279,8 @@ static void unpack(void * v, ekf_t * ekf, int n, int m)
     ekf->tmp4 = dptr;
     dptr += m*m;
     ekf->tmp5 = dptr;
+	dptr += m;
+	ekf->tmp6 = dptr;
   }
 
 void ekf_init(void * v, int n, int m)
@@ -281,7 +296,11 @@ void ekf_init(void * v, int n, int m)
     unpack(v, &ekf, n, m);
 
     /* zero-out matrices */
-    zeros(ekf.P, n, n);
+	zeros(ekf.x, n, 1);
+	zeros(ekf.xB, n, 1);
+	zeros(ekf.V, n, 1);
+	zeros(ekf.o, n, 1);
+	zeros(ekf.P, n, n);
     zeros(ekf.Q, n, n);
     zeros(ekf.R, m, m);
     zeros(ekf.G, n, m);
@@ -289,7 +308,7 @@ void ekf_init(void * v, int n, int m)
     zeros(ekf.H, m, n);
 }
 
-int ekf_step(void * v, double * z)
+int ekf_step(void * v, double * z) // v=EKF ; z = meas model (world)
 {        
     /* unpack incoming structure */
 
@@ -308,10 +327,18 @@ int ekf_step(void * v, double * z)
     transpose(ekf.F, ekf.Ft, n, n);
     mulmat(ekf.tmp0, ekf.Ft, ekf.Pp, n, n, n);
     accum(ekf.Pp, ekf.Q, n, n);
-
-	// V_k^b = V_k-1^b + xB_k^b * T
-
+	
+	double vt[3];
+	// V_k^b = V_k-1^b + xB_k * T
+	for (int i = 1; i < n; i++)
+	{
+		ekf.V[i] += ekf.xB[i] * T;
+		vt[i] = ekf.V[i] * T;
+	}
 	// S_k^w = S_k-1^w + Rbw_k * ( V_k-1^b * T )	-> \hat{x_k}
+
+	mulvec(ekf.Rbw, vt, ekf.tmp6, n, n);
+	accum(ekf.x, ekf.tmp6, 1, n);
 
 	// UPDATE
 
