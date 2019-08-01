@@ -103,7 +103,6 @@ _am/am-paper.pdf
 *.html
 *.help
 *.png
-*.js
 *.css
 *.jpg
 max-sdk-8.0.3/html/figures/simul.maxpat
