@@ -50,11 +50,13 @@ function ec14() {	// update V and S
 		V[i] += a[i] * deltaT;
 		S[i] += V[i] * deltaT;
 	}
-	axHist.push(V[0]);
-	axHist = axHist.slice(-5);
-	lr = linearRegression(axHist);
-	//post(lr['intercept']);
-	V[0] -= lr['slope'];
+	axHist.push(a[0]);
+	axHist = axHist.slice(-20);
+	if (axHist.length == 20) {
+		lr = linearRegression(axHist);
+		//post(lr['intercept']);
+		V[0] -= lr['slope'];
+	}
 
 }
 
