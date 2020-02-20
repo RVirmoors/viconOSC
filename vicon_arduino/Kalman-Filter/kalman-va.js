@@ -142,7 +142,7 @@ function list(l)
 	
 	for (var i = 0; i < l.length; i+=2) {
 		kalmanA.observation[0][0] =  l[i];
-		kalmanA.observation[1][0] =  l[i+1];
+		kalmanA.observation[1][0] =  l[i+1] + 500;
 		update(kalmanA);
 		tbl[i] = kalmanA.state_estimate[0][0];
 	}
