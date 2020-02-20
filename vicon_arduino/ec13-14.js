@@ -27,7 +27,7 @@ function list()
 	var l = arrayfromargs(arguments);
 	for (var i = 0; i < 3; i++) {
 		if (inlet == 0)
-			acc[i] = filter (acc[i], l[i]);
+			acc[i] = l[i];
 		if (inlet == 1)
 			w[i] = l[i];
 		if (inlet == 2)
@@ -35,14 +35,9 @@ function list()
 	}
 	ec14();
 	ec13();
-	lr = linearRegression(axHist);
 	outlet(0, S);
 	outlet(1, V);
 	outlet(2, a);
-}
-
-function filter(from, to) {
-	return to;
 }
 
 function ec14() {	// update V and S
@@ -50,14 +45,6 @@ function ec14() {	// update V and S
 		V[i] += a[i] * deltaT;
 		S[i] += V[i] * deltaT;
 	}
-	axHist.push(a[0]);
-	axHist = axHist.slice(-20);
-	if (axHist.length == 20) {
-		lr = linearRegression(axHist);
-		//post(lr['intercept']);
-		V[0] -= lr['slope'];
-	}
-
 }
 
 function ec13() {
@@ -65,29 +52,4 @@ function ec13() {
 
 //	a[1] = acc[1] + w[0]*V[2] - w[2]*V[0] - g*Math.sin(ypr[2])*Math.cos(ypr[1]);
 //	a[2] = acc[2] + w[0]*V[1] - w[1]*V[0] - g*Math.cos(ypr[2])*Math.cos(ypr[1]);
-}
-
-function linearRegression(x){
-        var lr = {};
-        var n = x.length;
-        var sum_x = 0;
-        var sum_y = 0;
-        var sum_xy = 0;
-        var sum_xx = 0;
-        var sum_yy = 0;
-
-        for (var i = 0; i < n; i++) {
-
-            sum_x += x[i];
-            sum_y += i;
-            sum_xy += (x[i]*i);
-            sum_xx += (x[i]*x[i]);
-            sum_yy += (i*i);
-        } 
-
-        lr['slope'] = (n * sum_xy - sum_x * sum_y) / (n*sum_xx - sum_x * sum_x);
-        lr['intercept'] = (sum_y - lr.slope * sum_x)/n;
-        lr['r2'] = Math.pow((n*sum_xy - sum_x*sum_y)/Math.sqrt((n*sum_xx-sum_x*sum_x)*(n*sum_yy-sum_y*sum_y)),2);
-
-        return lr;
 }
